@@ -113,7 +113,7 @@ function HeroSlider() {
             <div className="absolute -inset-4 rounded-3xl bg-[#0A0A0A] -rotate-2" />
             <img
               alt=""
-              className="relative rounded-3xl w-full aspect-[4/5] object-cover object-top border-4 border-white shadow-xl"
+              className="relative rounded-3xl w-full aspect-[4/5] object-contain bg-slate-900 border-4 border-white shadow-xl p-2"
               src={s.image}
             />
             <div className="absolute -bottom-6 -left-6 bg-white border border-black/10 rounded-2xl shadow-lg px-5 py-4">
