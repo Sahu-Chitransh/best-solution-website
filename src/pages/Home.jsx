@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   Sparkles, ArrowRight, Trophy, Users, Target,
   ClipboardCheck, Award, Presentation, BookOpen,
-  House, Bus, Coffee, Utensils,
+  House, Bus, Coffee, Utensils, X, ChevronLeft, ChevronRight, Download,
 } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import EnquiryForm from '../components/EnquiryForm';
@@ -11,6 +11,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import {
   HERO_SLIDES, STATS, MARQUEE_ITEMS, WHY_US,
   COURSES, FACILITIES, TESTIMONIALS,
+  JEE_RESULTS, NEET_RESULTS, PAMPHLET_IMAGE,
 } from '../data/site';
 
 /* ── Icon map ── */
@@ -378,6 +379,192 @@ function TestimonialsSection() {
   );
 }
 
+/* ── Results Gallery ── */
+function ResultsGallery() {
+  const ref = useScrollReveal();
+  const [activeTab, setActiveTab] = useState('jee');
+  const [lightbox, setLightbox] = useState({ open: false, idx: 0 });
+
+  const images = activeTab === 'jee' ? JEE_RESULTS : NEET_RESULTS;
+
+  const openLightbox = (idx) => setLightbox({ open: true, idx });
+  const closeLightbox = () => setLightbox({ open: false, idx: 0 });
+  const prevImage = () => setLightbox((s) => ({ ...s, idx: (s.idx - 1 + images.length) % images.length }));
+  const nextImage = () => setLightbox((s) => ({ ...s, idx: (s.idx + 1) % images.length }));
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (!lightbox.open) return;
+    const handler = (e) => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  });
+
+  return (
+    <section className="bg-[#FAFAFA] border-y border-black/5 py-24" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          eyebrow="Our Results"
+          title="Results that speak louder than promises."
+          description="Year after year, Best Solution students crack the toughest exams in India. Browse our JEE and NEET results below."
+        />
+
+        {/* Tabs */}
+        <div className="mt-10 flex items-center gap-1 border-b border-black/10 pb-0">
+          <button
+            onClick={() => setActiveTab('jee')}
+            className={`bs-tab px-5 py-3 text-sm font-bold uppercase tracking-widest transition-colors ${
+              activeTab === 'jee'
+                ? 'text-[#D32F2F] bs-tab-active'
+                : 'text-slate-500 hover:text-slate-800'
+            }`}
+          >
+            JEE Results ({JEE_RESULTS.length})
+          </button>
+          <button
+            onClick={() => setActiveTab('neet')}
+            className={`bs-tab px-5 py-3 text-sm font-bold uppercase tracking-widest transition-colors ${
+              activeTab === 'neet'
+                ? 'text-[#D32F2F] bs-tab-active'
+                : 'text-slate-500 hover:text-slate-800'
+            }`}
+          >
+            NEET Results ({NEET_RESULTS.length})
+          </button>
+        </div>
+
+        {/* Grid */}
+        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {images.map((src, i) => (
+            <div
+              key={`${activeTab}-${i}`}
+              className={`bs-gallery-img rounded-2xl overflow-hidden border border-black/10 bg-white bs-animate-hidden bs-stagger-${Math.min(i % 6 + 1, 6)}`}
+              data-animate
+              onClick={() => openLightbox(i)}
+            >
+              <img
+                alt={`${activeTab.toUpperCase()} result ${i + 1}`}
+                className="w-full aspect-[3/4] object-cover object-top"
+                src={src}
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox */}
+      {lightbox.open && (
+        <div
+          className="bs-lightbox fixed inset-0 z-[100] flex items-center justify-center bg-black/85 backdrop-blur-sm"
+          onClick={closeLightbox}
+        >
+          {/* Close button */}
+          <button
+            className="absolute top-4 right-4 text-white/80 hover:text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
+            onClick={closeLightbox}
+            aria-label="Close lightbox"
+          >
+            <X size={24} />
+          </button>
+
+          {/* Prev */}
+          <button
+            className="absolute left-4 text-white/80 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
+            onClick={(e) => { e.stopPropagation(); prevImage(); }}
+            aria-label="Previous image"
+          >
+            <ChevronLeft size={28} />
+          </button>
+
+          {/* Image */}
+          <img
+            key={lightbox.idx}
+            src={images[lightbox.idx]}
+            alt={`${activeTab.toUpperCase()} result ${lightbox.idx + 1}`}
+            className="bs-lightbox-img max-h-[85vh] max-w-[90vw] rounded-2xl object-contain shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          {/* Next */}
+          <button
+            className="absolute right-4 text-white/80 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
+            onClick={(e) => { e.stopPropagation(); nextImage(); }}
+            aria-label="Next image"
+          >
+            <ChevronRight size={28} />
+          </button>
+
+          {/* Counter */}
+          <div className="absolute bottom-6 text-white/60 text-sm font-semibold tracking-widest">
+            {lightbox.idx + 1} / {images.length}
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
+/* ── Pamphlet Banner ── */
+function PamphletBanner() {
+  const ref = useScrollReveal();
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A] py-24" ref={ref}>
+      {/* Decorative blurs */}
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#D32F2F]/10 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[#FFC107]/10 blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+        {/* Text */}
+        <div data-animate className="bs-animate-hidden">
+          <span className="inline-flex items-center gap-2 rounded-full border border-[#D32F2F]/30 bg-[#D32F2F]/10 text-[#FF6659] px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+            <Sparkles size={14} />
+            New · July 2026
+          </span>
+          <h2 className="mt-6 text-4xl sm:text-5xl font-black tracking-tighter text-white">
+            Our Latest{' '}
+            <span className="text-[#D32F2F]">Brochure</span>
+          </h2>
+          <p className="mt-5 text-slate-400 leading-relaxed max-w-lg">
+            Everything you need to know — courses, fees, timetable, scholarships, and admission process — in one beautifully designed pamphlet.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href={PAMPHLET_IMAGE}
+              download
+              className="inline-flex items-center gap-2 rounded-full bg-[#D32F2F] px-6 py-3.5 text-sm font-bold text-white hover:bg-[#B71C1C] hover:-translate-y-0.5 transition-[transform,background-color] duration-200 shadow-sm"
+            >
+              <Download size={16} />
+              Download Brochure
+            </a>
+            <Link
+              to="/admissions"
+              className="inline-flex items-center gap-2 rounded-full border border-white/20 text-white px-6 py-3.5 text-sm font-bold hover:bg-white hover:text-[#0A0A0A] transition-colors"
+            >
+              Apply Now <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+
+        {/* Pamphlet Image */}
+        <div data-animate className="bs-animate-hidden bs-stagger-2 flex justify-center">
+          <div className="bs-pamphlet-glow rounded-2xl overflow-hidden border border-white/10 max-w-sm">
+            <img
+              alt="Best Solution July 2026 Brochure"
+              className="w-full object-cover"
+              src={PAMPHLET_IMAGE}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ── CTA / Enquiry ── */
 function CtaSection() {
   return (
@@ -407,10 +594,12 @@ export default function Home() {
       <HeroSlider />
       <Marquee />
       <StatsSection />
+      <ResultsGallery />
       <WhySection />
       <ProgramsSection />
       <FacilitiesSection />
       <TestimonialsSection />
+      <PamphletBanner />
       <CtaSection />
     </div>
   );

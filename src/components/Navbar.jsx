@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X } from 'lucide-react';
-import { NAV_LINKS } from '../data/site';
+import { NAV_LINKS, LOGO_IMAGE } from '../data/site';
 
 export default function Navbar() {
   const { pathname } = useLocation();
@@ -12,7 +12,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img src="/images/logo.png" alt="Best Solution" className="h-10 w-auto rounded" />
+          <img src={LOGO_IMAGE} alt="Best Solution" className="h-10 w-auto rounded" />
         </Link>
 
         {/* Desktop nav */}

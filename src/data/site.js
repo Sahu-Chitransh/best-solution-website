@@ -185,3 +185,42 @@ export const COURSE_OPTIONS = [
   'Foundation (Class 6–8)',
   'Board Exam Prep',
 ];
+
+// JEE Results images
+export const JEE_RESULTS = [
+  '/images/jee/JEE_01.png',
+  '/images/jee/JEE_02.png',
+  '/images/jee/JEE_03.png',
+  '/images/jee/01.png',
+  '/images/jee/02.png',
+  '/images/jee/03.png',
+  '/images/jee/04.png',
+  '/images/jee/05.png',
+  '/images/jee/06.png',
+  '/images/jee/07.png',
+  '/images/jee/08.png',
+  '/images/jee/09.png',
+  '/images/jee/10.png',
+  '/images/jee/11.png',
+  '/images/jee/12.png',
+  '/images/jee/13.png',
+  '/images/jee/14.png',
+];
+
+// NEET Results images
+export const NEET_RESULTS = [
+  '/images/neet/NEET_01.png',
+  '/images/neet/NEET_02.png',
+  '/images/neet/NEET_03.png',
+  '/images/neet/NEET_04.png',
+  '/images/neet/NEET_05.png',
+  '/images/neet/NEET_06.png',
+  '/images/neet/NEET_07.png',
+  '/images/neet/NEET_08.png',
+];
+
+// Pamphlet
+export const PAMPHLET_IMAGE = '/images/common/pamphlet_july_2026.jpeg';
+
+// Logo
+export const LOGO_IMAGE = '/images/jee/Best_Solution_LOGO.png';

@@ -11,7 +11,7 @@ function InstagramIcon({ size = 16 }) {
     </svg>
   );
 }
-import { FOOTER_EXPLORE, CONTACT_INFO } from '../data/site';
+import { FOOTER_EXPLORE, CONTACT_INFO, LOGO_IMAGE } from '../data/site';
 
 export default function Footer() {
   return (
@@ -23,7 +23,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <img src="/images/logo.png" alt="Best Solution" className="h-12 w-auto rounded mb-6" />
+            <img src={LOGO_IMAGE} alt="Best Solution" className="h-12 w-auto rounded mb-6" />
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
               Best Solution Coaching Classes — training champions for IIT-JEE, NEET, Olympiads, NTSE & CCG since 2010, right in the heart of Vijay Nagar, Indore.
             </p>

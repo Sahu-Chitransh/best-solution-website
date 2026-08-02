@@ -92,3 +92,60 @@
 .bs-hero-image-animate {
   animation: hero-image-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* Results gallery image hover */
+.bs-gallery-img {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  cursor: pointer;
+}
+.bs-gallery-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Lightbox */
+@keyframes lightbox-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes lightbox-img-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+.bs-lightbox {
+  animation: lightbox-in 0.25s ease forwards;
+}
+.bs-lightbox-img {
+  animation: lightbox-img-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Tab button */
+.bs-tab {
+  position: relative;
+  transition: color 0.25s ease;
+}
+.bs-tab::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 3px;
+  border-radius: 999px;
+  background: #D32F2F;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bs-tab-active::after {
+  transform: scaleX(1);
+}
+
+/* Pamphlet glow */
+@keyframes pamphlet-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(211, 47, 47, 0.15); }
+  50% { box-shadow: 0 0 40px rgba(211, 47, 47, 0.3); }
+}
+.bs-pamphlet-glow {
+  animation: pamphlet-glow 3s ease-in-out infinite;
+}
+
