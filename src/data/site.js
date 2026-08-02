@@ -6,7 +6,7 @@ export const HERO_SLIDES = [
     body: '22 of 36 students in our Pinnacle Program crossed 95%ile in JEE Main 2025. Our teaching floor is built on rigour, not luck.',
     primaryCta: { label: 'See JEE Program', href: '/courses' },
     secondaryCta: { label: 'Book a demo', href: '/admissions' },
-    image: '/images/samarth.png',
+    image: '/images/jee/JEE_01.png',
     stat: { value: 'AIR 1833', label: 'Samarth Khandelwal · JEE Adv. 2025' },
   },
   {
@@ -15,7 +15,7 @@ export const HERO_SLIDES = [
     body: 'Srujan Gawande scored 99.48%ile in JEE Main 2023 — trained entirely at Best Solution, Vijay Nagar.',
     primaryCta: { label: 'Our Results', href: '/about' },
     secondaryCta: { label: 'Meet Faculty', href: '/faculty' },
-    image: '/images/srujan.png',
+    image: '/images/jee/JEE_02.png',
     stat: { value: '99.48%', label: 'Srujan Gawande · JEE Main 2023' },
   },
   {
@@ -24,7 +24,7 @@ export const HERO_SLIDES = [
     body: 'Anita Kulkarni cracked NEET in her first attempt with 645/720. Biology diagrams and NCERT drills — every single day.',
     primaryCta: { label: 'See NEET Program', href: '/courses' },
     secondaryCta: { label: 'Book a demo', href: '/admissions' },
-    image: '/images/anita.jpg',
+    image: '/images/neet/NEET_01.png',
     stat: { value: '645/720', label: 'Anita Kulkarni · NEET 2024' },
   },
 ];

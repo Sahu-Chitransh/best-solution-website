@@ -113,7 +113,7 @@ function HeroSlider() {
             <div className="absolute -inset-4 rounded-3xl bg-[#0A0A0A] -rotate-2" />
             <img
               alt=""
-              className="relative rounded-3xl w-full aspect-[4/5] object-cover border-4 border-white shadow-xl"
+              className="relative rounded-3xl w-full aspect-[4/5] object-contain bg-slate-900 border-4 border-white shadow-xl p-2"
               src={s.image}
             />
             <div className="absolute -bottom-6 -left-6 bg-white border border-black/10 rounded-2xl shadow-lg px-5 py-4">
@@ -423,7 +423,7 @@ function ResultsGallery() {
                 : 'text-slate-500 hover:text-slate-800'
             }`}
           >
-            JEE Results ({JEE_RESULTS.length})
+            JEE Results
           </button>
           <button
             onClick={() => setActiveTab('neet')}
@@ -433,7 +433,7 @@ function ResultsGallery() {
                 : 'text-slate-500 hover:text-slate-800'
             }`}
           >
-            NEET Results ({NEET_RESULTS.length})
+            NEET Results
           </button>
         </div>
 
@@ -442,13 +442,13 @@ function ResultsGallery() {
           {images.map((src, i) => (
             <div
               key={`${activeTab}-${i}`}
-              className={`bs-gallery-img rounded-2xl overflow-hidden border border-black/10 bg-white bs-animate-hidden bs-stagger-${Math.min(i % 6 + 1, 6)}`}
+              className={`bs-gallery-img rounded-2xl overflow-hidden border border-black/10 bg-[#F8FAFC] flex items-center justify-center p-2 aspect-[3/4] bs-animate-hidden bs-stagger-${Math.min(i % 6 + 1, 6)}`}
               data-animate
               onClick={() => openLightbox(i)}
             >
               <img
                 alt={`${activeTab.toUpperCase()} result ${i + 1}`}
-                className="w-full aspect-[3/4] object-cover object-top"
+                className="w-full h-full object-contain rounded-xl"
                 src={src}
                 loading="lazy"
               />
