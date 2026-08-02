@@ -202,9 +202,6 @@ export const JEE_RESULTS = [
   '/images/jee/12.png',
   '/images/jee/13.png',
   '/images/jee/14.png',
-  '/images/jee/JEE_01.png',
-  '/images/jee/JEE_02.png',
-  '/images/jee/JEE_03.png',
 ];
 
 // NEET Results images
