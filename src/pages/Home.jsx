@@ -8,11 +8,15 @@ import {
 import SectionHeader from '../components/SectionHeader';
 import EnquiryForm from '../components/EnquiryForm';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import {
-  HERO_SLIDES, STATS, MARQUEE_ITEMS, WHY_US,
-  COURSES, FACILITIES, TESTIMONIALS,
-  JEE_RESULTS, NEET_RESULTS, PAMPHLET_IMAGE,
-} from '../data/site';
+import heroData from '../content/hero.json';
+import statsData from '../content/stats.json';
+import marqueeData from '../content/marquee.json';
+import whyUsData from '../content/why-us.json';
+import facilitiesData from '../content/facilities.json';
+import coursesData from '../content/homepage-courses.json';
+import brochureData from '../content/brochure.json';
+import testimonialsData from '../content/testimonials.json';
+import resultsData from '../content/results.json';
 
 /* ── Icon map ── */
 const ICONS = {
@@ -26,7 +30,7 @@ function HeroSlider() {
   const [animKey, setAnimKey] = useState(0);
 
   const next = useCallback(() => {
-    setCurrent((c) => (c + 1) % HERO_SLIDES.length);
+    setCurrent((c) => (c + 1) % heroData.slides.length);
     setAnimKey((k) => k + 1);
   }, []);
 
@@ -40,7 +44,7 @@ function HeroSlider() {
     setAnimKey((k) => k + 1);
   };
 
-  const s = HERO_SLIDES[current];
+  const s = heroData.slides[current];
 
   return (
     <section className="relative overflow-hidden bg-white bs-grid-bg">
@@ -89,7 +93,7 @@ function HeroSlider() {
 
           {/* Dots */}
           <div className="mt-10 flex items-center gap-4">
-            {HERO_SLIDES.map((_, i) => (
+            {heroData.slides.map((_, i) => (
               <button
                 key={i}
                 aria-label={`Go to slide ${i + 1}`}
@@ -102,7 +106,7 @@ function HeroSlider() {
               />
             ))}
             <span className="ml-2 text-xs font-semibold text-slate-500 uppercase tracking-widest">
-              {String(current + 1).padStart(2, '0')} / {String(HERO_SLIDES.length).padStart(2, '0')}
+              {String(current + 1).padStart(2, '0')} / {String(heroData.slides.length).padStart(2, '0')}
             </span>
           </div>
         </div>
@@ -133,7 +137,7 @@ function HeroSlider() {
 
 /* ── Marquee ── */
 function Marquee() {
-  const items = MARQUEE_ITEMS;
+  const items = marqueeData.items;
   return (
     <div className="border-y border-black/10 bg-[#0A0A0A] text-white overflow-hidden">
       <div className="bs-marquee-track py-4 whitespace-nowrap">
@@ -163,7 +167,7 @@ function StatsSection() {
         description="Every number here is a real student — with a real rank and a real family who believed in the process."
       />
       <div className="mt-14 grid grid-cols-2 md:grid-cols-4 divide-x divide-black/10 border-y border-black/10">
-        {STATS.map((s, i) => (
+        {statsData.stats.map((s, i) => (
           <div key={i} className={`p-6 md:p-8 bs-animate-hidden bs-stagger-${i + 1}`} data-animate>
             <div className="text-4xl md:text-5xl font-black text-[#D32F2F] tracking-tight">
               {s.value}
@@ -206,7 +210,7 @@ function WhySection() {
           </div>
         </div>
         <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3">
-          {WHY_US.map((c, i) => {
+          {whyUsData.cards.map((c, i) => {
             const Icon = ICONS[c.icon];
             return (
               <div
@@ -215,8 +219,8 @@ function WhySection() {
                 data-animate
               >
                 {Icon && <Icon size={22} strokeWidth={2.4} className="text-[#D32F2F]" />}
-                <div className="mt-4 font-bold text-[#0A0A0A]">{c.t}</div>
-                <div className="mt-1 text-sm text-slate-600 leading-relaxed">{c.d}</div>
+                <div className="mt-4 font-bold text-[#0A0A0A]">{c.title}</div>
+                <div className="mt-1 text-sm text-slate-600 leading-relaxed">{c.description}</div>
               </div>
             );
           })}
@@ -238,7 +242,7 @@ function ProgramsSection() {
         title="Pick your track. We'll build the ladder."
       />
       <div className="mt-14 grid grid-cols-1 md:grid-cols-12 gap-5">
-        {COURSES.map((c, i) => (
+        {coursesData.courses.map((c, i) => (
           <div
             key={i}
             className={`${COL_SPAN[c.span]} group relative rounded-3xl border border-black/10 bg-white overflow-hidden p-7 md:p-9 hover:-translate-y-1 hover:border-[#D32F2F] transition-[transform,border-color] duration-300 bs-animate-hidden bs-stagger-${i + 1}`}
@@ -313,12 +317,12 @@ function FacilitiesSection() {
             Fixed seating, dedicated study bays, quiet zones and a full computer lab. Distraction is designed out — focus is designed in.
           </p>
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {FACILITIES.map((f, i) => {
+            {facilitiesData.items.map((f, i) => {
               const Icon = ICONS[f.icon];
               return (
                 <div key={i} className="flex items-center gap-2 text-sm text-slate-700">
                   {Icon && <Icon size={16} className="text-[#D32F2F]" />}
-                  {f.t}
+                  {f.title}
                 </div>
               );
             })}
@@ -341,7 +345,7 @@ function TestimonialsSection() {
           dark
         />
         <div className="mt-14 grid md:grid-cols-3 gap-5">
-          {TESTIMONIALS.map((t, i) => (
+          {testimonialsData.testimonials.map((t, i) => (
             <div
               key={i}
               className={`rounded-3xl bg-white/5 border border-white/10 p-7 hover:border-[#D32F2F] transition-colors bs-animate-hidden bs-stagger-${i + 1}`}
@@ -385,7 +389,7 @@ function ResultsGallery() {
   const [activeTab, setActiveTab] = useState('jee');
   const [lightbox, setLightbox] = useState({ open: false, idx: 0 });
 
-  const images = activeTab === 'jee' ? JEE_RESULTS : NEET_RESULTS;
+  const images = activeTab === 'jee' ? resultsData.jee : resultsData.neet;
 
   const openLightbox = (idx) => setLightbox({ open: true, idx });
   const closeLightbox = () => setLightbox({ open: false, idx: 0 });
@@ -523,18 +527,18 @@ function PamphletBanner() {
         <div data-animate className="bs-animate-hidden">
           <span className="inline-flex items-center gap-2 rounded-full border border-[#D32F2F]/30 bg-[#D32F2F]/10 text-[#FF6659] px-3 py-1 text-xs font-semibold uppercase tracking-widest">
             <Sparkles size={14} />
-            New · July 2026
+            {brochureData.sessionLabel}
           </span>
           <h2 className="mt-6 text-4xl sm:text-5xl font-black tracking-tighter text-white">
             Our Latest{' '}
             <span className="text-[#D32F2F]">Brochure</span>
           </h2>
           <p className="mt-5 text-slate-400 leading-relaxed max-w-lg">
-            Everything you need to know — courses, fees, timetable, scholarships, and admission process — in one beautifully designed pamphlet.
+            {brochureData.description}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href={PAMPHLET_IMAGE}
+              href={brochureData.image}
               download
               className="inline-flex items-center gap-2 rounded-full bg-[#D32F2F] px-6 py-3.5 text-sm font-bold text-white hover:bg-[#B71C1C] hover:-translate-y-0.5 transition-[transform,background-color] duration-200 shadow-sm"
             >
@@ -556,7 +560,7 @@ function PamphletBanner() {
             <img
               alt="Best Solution July 2026 Brochure"
               className="w-full object-cover"
-              src={PAMPHLET_IMAGE}
+              src={brochureData.image}
             />
           </div>
         </div>

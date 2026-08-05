@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import resultsData from '../content/results.json';
 
 const useScrollReveal = () => {
   const ref = useRef(null);
@@ -29,33 +30,9 @@ const Reveal = ({ children, className = '', delay = 0 }) => {
   );
 };
 
-const jeeResults = [
-  '/images/results/01.png',
-  '/images/results/02.png',
-  '/images/results/03.png',
-  '/images/results/04.png',
-  '/images/results/05.png',
-  '/images/results/06.png',
-  '/images/results/07.png',
-  '/images/results/08.png',
-  '/images/results/09.png',
-  '/images/results/10.png',
-  '/images/results/11.png',
-  '/images/results/12.png',
-  '/images/results/13.png',
-  '/images/results/14.png'
-];
+const jeeResults = resultsData.jee;
 
-const neetResults = [
-  '/images/results/NEET_01.png',
-  '/images/results/NEET_02.png',
-  '/images/results/NEET_03.png',
-  '/images/results/NEET_04.png',
-  '/images/results/NEET_05.png',
-  '/images/results/NEET_06.png',
-  '/images/results/NEET_07.png',
-  '/images/results/NEET_08.png'
-];
+const neetResults = resultsData.neet;
 
 const Results = () => {
   const [activeTab, setActiveTab] = useState('JEE');
@@ -122,25 +99,17 @@ const Results = () => {
 
           <Reveal delay={200}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-slate-200">
-              <div>
-                <div className="text-4xl font-bold text-[#0A0A0A] mb-1">3800+</div>
-                <div className="text-sm font-medium text-slate-500">Students Trained</div>
-              </div>
-              <div className="hidden md:block w-px h-12 bg-slate-200 mx-auto"></div>
-              <div>
-                <div className="text-4xl font-bold text-[#0A0A0A] mb-1">99.48</div>
-                <div className="text-sm font-medium text-slate-500">Top %ile JEE 2023</div>
-              </div>
-              <div className="hidden md:block w-px h-12 bg-slate-200 mx-auto"></div>
-              <div>
-                <div className="text-4xl font-bold text-[#0A0A0A] mb-1">AIR 1833</div>
-                <div className="text-sm font-medium text-slate-500">JEE Advanced 2025</div>
-              </div>
-              <div className="hidden md:block w-px h-12 bg-slate-200 mx-auto"></div>
-              <div>
-                <div className="text-4xl font-bold text-[#0A0A0A] mb-1">77%</div>
-                <div className="text-sm font-medium text-slate-500">Selection Ratio 2024</div>
-              </div>
+              {resultsData.stats.map((stat, index) => (
+                <React.Fragment key={index}>
+                  <div>
+                    <div className="text-4xl font-bold text-[#0A0A0A] mb-1">{stat.value}</div>
+                    <div className="text-sm font-medium text-slate-500">{stat.label}</div>
+                  </div>
+                  {index < resultsData.stats.length - 1 && (
+                    <div className="hidden md:block w-px h-12 bg-slate-200 mx-auto"></div>
+                  )}
+                </React.Fragment>
+              ))}
             </div>
           </Reveal>
         </div>

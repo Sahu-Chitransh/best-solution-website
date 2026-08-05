@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, ArrowUpRight } from 'lucide-react';
+import contactData from '../content/contact.json';
+import settingsData from '../content/settings.json';
 
 // Instagram icon removed from lucide-react in v1.x — using inline SVG
 function InstagramIcon({ size = 16 }) {
@@ -11,7 +13,7 @@ function InstagramIcon({ size = 16 }) {
     </svg>
   );
 }
-import { FOOTER_EXPLORE, CONTACT_INFO, LOGO_IMAGE } from '../data/site';
+import { FOOTER_EXPLORE } from '../data/site';
 
 export default function Footer() {
   return (
@@ -23,18 +25,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <img src={LOGO_IMAGE} alt="Best Solution" className="h-12 w-auto rounded mb-6" />
+            <img src={settingsData.logo} alt="Best Solution" className="h-12 w-auto rounded mb-6" />
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
               Best Solution Coaching Classes — training champions for IIT-JEE, NEET, Olympiads, NTSE & CCG since 2010, right in the heart of Vijay Nagar, Indore.
             </p>
             <a
-              href="https://instagram.com/bestsolutionindore"
+              href={contactData.instagram.url}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-1.5 text-sm text-[#D32F2F] hover:text-white transition-colors"
             >
               <InstagramIcon size={16} />
-              @bestsolutionindore
+              {contactData.instagram.handle}
               <ArrowUpRight size={12} />
             </a>
           </div>
@@ -69,17 +71,17 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex gap-3 text-sm text-slate-400">
                 <MapPin size={16} className="text-[#D32F2F] flex-shrink-0 mt-0.5" />
-                <span>{CONTACT_INFO.address}</span>
+                <span>{contactData.address}</span>
               </div>
               <div className="flex gap-3 text-sm text-slate-400">
                 <Phone size={16} className="text-[#D32F2F] flex-shrink-0 mt-0.5" />
                 <span className="tracking-wide">
-                  {CONTACT_INFO.phones.join(' · ')}
+                  {contactData.phones.join(' · ')}
                 </span>
               </div>
               <div className="flex gap-3 text-sm text-slate-400">
                 <Mail size={16} className="text-[#D32F2F] flex-shrink-0 mt-0.5" />
-                <span>{CONTACT_INFO.email}</span>
+                <span>{contactData.email}</span>
               </div>
             </div>
           </div>

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X } from 'lucide-react';
-import { NAV_LINKS, LOGO_IMAGE } from '../data/site';
+import { NAV_LINKS } from '../data/site';
+import settingsData from '../content/settings.json';
 
 export default function Navbar() {
   const { pathname } = useLocation();
@@ -12,7 +13,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img src={LOGO_IMAGE} alt="Best Solution" className="h-10 w-auto rounded" />
+          <img src={settingsData.logo} alt="Best Solution" className="h-10 w-auto rounded" />
         </Link>
 
         {/* Desktop nav */}
@@ -38,11 +39,11 @@ export default function Navbar() {
         {/* Right side */}
         <div className="flex items-center gap-3">
           <a
-            href="tel:+919425959956"
+            href={settingsData.phoneLink}
             className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-[#0A0A0A]"
           >
             <Phone size={16} />
-            <span className="tracking-wide">94259 59956</span>
+            <span className="tracking-wide">{settingsData.phone}</span>
           </a>
           <Link
             to="/admissions"
@@ -83,10 +84,10 @@ export default function Navbar() {
             })}
             <div className="pt-3 border-t border-black/5 flex flex-col gap-2">
               <a
-                href="tel:+919425959956"
+                href={settingsData.phoneLink}
                 className="flex items-center gap-2 px-3 py-2 text-sm font-semibold"
               >
-                <Phone size={16} /> 94259 59956
+                <Phone size={16} /> {settingsData.phone}
               </a>
               <Link
                 to="/admissions"

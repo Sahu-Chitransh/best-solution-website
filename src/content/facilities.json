@@ -1,0 +1,10 @@
+{
+  "items": [
+    { "icon": "Presentation", "title": "Smart Classrooms" },
+    { "icon": "BookOpen", "title": "Library" },
+    { "icon": "House", "title": "Hostel" },
+    { "icon": "Bus", "title": "Transportation" },
+    { "icon": "Coffee", "title": "Quiet Study Area" },
+    { "icon": "Utensils", "title": "Canteen" }
+  ]
+}

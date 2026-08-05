@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import testimonialsData from '../content/testimonials.json';
 
 // Scroll reveal hook
 const useScrollReveal = () => {
@@ -43,56 +44,7 @@ const Reveal = ({ children, className = '', delay = 0 }) => {
 };
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      name: "Srujan Gawande",
-      tag: "JEE MAIN 2023 - 99.48%ILE",
-      quote: "Best Solution built me from scratch. The Sunday tests and mentor calls literally shaped my JEE journey.",
-      initials: "SG"
-    },
-    {
-      name: "Samarth Khandelwal",
-      tag: "JEE ADVANCED 2025 - AIR 1833",
-      quote: "Pinnacle program is intense but honest. 22 of 36 students crossed 95%ile — I was one of them.",
-      initials: "SK"
-    },
-    {
-      name: "Anita Kulkarni",
-      tag: "NEET 2024 - 645/720",
-      quote: "Biology diagrams and NCERT drills every single day. That's why I could crack NEET in first attempt.",
-      initials: "AK"
-    },
-    {
-      name: "Rohan Yadav",
-      tag: "NTSE STAGE-2 SCHOLAR",
-      quote: "The reasoning drills are honestly next level. I started weak and ended up NTSE stage-2.",
-      initials: "RY"
-    },
-    {
-      name: "Priya Mehta",
-      tag: "CCG → CA FOUNDATION",
-      quote: "The CCG program helped me realise I want commerce, not medical. Career counselling is gold here.",
-      initials: "PM"
-    },
-    {
-      name: "Vikram Singh",
-      tag: "KVPY SA - 2023",
-      quote: "Their Olympiad batch made complex problems feel like puzzles. Kavya ma'am is legendary.",
-      initials: "VS"
-    },
-    {
-      name: "Sneha Tiwari",
-      tag: "CBSE BOARD - 96.4%",
-      quote: "Small batch, personal attention, weekly tests. Board prep was almost stress-free.",
-      initials: "ST"
-    },
-    {
-      name: "Aditya Bhardwaj",
-      tag: "IIT BOMBAY - CLASS OF 2027",
-      quote: "The rank booster mocks were exactly the difficulty of JEE Advanced. Nothing was a surprise on exam day.",
-      initials: "AB"
-    }
-  ];
+  const testimonials = testimonialsData.testimonials;
 
   return (
     <div className="bg-white min-h-screen pt-24 pb-20">

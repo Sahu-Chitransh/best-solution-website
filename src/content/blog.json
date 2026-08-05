@@ -1,0 +1,58 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "category": "IIT-JEE",
+      "readTime": "6 MIN",
+      "title": "Top 10 Tips to Ace IIT-JEE 2026 — From Our Coaches",
+      "snippet": "A tactical playbook combining our teaching floor's most repeated advice — from timetable to test-day rituals.",
+      "date": "12 Jan 2026",
+      "bgColor": "bg-slate-200"
+    },
+    {
+      "id": 2,
+      "category": "NEET",
+      "readTime": "8 MIN",
+      "title": "How to Crack NEET in Your First Attempt",
+      "snippet": "A framework used by 4 of our AIR<3000 NEET rankers, broken down into weekly cycles.",
+      "date": "05 Jan 2026",
+      "bgColor": "bg-blue-100"
+    },
+    {
+      "id": 3,
+      "category": "CCG",
+      "readTime": "5 MIN",
+      "title": "What Is the CCG Program? A Complete Guide",
+      "snippet": "If your child is undecided between commerce, science or humanities, this new integrated program is built for them.",
+      "date": "28 Dec 2025",
+      "bgColor": "bg-amber-100"
+    },
+    {
+      "id": 4,
+      "category": "BOARDS",
+      "readTime": "7 MIN",
+      "title": "Board Exam Strategy 2026 — The 90+% Roadmap",
+      "snippet": "Practical, weekly milestones for Class 12 board students, tuned for CBSE and MP Board.",
+      "date": "20 Dec 2025",
+      "bgColor": "bg-rose-100"
+    },
+    {
+      "id": 5,
+      "category": "OLYMPIAD",
+      "readTime": "5 MIN",
+      "title": "Why Early Olympiad Coaching Actually Matters",
+      "snippet": "Olympiads aren't about extra syllabus — they build a reasoning core that IIT/NEET exploit later.",
+      "date": "10 Dec 2025",
+      "bgColor": "bg-emerald-100"
+    },
+    {
+      "id": 6,
+      "category": "WELLNESS",
+      "readTime": "4 MIN",
+      "title": "5 Habits to Beat Exam Stress (That Actually Work)",
+      "snippet": "Written with our in-house counsellor for parents and students juggling boards + entrance exams.",
+      "date": "01 Dec 2025",
+      "bgColor": "bg-violet-100"
+    }
+  ]
+}

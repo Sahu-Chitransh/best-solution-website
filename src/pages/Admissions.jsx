@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ClipboardList, Users, FileText, CalendarCheck } from 'lucide-react';
 import EnquiryForm from '../components/EnquiryForm';
+import admissionsData from '../content/admissions.json';
 
 function useScrollReveal() {
   const ref = useRef(null);
@@ -23,48 +24,19 @@ function useScrollReveal() {
   return ref;
 }
 
+const iconMap = { ClipboardList, Users, FileText, CalendarCheck };
+
 export default function Admissions() {
   const revealRef1 = useScrollReveal();
   const revealRef2 = useScrollReveal();
   const revealRef3 = useScrollReveal();
 
-  const steps = [
-    {
-      id: '01',
-      label: 'STEP 1',
-      title: 'Fill the enquiry form',
-      description: 'Share your class, target exam, and preferred batch.',
-      icon: ClipboardList,
-    },
-    {
-      id: '02',
-      label: 'STEP 2',
-      title: 'Counsellor call within 2 hrs',
-      description: 'We understand your goal and suggest the right program.',
-      icon: Users,
-    },
-    {
-      id: '03',
-      label: 'STEP 3',
-      title: 'Diagnostic + document check',
-      description: '20-min aptitude + previous mark sheet review.',
-      icon: FileText,
-    },
-    {
-      id: '04',
-      label: 'STEP 4',
-      title: 'Confirm seat & start',
-      description: 'Pay registration, pick your batch and join Day 1.',
-      icon: CalendarCheck,
-    },
-  ];
+  const steps = admissionsData.steps.map(step => ({
+    ...step,
+    icon: iconMap[step.icon]
+  }));
 
-  const documents = [
-    'Photo ID (Aadhaar / school ID)',
-    'Previous class mark sheet',
-    'Passport-sized photo',
-    'Parent / guardian contact',
-  ];
+  const documents = admissionsData.documents;
 
   return (
     <div className="bg-white min-h-screen pt-24 pb-16 px-4 sm:px-6 lg:px-8">
@@ -72,7 +44,7 @@ export default function Admissions() {
         {/* Hero Section */}
         <div ref={revealRef1} className="text-center space-y-6 opacity-0 translate-y-8 transition-all duration-700 ease-out flex flex-col items-center">
           <div className="text-[#D32F2F] bg-[#FFEBEE] rounded-full uppercase tracking-widest text-xs font-semibold px-3 py-1 inline-block">
-            ADMISSIONS OPEN · BATCH 2026-27
+            ADMISSIONS OPEN · BATCH {admissionsData.sessionYear}
           </div>
           <h1 className="text-[#0A0A0A] font-black text-5xl sm:text-6xl md:text-7xl tracking-tighter">
             Four honest steps.<br />
@@ -127,15 +99,15 @@ export default function Admissions() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center border-b border-white/10 pb-3">
                   <span className="text-slate-400 text-sm">Registration opens</span>
-                  <span className="text-white font-bold font-mono text-sm">15 Jan 2026</span>
+                  <span className="text-white font-bold font-mono text-sm">{admissionsData.keyDates.registrationOpens}</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-white/10 pb-3">
                   <span className="text-slate-400 text-sm">Scholarship Test</span>
-                  <span className="text-white font-bold font-mono text-sm">Every 2nd Sunday</span>
+                  <span className="text-white font-bold font-mono text-sm">{admissionsData.keyDates.scholarshipTest}</span>
                 </div>
                 <div className="flex justify-between items-center pb-1">
                   <span className="text-slate-400 text-sm">Batch commences</span>
-                  <span className="text-white font-bold font-mono text-sm">01 Apr 2026</span>
+                  <span className="text-white font-bold font-mono text-sm">{admissionsData.keyDates.batchCommences}</span>
                 </div>
               </div>
             </div>

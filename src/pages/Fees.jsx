@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Info } from 'lucide-react';
+import feesData from '../content/fees.json';
 
 function useScrollReveal() {
   const ref = useRef(null);
@@ -31,15 +32,7 @@ function useScrollReveal() {
 export default function Fees() {
   useScrollReveal();
 
-  const feeData = [
-    { program: 'IIT-JEE Advanced (2 Yr)', registration: '₹5,000', tuition: '₹1,45,000', installments: '3 Installments', scholarship: 'UP TO 50%' },
-    { program: 'IIT-JEE Main (1 Yr)', registration: '₹5,000', tuition: '₹75,000', installments: '2 Installments', scholarship: 'UP TO 40%' },
-    { program: 'NEET (2 Yr)', registration: '₹5,000', tuition: '₹1,30,000', installments: '3 Installments', scholarship: 'UP TO 50%' },
-    { program: 'NEET (1 Yr)', registration: '₹5,000', tuition: '₹68,000', installments: '2 Installments', scholarship: 'UP TO 40%' },
-    { program: 'Olympiad / NTSE / KVPY', registration: '₹2,000', tuition: '₹22,000', installments: '2 Installments', scholarship: 'MERIT BASED' },
-    { program: 'Foundation (Class 6 — 8)', registration: '₹2,000', tuition: '₹18,000', installments: '2 Installments', scholarship: '—' },
-    { program: 'CCG — Career Guidance', registration: '₹2,000', tuition: '₹18,000', installments: 'Modular', scholarship: '—' },
-  ];
+  const feeData = feesData.rows;
 
   return (
     <main className="w-full min-h-screen bg-white pt-24 pb-20 px-6 sm:px-12 lg:px-24 font-sans">
@@ -49,7 +42,7 @@ export default function Fees() {
         <div className="space-y-6 scroll-reveal opacity-0 translate-y-8 transition-all duration-700 ease-out">
           <div className="inline-block">
             <span className="text-[#D32F2F] bg-[#FFEBEE] rounded-full uppercase tracking-widest text-xs font-semibold px-3 py-1">
-              FEE STRUCTURE · 2026-27
+              FEE STRUCTURE · {feesData.sessionYear}
             </span>
           </div>
           <h1 className="font-black text-5xl sm:text-6xl md:text-7xl tracking-tighter text-black">
@@ -102,7 +95,7 @@ export default function Fees() {
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 flex items-start gap-4">
             <Info className="text-amber-600 shrink-0 w-6 h-6 mt-0.5" />
             <p className="text-amber-900 text-base leading-relaxed">
-              <span className="font-bold">Note:</span> Registration fee is non-refundable. Scholarships are decided after a 90-minute entrance test held every second Sunday. Sibling & group discounts available on request — call us at <span className="font-bold">94259 59956</span>.
+              <span className="font-bold">Note:</span> {feesData.note} <span className="font-bold">94259 59956</span>.
             </p>
           </div>
         </div>

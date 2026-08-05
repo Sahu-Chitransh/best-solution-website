@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import timetableData from '../content/timetable.json';
 
 function useScrollReveal() {
   const ref = useRef(null);
@@ -28,16 +29,7 @@ function useScrollReveal() {
   return ref;
 }
 
-const tableData = [
-  { batch: "JEE Advanced — Grade 12", days: "Mon — Sat", time: "6:00 AM - 9:30 AM", room: "Hall A" },
-  { batch: "JEE Main — Grade 11", days: "Mon — Sat", time: "10:00 AM - 1:30 PM", room: "Hall B" },
-  { batch: "NEET Toppers — Grade 12", days: "Mon — Sat", time: "2:00 PM - 5:30 PM", room: "Hall C" },
-  { batch: "NEET Aspirants — Grade 11", days: "Mon — Sat", time: "4:00 PM - 7:30 PM", room: "Hall D" },
-  { batch: "Olympiad — Grade 9 & 10", days: "Tue, Thu, Sat", time: "5:00 PM - 7:00 PM", room: "Hall E" },
-  { batch: "Foundation — Grade 6 — 8", days: "Mon, Wed, Fri", time: "5:30 PM - 7:00 PM", room: "Hall E" },
-  { batch: "CCG Modules", days: "Sat — Sun", time: "10:00 AM - 1:00 PM", room: "Seminar Rm" },
-  { batch: "Weekend Doubt Marathon", days: "Sunday", time: "9:00 AM - 12:00 PM", room: "All Halls" }
-];
+const tableData = timetableData.batches;
 
 export default function Timetable() {
   const revealRef = useScrollReveal();

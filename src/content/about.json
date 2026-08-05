@@ -1,0 +1,56 @@
+{
+  "values": [
+    {
+      "icon": "Ban",
+      "title": "Our Mission",
+      "description": "Give every serious student — regardless of school background — a shot at a top JEE/NEET rank through clarity, mentorship, and disciplined weekly cycles."
+    },
+    {
+      "icon": "Flame",
+      "title": "Our Belief",
+      "description": "Coaching isn't magic. It's the compounding of small, honest habits — daily problem sets, weekly tests, and a mentor who won't let you drift."
+    },
+    {
+      "icon": "Users",
+      "title": "The Founders",
+      "description": "Started in 2010 by a team of IITian educators who left corporate coaching chains to build something small, personal and unapologetically results-driven."
+    },
+    {
+      "icon": "Award",
+      "title": "Results First",
+      "description": "3800+ students trained. 77% selection ratio in our Pinnacle batch. AIR 1833 in JEE Advanced 2025. Numbers we can defend, not hide behind."
+    }
+  ],
+  "timeline": [
+    {
+      "year": "2010",
+      "title": "The first classroom",
+      "description": "22 students, one rented hall in Vijay Nagar, one whiteboard."
+    },
+    {
+      "year": "2014",
+      "title": "First AIR under 5000",
+      "description": "JEE Advanced result put us on the Indore coaching map."
+    },
+    {
+      "year": "2018",
+      "title": "NEET & Olympiad wings",
+      "description": "Dedicated Biology + reasoning teams built from scratch."
+    },
+    {
+      "year": "2023",
+      "title": "99.48%ile",
+      "description": "Srujan Gawande cracks JEE Main 2023 — our best percentile till then."
+    },
+    {
+      "year": "2025",
+      "title": "Pinnacle Program",
+      "description": "22 of 36 students cross 95%ile in JEE Main. AIR 1833 in Advanced."
+    },
+    {
+      "year": "2026",
+      "title": "CCG launches",
+      "description": "New Career & Competitive Guidance track for undecided students."
+    }
+  ]
+}

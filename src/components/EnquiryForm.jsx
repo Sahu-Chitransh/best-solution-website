@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { GRADE_OPTIONS, COURSE_OPTIONS } from '../data/site';
+import settingsData from '../content/settings.json';
 
 function Field({ label, children }) {
   return (
@@ -69,7 +69,7 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
             onChange={update('grade')}
           >
             <option value="">Select…</option>
-            {GRADE_OPTIONS.map((g) => (
+            {settingsData.gradeOptions.map((g) => (
               <option key={g} value={g}>{g}</option>
             ))}
           </select>
@@ -84,7 +84,7 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
             onChange={update('course')}
           >
             <option value="">Select course…</option>
-            {COURSE_OPTIONS.map((c) => (
+            {settingsData.courseOptions.map((c) => (
               <option key={c} value={c}>{c}</option>
             ))}
           </select>

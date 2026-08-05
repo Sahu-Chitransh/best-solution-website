@@ -1,0 +1,349 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "hero"
+    label: "Hero Slides"
+    files:
+      - file: "src/content/hero.json"
+        label: "Hero Content"
+        name: "hero"
+        fields:
+          - name: "slides"
+            label: "Slides"
+            widget: "list"
+            fields:
+              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
+              - {label: "Title", name: "title", widget: "list", field: {name: "line", label: "Line", widget: "string"}}
+              - {label: "Body", name: "body", widget: "text"}
+              - name: "primaryCta"
+                label: "Primary CTA"
+                widget: "object"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "Href", name: "href", widget: "string"}
+              - name: "secondaryCta"
+                label: "Secondary CTA"
+                widget: "object"
+                fields:
+                  - {label: "Label", name: "label", widget: "string"}
+                  - {label: "Href", name: "href", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - name: "stat"
+                label: "Stat"
+                widget: "object"
+                fields:
+                  - {label: "Value", name: "value", widget: "string"}
+                  - {label: "Label", name: "label", widget: "string"}
+
+  - name: "stats"
+    label: "Stats"
+    files:
+      - file: "src/content/stats.json"
+        label: "Stats"
+        name: "stats"
+        fields:
+          - name: "stats"
+            label: "Stats"
+            widget: "list"
+            fields:
+              - {label: "Value", name: "value", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}
+
+  - name: "marquee"
+    label: "Marquee"
+    files:
+      - file: "src/content/marquee.json"
+        label: "Marquee"
+        name: "marquee"
+        fields:
+          - name: "items"
+            label: "Items"
+            widget: "list"
+            field: {name: "item", label: "Item", widget: "string"}
+
+  - name: "why-us"
+    label: "Why Us"
+    files:
+      - file: "src/content/why-us.json"
+        label: "Why Us"
+        name: "why-us"
+        fields:
+          - name: "cards"
+            label: "Cards"
+            widget: "list"
+            fields:
+              - {label: "Icon", name: "icon", widget: "select", options: ["Trophy", "Users", "Target", "ClipboardCheck", "Award", "Sparkles"]}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+
+  - name: "facilities"
+    label: "Facilities"
+    files:
+      - file: "src/content/facilities.json"
+        label: "Facilities"
+        name: "facilities"
+        fields:
+          - name: "items"
+            label: "Items"
+            widget: "list"
+            fields:
+              - {label: "Icon", name: "icon", widget: "select", options: ["Presentation", "BookOpen", "House", "Bus", "Coffee", "Utensils"]}
+              - {label: "Title", name: "title", widget: "string"}
+
+  - name: "homepage-courses"
+    label: "Homepage Courses"
+    files:
+      - file: "src/content/homepage-courses.json"
+        label: "Homepage Courses"
+        name: "homepage-courses"
+        fields:
+          - name: "courses"
+            label: "Courses"
+            widget: "list"
+            fields:
+              - {label: "Slug", name: "slug", widget: "string"}
+              - {label: "Grade", name: "grade", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Tagline", name: "tagline", widget: "string"}
+              - {label: "Subjects", name: "subjects", widget: "list", field: {name: "subject", label: "Subject", widget: "string"}}
+              - {label: "Price", name: "price", widget: "string"}
+              - {label: "Color", name: "color", widget: "color"}
+              - {label: "Span", name: "span", widget: "number"}
+
+  - name: "courses"
+    label: "Courses (Full)"
+    files:
+      - file: "src/content/courses.json"
+        label: "Courses"
+        name: "courses"
+        fields:
+          - name: "programs"
+            label: "Programs"
+            widget: "list"
+            fields:
+              - {label: "Slug", name: "slug", widget: "string"}
+              - {label: "Grade", name: "grade", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Tagline", name: "tagline", widget: "string"}
+              - {label: "Subjects", name: "subjects", widget: "list", field: {name: "subject", label: "Subject", widget: "string"}}
+              - {label: "Features", name: "features", widget: "list", field: {name: "feature", label: "Feature", widget: "string"}}
+              - {label: "Fee", name: "fee", widget: "string"}
+              - {label: "Color", name: "color", widget: "color"}
+
+  - name: "faculty"
+    label: "Faculty"
+    files:
+      - file: "src/content/faculty.json"
+        label: "Faculty"
+        name: "faculty"
+        fields:
+          - name: "members"
+            label: "Members"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Subject", name: "subject", widget: "string"}
+              - {label: "Qualification", name: "qualification", widget: "string"}
+              - {label: "Experience", name: "experience", widget: "string"}
+              - {label: "Initials", name: "initials", widget: "string"}
+              - {label: "BgColor", name: "bgColor", widget: "color"}
+
+  - name: "timetable"
+    label: "Timetable"
+    files:
+      - file: "src/content/timetable.json"
+        label: "Timetable"
+        name: "timetable"
+        fields:
+          - name: "batches"
+            label: "Batches"
+            widget: "list"
+            fields:
+              - {label: "Program", name: "program", widget: "string"}
+              - {label: "Days", name: "days", widget: "string"}
+              - {label: "Time", name: "time", widget: "string"}
+              - {label: "Room", name: "room", widget: "string"}
+
+  - name: "fees"
+    label: "Fees"
+    files:
+      - file: "src/content/fees.json"
+        label: "Fees"
+        name: "fees"
+        fields:
+          - {label: "Session Year", name: "sessionYear", widget: "string"}
+          - name: "rows"
+            label: "Rows"
+            widget: "list"
+            fields:
+              - {label: "Program", name: "program", widget: "string"}
+              - {label: "Registration", name: "registration", widget: "string"}
+              - {label: "Tuition", name: "tuition", widget: "string"}
+              - {label: "Installments", name: "installments", widget: "string"}
+              - {label: "Scholarship", name: "scholarship", widget: "string"}
+          - {label: "Note", name: "note", widget: "text"}
+
+  - name: "admissions"
+    label: "Admissions"
+    files:
+      - file: "src/content/admissions.json"
+        label: "Admissions"
+        name: "admissions"
+        fields:
+          - {label: "Session Year", name: "sessionYear", widget: "string"}
+          - name: "steps"
+            label: "Steps"
+            widget: "list"
+            fields:
+              - {label: "Step", name: "step", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+          - name: "documents"
+            label: "Documents"
+            widget: "list"
+            field: {name: "document", label: "Document", widget: "string"}
+          - name: "keyDates"
+            label: "Key Dates"
+            widget: "object"
+            fields:
+              - {label: "Registration Opens", name: "registrationOpens", widget: "string"}
+              - {label: "Scholarship Test", name: "scholarshipTest", widget: "string"}
+              - {label: "Batch Commences", name: "batchCommences", widget: "string"}
+
+  - name: "testimonials"
+    label: "Testimonials"
+    files:
+      - file: "src/content/testimonials.json"
+        label: "Testimonials"
+        name: "testimonials"
+        fields:
+          - name: "testimonials"
+            label: "Testimonials"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Tag", name: "tag", widget: "string"}
+              - {label: "Quote", name: "quote", widget: "text"}
+              - {label: "Initials", name: "initials", widget: "string"}
+              - {label: "Image", name: "image", widget: "image", required: false}
+
+  - name: "results"
+    label: "Results"
+    files:
+      - file: "src/content/results.json"
+        label: "Results"
+        name: "results"
+        fields:
+          - name: "jee"
+            label: "JEE"
+            widget: "list"
+            field: {name: "image", label: "Image", widget: "image"}
+          - name: "neet"
+            label: "NEET"
+            widget: "list"
+            field: {name: "image", label: "Image", widget: "image"}
+          - name: "stats"
+            label: "Stats"
+            widget: "list"
+            fields:
+              - {label: "Value", name: "value", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}
+
+  - name: "blog"
+    label: "Blog"
+    files:
+      - file: "src/content/blog.json"
+        label: "Blog"
+        name: "blog"
+        fields:
+          - name: "posts"
+            label: "Posts"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "number"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Snippet", name: "snippet", widget: "text"}
+              - {label: "Category", name: "category", widget: "select", options: ["IIT-JEE", "NEET", "CCG", "OLYMPIAD", "BOARDS", "WELLNESS"]}
+              - {label: "Date", name: "date", widget: "string"}
+              - {label: "Read Time", name: "readTime", widget: "string"}
+              - {label: "BgColor", name: "bgColor", widget: "color"}
+
+  - name: "contact"
+    label: "Contact"
+    files:
+      - file: "src/content/contact.json"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - {label: "Address", name: "address", widget: "string"}
+          - name: "phones"
+            label: "Phones"
+            widget: "list"
+            field: {name: "phone", label: "Phone", widget: "string"}
+          - {label: "Email", name: "email", widget: "string"}
+          - name: "instagram"
+            label: "Instagram"
+            widget: "object"
+            fields:
+              - {label: "Handle", name: "handle", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+          - {label: "Map Embed", name: "mapEmbed", widget: "string"}
+          - {label: "Map Address", name: "mapAddress", widget: "string"}
+
+  - name: "brochure"
+    label: "Brochure"
+    files:
+      - file: "src/content/brochure.json"
+        label: "Brochure"
+        name: "brochure"
+        fields:
+          - {label: "Session Label", name: "sessionLabel", widget: "string"}
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Description", name: "description", widget: "text"}
+
+  - name: "about"
+    label: "About"
+    files:
+      - file: "src/content/about.json"
+        label: "About"
+        name: "about"
+        fields:
+          - name: "values"
+            label: "Values"
+            widget: "list"
+            fields:
+              - {label: "Icon", name: "icon", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+          - name: "timeline"
+            label: "Timeline"
+            widget: "list"
+            fields:
+              - {label: "Year", name: "year", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "src/content/settings.json"
+        label: "Settings"
+        name: "settings"
+        fields:
+          - {label: "Phone", name: "phone", widget: "string"}
+          - {label: "Phone Link", name: "phoneLink", widget: "string"}
+          - {label: "Session Year", name: "sessionYear", widget: "string"}
+          - {label: "Logo", name: "logo", widget: "image"}
+          - name: "gradeOptions"
+            label: "Grade Options"
+            widget: "list"
+            field: {name: "grade", label: "Grade", widget: "string"}
+          - name: "courseOptions"
+            label: "Course Options"
+            widget: "list"
+            field: {name: "course", label: "Course", widget: "string"}

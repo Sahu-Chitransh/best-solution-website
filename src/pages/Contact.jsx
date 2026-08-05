@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MapPin, Phone, Mail, MessageSquare, Send, ArrowRight } from 'lucide-react';
+import contactData from '../content/contact.json';
 
 // Scroll reveal hook
 const useScrollReveal = () => {
@@ -108,7 +109,7 @@ const Contact = () => {
               VISIT THE CAMPUS
             </div>
             <div className="font-bold text-[#0A0A0A] text-base mt-1">
-              18/19 Sayaji Square, Near Hotel Park, Vijay Nagar, Indore (M.P.)
+              {contactData.address}
             </div>
             <a 
               href="https://maps.google.com/?q=Sayaji+Square+Indore" 
@@ -129,10 +130,10 @@ const Contact = () => {
               CALL US
             </div>
             <div className="font-bold text-[#0A0A0A] text-base mt-1">
-              94259 59956 · 0731-4080896
+              {contactData.phones.join(' · ')}
             </div>
             <a 
-              href="tel:+919425959956" 
+              href={`tel:+91${contactData.phones[0].replace(/\s/g, '')}`} 
               className="text-[#D32F2F] font-semibold text-sm mt-2 hover:underline inline-flex items-center gap-1"
             >
               Tap to call <ArrowRight size={14} />
@@ -148,10 +149,10 @@ const Contact = () => {
               EMAIL
             </div>
             <div className="font-bold text-[#0A0A0A] text-base mt-1">
-              info@bestsolutionindore.com
+              {contactData.email}
             </div>
             <a 
-              href="mailto:info@bestsolutionindore.com" 
+              href={`mailto:${contactData.email}`} 
               className="text-[#D32F2F] font-semibold text-sm mt-2 hover:underline inline-flex items-center gap-1"
             >
               Send email <ArrowRight size={14} />
@@ -167,10 +168,10 @@ const Contact = () => {
               INSTAGRAM
             </div>
             <div className="font-bold text-[#0A0A0A] text-base mt-1">
-              @bestsolutionindore
+              {contactData.instagram.handle}
             </div>
             <a 
-              href="https://instagram.com/bestsolutionindore" 
+              href={contactData.instagram.url} 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-[#D32F2F] font-semibold text-sm mt-2 hover:underline inline-flex items-center gap-1"
@@ -275,7 +276,7 @@ const Contact = () => {
         className="mt-16 mb-16 rounded-3xl overflow-hidden border border-black/8 h-[400px] relative opacity-0 translate-y-8 transition-all duration-1000 delay-400 ease-out"
       >
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.2!2d75.8868!3d22.7532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sSayaji+Square!5e0!3m2!1sen!2sin!4v1700000000000"
+          src={contactData.mapEmbed}
           className="w-full h-full border-0"
           allowFullScreen=""
           loading="lazy"
@@ -286,7 +287,7 @@ const Contact = () => {
         <div className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur rounded-xl border border-black/5 p-4 shadow-lg max-w-xs">
           <h3 className="font-bold text-[#0A0A0A]">Sayaji Square</h3>
           <p className="text-sm text-slate-500 mt-1">
-            Scheme No 54, Vijay Nagar, Indore, M.P. 452010
+            {contactData.mapAddress}
           </p>
         </div>
       </div>

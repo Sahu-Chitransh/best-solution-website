@@ -1,0 +1,44 @@
+{
+  "sessionYear": "2026-27",
+  "steps": [
+    {
+      "id": "01",
+      "label": "STEP 1",
+      "title": "Fill the enquiry form",
+      "description": "Share your class, target exam, and preferred batch.",
+      "icon": "ClipboardList"
+    },
+    {
+      "id": "02",
+      "label": "STEP 2",
+      "title": "Counsellor call within 2 hrs",
+      "description": "We understand your goal and suggest the right program.",
+      "icon": "Users"
+    },
+    {
+      "id": "03",
+      "label": "STEP 3",
+      "title": "Diagnostic + document check",
+      "description": "20-min aptitude + previous mark sheet review.",
+      "icon": "FileText"
+    },
+    {
+      "id": "04",
+      "label": "STEP 4",
+      "title": "Confirm seat & start",
+      "description": "Pay registration, pick your batch and join Day 1.",
+      "icon": "CalendarCheck"
+    }
+  ],
+  "documents": [
+    "Photo ID (Aadhaar / school ID)",
+    "Previous class mark sheet",
+    "Passport-sized photo",
+    "Parent / guardian contact"
+  ],
+  "keyDates": {
+    "registrationOpens": "15 Jan 2026",
+    "scholarshipTest": "Every 2nd Sunday",
+    "batchCommences": "01 Apr 2026"
+  }
+}

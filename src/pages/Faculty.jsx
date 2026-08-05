@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import facultyDataJson from '../content/faculty.json';
 
 function useScrollReveal() {
   const ref = useRef(null);
@@ -23,80 +24,7 @@ function useScrollReveal() {
   return ref;
 }
 
-const facultyData = [
-  {
-    category: 'PHYSICS',
-    name: 'Dr. Ajay Sharma',
-    qualification: 'IIT Roorkee, ex-Allen',
-    experience: '14+ yrs experience',
-    bgColor: 'bg-slate-300',
-    initials: 'AS',
-    highlight: false,
-  },
-  {
-    category: 'MATHEMATICS',
-    name: 'Prof. Neeraj Mishra',
-    qualification: 'IIT BHU, JEE Adv. Mentor',
-    experience: '12+ yrs experience',
-    bgColor: 'bg-blue-100',
-    initials: 'NM',
-    highlight: false,
-  },
-  {
-    category: 'CHEMISTRY',
-    name: 'Dr. Priya Bansal',
-    qualification: 'PhD IIT Indore',
-    experience: '10+ yrs experience',
-    bgColor: 'bg-amber-100',
-    initials: 'PB',
-    highlight: false,
-  },
-  {
-    category: 'BIOLOGY (NEET)',
-    name: 'Dr. Sneha Verma',
-    qualification: 'MBBS + NEET Mentor',
-    experience: '11+ yrs experience',
-    bgColor: 'bg-emerald-100',
-    initials: 'SV',
-    highlight: false,
-  },
-  {
-    category: 'PHYSICS (NEET)',
-    name: 'Mr. Rohit Agrawal',
-    qualification: 'IIT Kanpur',
-    experience: '9+ yrs experience',
-    bgColor: 'bg-violet-100',
-    initials: 'RA',
-    highlight: false,
-  },
-  {
-    category: 'OLYMPIAD MATHS',
-    name: 'Ms. Kavya Iyer',
-    qualification: 'CMI, RMO Mentor',
-    experience: '8+ yrs experience',
-    bgColor: 'bg-rose-100',
-    initials: 'KI',
-    highlight: false,
-  },
-  {
-    category: 'CCG / APTITUDE',
-    name: 'Mr. Arjun Deshmukh',
-    qualification: 'IIM Indore',
-    experience: '7+ yrs experience',
-    bgColor: 'bg-cyan-100',
-    initials: 'AD',
-    highlight: true,
-  },
-  {
-    category: 'COUNSELLOR',
-    name: 'Ms. Ritu Jain',
-    qualification: 'MA Psychology',
-    experience: '10+ yrs experience',
-    bgColor: 'bg-pink-100',
-    initials: 'RJ',
-    highlight: false,
-  }
-];
+// Faculty data is now imported from ../content/faculty.json
 
 function FacultyCard({ faculty, index }) {
   const cardRef = useScrollReveal();
@@ -165,7 +93,7 @@ export default function Faculty() {
       {/* Faculty Grid */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {facultyData.map((faculty, index) => (
+          {facultyDataJson.members.map((faculty, index) => (
             <FacultyCard key={index} faculty={faculty} index={index} />
           ))}
         </div>

@@ -1,0 +1,60 @@
+{
+  "testimonials": [
+    {
+      "name": "Srujan Gawande",
+      "tag": "JEE MAIN 2023 - 99.48%ILE",
+      "quote": "Best Solution built me from scratch. The Sunday tests and mentor calls literally shaped my JEE journey.",
+      "initials": "SG",
+      "image": "/images/srujan.png"
+    },
+    {
+      "name": "Samarth Khandelwal",
+      "tag": "JEE ADVANCED 2025 - AIR 1833",
+      "quote": "Pinnacle program is intense but honest. 22 of 36 students crossed 95%ile — I was one of them.",
+      "initials": "SK",
+      "image": "/images/samarth.png"
+    },
+    {
+      "name": "Anita Kulkarni",
+      "tag": "NEET 2024 - 645/720",
+      "quote": "Biology diagrams and NCERT drills every single day. That's why I could crack NEET in first attempt.",
+      "initials": "AK",
+      "image": "/images/anita.jpg"
+    },
+    {
+      "name": "Rohan Yadav",
+      "tag": "NTSE STAGE-2 SCHOLAR",
+      "quote": "The reasoning drills are honestly next level. I started weak and ended up NTSE stage-2.",
+      "initials": "RY",
+      "image": ""
+    },
+    {
+      "name": "Priya Mehta",
+      "tag": "CCG → CA FOUNDATION",
+      "quote": "The CCG program helped me realise I want commerce, not medical. Career counselling is gold here.",
+      "initials": "PM",
+      "image": ""
+    },
+    {
+      "name": "Vikram Singh",
+      "tag": "KVPY SA - 2023",
+      "quote": "Their Olympiad batch made complex problems feel like puzzles. Kavya ma'am is legendary.",
+      "initials": "VS",
+      "image": ""
+    },
+    {
+      "name": "Sneha Tiwari",
+      "tag": "CBSE BOARD - 96.4%",
+      "quote": "Small batch, personal attention, weekly tests. Board prep was almost stress-free.",
+      "initials": "ST",
+      "image": ""
+    },
+    {
+      "name": "Aditya Bhardwaj",
+      "tag": "IIT BOMBAY - CLASS OF 2027",
+      "quote": "The rank booster mocks were exactly the difficulty of JEE Advanced. Nothing was a surprise on exam day.",
+      "initials": "AB",
+      "image": ""
+    }
+  ]
+}

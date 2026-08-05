@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ArrowRight } from 'lucide-react';
+import coursesData from '../content/courses.json';
 
 /* ───── scroll-reveal hook ───── */
 function useScrollReveal() {
@@ -25,77 +26,7 @@ function useScrollReveal() {
   return ref;
 }
 
-/* ───── course data ───── */
-const PROGRAMS = [
-  {
-    grade: 'Class 11 – 12 + Droppers · 1 – 2 Year Program',
-    title: 'IIT-JEE (Main + Advanced)',
-    tagline: 'Rank-focused. Concept-first.',
-    subjects: ['Physics', 'Chemistry', 'Mathematics'],
-    features: [
-      'Weekly full-length mock tests aligned with JEE pattern',
-      'Small batches of 25 — 30 students',
-      'Doubt-clearing sessions daily 6—8 PM',
-      'Personal mentor for every enrolled student',
-    ],
-    fee: 'From ₹75,000 / year',
-    color: '#D32F2F',           // red gradient
-    colorDark: '#B71C1C',
-    enrollLabel: 'Enroll in IIT-JEE',
-    enrollHref: '/admissions',
-  },
-  {
-    grade: 'Class 11 – 12 + Droppers · 1 – 2 Year Program',
-    title: 'NEET (Medical)',
-    tagline: 'White-coat begins here.',
-    subjects: ['Biology', 'Physics', 'Chemistry'],
-    features: [
-      'NCERT-mastery framework by senior faculty',
-      'Diagram lab & NEET biology practicals',
-      'Weekly NEET-pattern MCQ marathon',
-      'Rank-improvement guarantee for droppers',
-    ],
-    fee: 'From ₹68,000 / year',
-    color: '#2E7D32',           // green
-    colorDark: '#1B5E20',
-    enrollLabel: 'Enroll in NEET',
-    enrollHref: '/admissions',
-  },
-  {
-    grade: 'Class 6 – 10 · Annual Program',
-    title: 'Olympiads & NTSE / KVPY',
-    tagline: 'Sharpen the champion mind, early.',
-    subjects: ['Maths', 'Science', 'Reasoning'],
-    features: [
-      'PRMO, RMO, NSO, IMO, IJSO foundation',
-      'Stage-wise mentored preparation',
-      'Puzzle-based reasoning sprints',
-    ],
-    fee: 'From ₹22,000 / year',
-    color: '#1a1a1a',           // dark
-    colorDark: '#0A0A0A',
-    enrollLabel: 'Enroll in Olympiads',
-    enrollHref: '/admissions',
-  },
-  {
-    grade: 'Class 9 – 12 · Flexible Modules',
-    title: 'CCG – Career & Competitive Guidance',
-    tagline: 'Find your track. Own the race.',
-    subjects: ['Aptitude', 'Career Mapping', 'Board + Exam Blend'],
-    features: [
-      'Integrated Board + JEE/NEET foundation',
-      '1-on-1 counselling with mentors',
-      'Aptitude & career psychometrics',
-      'Perfect for students undecided about stream',
-    ],
-    fee: 'From ₹18,000 / year',
-    color: '#1a1a1a',           // dark
-    colorDark: '#0A0A0A',
-    enrollLabel: 'Enroll in CCG',
-    enrollHref: '/admissions',
-  },
-];
-
+// Course data is now imported from ../content/courses.json
 /* ───── component ───── */
 export default function Courses() {
   const wrapRef = useScrollReveal();
@@ -125,7 +56,7 @@ export default function Courses() {
 
       {/* ============ COURSE CARDS ============ */}
       <section className="pb-20 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto space-y-8">
-        {PROGRAMS.map((p, i) => (
+        {coursesData.programs.map((p, i) => (
           <div
             key={p.title}
             className={`bs-animate-hidden bs-stagger-${Math.min(i + 1, 4)} rounded-3xl overflow-hidden border border-black/8 grid grid-cols-1 md:grid-cols-12`}
