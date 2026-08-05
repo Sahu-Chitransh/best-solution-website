@@ -143,6 +143,7 @@ export const NAV_LINKS = [
   { label: 'Fees', href: '/fees' },
   { label: 'Admissions', href: '/admissions' },
   { label: 'Testimonials', href: '/testimonials' },
+  { label: 'Results', href: '/results' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -161,6 +162,7 @@ export const FOOTER_EXPLORE = [
     { label: 'Faculty', href: '/faculty' },
     { label: 'Fees', href: '/fees' },
     { label: 'Testimonials', href: '/testimonials' },
+    { label: 'Results', href: '/results' },
     { label: 'Contact', href: '/contact' },
   ],
 ];
