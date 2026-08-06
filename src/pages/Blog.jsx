@@ -91,7 +91,14 @@ export default function Blog() {
       {/* Blog Cards Grid */}
       <div className="px-6 lg:px-8 max-w-7xl mx-auto">
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 opacity-0 translate-y-8 transition-all duration-1000 delay-300 ease-out">
-          {blogPosts.map((post) => (
+          {blogPosts
+            .filter((post) => activeCategory === 'ALL' || post.category === activeCategory)
+            .filter((post) => {
+              if (!searchQuery) return true;
+              const q = searchQuery.toLowerCase();
+              return post.title.toLowerCase().includes(q) || post.snippet.toLowerCase().includes(q);
+            })
+            .map((post) => (
             <article key={post.id} className="rounded-2xl border border-black/8 bg-white overflow-hidden hover:shadow-md transition-shadow group flex flex-col h-full">
               <div className={`h-48 w-full ${post.bgColor}`}></div>
               <div className="p-6 flex flex-col flex-grow">

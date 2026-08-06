@@ -134,6 +134,9 @@ collections:
               - {label: "Features", name: "features", widget: "list", field: {name: "feature", label: "Feature", widget: "string"}}
               - {label: "Fee", name: "fee", widget: "string"}
               - {label: "Color", name: "color", widget: "color"}
+              - {label: "Color Dark", name: "colorDark", widget: "color"}
+              - {label: "Enroll Label", name: "enrollLabel", widget: "string"}
+              - {label: "Enroll Href", name: "enrollHref", widget: "string"}
 
   - name: "faculty"
     label: "Faculty"
@@ -146,12 +149,13 @@ collections:
             label: "Members"
             widget: "list"
             fields:
+              - {label: "Category", name: "category", widget: "string"}
               - {label: "Name", name: "name", widget: "string"}
-              - {label: "Subject", name: "subject", widget: "string"}
               - {label: "Qualification", name: "qualification", widget: "string"}
               - {label: "Experience", name: "experience", widget: "string"}
               - {label: "Initials", name: "initials", widget: "string"}
-              - {label: "BgColor", name: "bgColor", widget: "color"}
+              - {label: "BgColor", name: "bgColor", widget: "string"}
+              - {label: "Highlight", name: "highlight", widget: "boolean"}
 
   - name: "timetable"
     label: "Timetable"
@@ -164,7 +168,7 @@ collections:
             label: "Batches"
             widget: "list"
             fields:
-              - {label: "Program", name: "program", widget: "string"}
+              - {label: "Batch", name: "batch", widget: "string"}
               - {label: "Days", name: "days", widget: "string"}
               - {label: "Time", name: "time", widget: "string"}
               - {label: "Room", name: "room", widget: "string"}
@@ -200,9 +204,11 @@ collections:
             label: "Steps"
             widget: "list"
             fields:
-              - {label: "Step", name: "step", widget: "string"}
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Label", name: "label", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "string"}
+              - {label: "Icon", name: "icon", widget: "string"}
           - name: "documents"
             label: "Documents"
             widget: "list"

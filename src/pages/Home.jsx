@@ -352,11 +352,17 @@ function TestimonialsSection() {
               data-animate
             >
               <div className="flex items-center gap-4">
-                <img
-                  alt={t.name}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-[#D32F2F]"
-                  src={t.image}
-                />
+                {t.image ? (
+                  <img
+                    alt={t.name}
+                    className="w-14 h-14 rounded-full object-cover border-2 border-[#D32F2F]"
+                    src={t.image}
+                  />
+                ) : (
+                  <div className="w-14 h-14 rounded-full bg-[#D32F2F] flex items-center justify-center text-white font-bold text-lg border-2 border-[#D32F2F]">
+                    {t.initials}
+                  </div>
+                )}
                 <div>
                   <div className="font-bold">{t.name}</div>
                   <div className="text-xs font-semibold uppercase tracking-widest text-[#FFC107]">
