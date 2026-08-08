@@ -17,6 +17,9 @@ const Gallery = () => {
 
   const { sectionTitle, handle, profileUrl, posts } = instagramData;
 
+  const getPostImage = (post) => post.image || post.fetchedImage || '';
+  const getPostCaption = (post) => post.caption || post.fetchedCaption || '';
+
   return (
     <div className="min-h-screen bg-gray-50 pt-24 pb-16">
       {/* Hero Section */}
@@ -84,23 +87,32 @@ const Gallery = () => {
                 rel="noopener noreferrer"
                 className={`block break-inside-avoid relative rounded-2xl border border-black/10 overflow-hidden group hover:shadow-md transition-shadow data-animate bs-animate-hidden bs-stagger-${(index % 5) + 1}`}
               >
-                <img
-                  src={post.image}
-                  alt={post.caption ? truncateCaption(post.caption, 40) : 'Instagram Post'}
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
-                
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <p className="text-white text-sm font-medium mb-4 line-clamp-3">
-                    {truncateCaption(post.caption)}
-                  </p>
-                  <div className="flex items-center gap-2 text-[#FFC107] font-bold text-sm">
-                    <InstagramIcon size={16} />
-                    <span>View on Instagram</span>
+                {getPostImage(post) ? (
+                  <>
+                    <img
+                      src={getPostImage(post)}
+                      alt={getPostCaption(post) ? truncateCaption(getPostCaption(post), 40) : 'Instagram Post'}
+                      className="w-full h-auto object-cover"
+                      loading="lazy"
+                    />
+                    
+                    {/* Hover Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                      <p className="text-white text-sm font-medium mb-4 line-clamp-3">
+                        {truncateCaption(getPostCaption(post))}
+                      </p>
+                      <div className="flex items-center gap-2 text-[#FFC107] font-bold text-sm">
+                        <InstagramIcon size={16} />
+                        <span>View on Instagram</span>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div className="aspect-square bg-gradient-to-br from-purple-100 via-pink-50 to-orange-50 flex flex-col items-center justify-center gap-3 p-6">
+                    <InstagramIcon size={32} className="text-pink-400" />
+                    <p className="text-sm text-gray-500 text-center font-medium">View on Instagram</p>
                   </div>
-                </div>
+                )}
               </a>
             ))}
           </div>

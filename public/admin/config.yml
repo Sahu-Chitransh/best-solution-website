@@ -368,8 +368,10 @@ collections:
             label: "Posts"
             widget: "list"
             fields:
-              - {label: "Image", name: "image", widget: "image"}
-              - {label: "Caption", name: "caption", widget: "text"}
+              - {label: "Image", name: "image", widget: "image", required: false, hint: "Leave empty to auto-fetch from Instagram URL"}
+              - {label: "Caption", name: "caption", widget: "text", required: false, hint: "Leave empty to auto-fetch from Instagram"}
               - {label: "Instagram URL", name: "instagramUrl", widget: "string"}
               - {label: "Date", name: "date", widget: "string"}
               - {label: "Featured on Homepage", name: "featured", widget: "boolean", default: false}
+              - {label: "Fetched Image", name: "fetchedImage", widget: "hidden", required: false}
+              - {label: "Fetched Caption", name: "fetchedCaption", widget: "hidden", required: false}

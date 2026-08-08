@@ -524,6 +524,8 @@ function ResultsGallery() {
 /* ── Instagram Section ── */
 function InstagramSection() {
   const ref = useScrollReveal();
+  const getPostImage = (post) => post.image || post.fetchedImage || '';
+  const getPostCaption = (post) => post.caption || post.fetchedCaption || '';
   const featuredPosts = instagramData.posts
     .filter(p => p.featured)
     .sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -559,19 +561,28 @@ function InstagramSection() {
               className={`group relative rounded-2xl overflow-hidden border border-black/10 aspect-square bg-slate-100 bs-animate-hidden bs-stagger-${Math.min(i + 1, 6)}`}
               data-animate
             >
-              <img
-                src={post.image}
-                alt={post.caption}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                <p className="text-white text-sm font-medium line-clamp-2">{post.caption}</p>
-                <div className="flex items-center gap-1.5 mt-2 text-white/80 text-xs">
-                  <InstagramIcon size={14} />
-                  <span>View on Instagram</span>
+              {getPostImage(post) ? (
+                <>
+                  <img
+                    src={getPostImage(post)}
+                    alt={getPostCaption(post)}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                    <p className="text-white text-sm font-medium line-clamp-2">{getPostCaption(post)}</p>
+                    <div className="flex items-center gap-1.5 mt-2 text-white/80 text-xs">
+                      <InstagramIcon size={14} />
+                      <span>View on Instagram</span>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div className="w-full h-full bg-gradient-to-br from-purple-100 via-pink-50 to-orange-50 flex flex-col items-center justify-center gap-2">
+                  <InstagramIcon size={28} className="text-pink-400" />
+                  <span className="text-xs text-gray-500 font-medium">View on Instagram</span>
                 </div>
-              </div>
+              )}
             </a>
           ))}
         </div>
