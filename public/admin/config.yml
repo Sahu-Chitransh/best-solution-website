@@ -353,3 +353,23 @@ collections:
             label: "Course Options"
             widget: "list"
             field: {name: "course", label: "Course", widget: "string"}
+
+  - name: "instagram"
+    label: "Instagram Gallery"
+    files:
+      - file: "src/content/instagram.json"
+        label: "Instagram Gallery"
+        name: "instagram"
+        fields:
+          - {label: "Section Title", name: "sectionTitle", widget: "string"}
+          - {label: "Handle", name: "handle", widget: "string"}
+          - {label: "Profile URL", name: "profileUrl", widget: "string"}
+          - name: "posts"
+            label: "Posts"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Caption", name: "caption", widget: "text"}
+              - {label: "Instagram URL", name: "instagramUrl", widget: "string"}
+              - {label: "Date", name: "date", widget: "string"}
+              - {label: "Featured on Homepage", name: "featured", widget: "boolean", default: false}

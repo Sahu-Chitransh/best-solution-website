@@ -9,6 +9,7 @@ export const NAV_LINKS = [
   { label: 'Admissions', href: '/admissions' },
   { label: 'Testimonials', href: '/testimonials' },
   { label: 'Results', href: '/results' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -21,6 +22,7 @@ export const FOOTER_EXPLORE = [
     { label: 'Timetable', href: '/timetable' },
     { label: 'Admissions', href: '/admissions' },
     { label: 'Blog', href: '/blog' },
+    { label: 'Gallery', href: '/gallery' },
   ],
   [
     { label: 'About', href: '/about' },

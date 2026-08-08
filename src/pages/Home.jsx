@@ -5,6 +5,7 @@ import {
   ClipboardCheck, Award, Presentation, BookOpen,
   House, Bus, Coffee, Utensils, X, ChevronLeft, ChevronRight, Download,
 } from 'lucide-react';
+import InstagramIcon from '../components/InstagramIcon';
 import SectionHeader from '../components/SectionHeader';
 import EnquiryForm from '../components/EnquiryForm';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -17,6 +18,7 @@ import coursesData from '../content/homepage-courses.json';
 import brochureData from '../content/brochure.json';
 import testimonialsData from '../content/testimonials.json';
 import resultsData from '../content/results.json';
+import instagramData from '../content/instagram.json';
 
 /* ── Icon map ── */
 const ICONS = {
@@ -519,6 +521,74 @@ function ResultsGallery() {
   );
 }
 
+/* ── Instagram Section ── */
+function InstagramSection() {
+  const ref = useScrollReveal();
+  const featuredPosts = instagramData.posts
+    .filter(p => p.featured)
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
+    .slice(0, 6);
+
+  return (
+    <section className="py-24 bg-white" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <SectionHeader
+            eyebrow="Life at Best Solution"
+            title={instagramData.sectionTitle}
+            description="A glimpse into daily life, achievements, and celebrations at our coaching center."
+          />
+          <a
+            href={instagramData.profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F77737] px-5 py-2.5 text-sm font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap self-start"
+          >
+            <InstagramIcon size={16} />
+            {instagramData.handle}
+          </a>
+        </div>
+
+        <div className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-4">
+          {featuredPosts.map((post, i) => (
+            <a
+              key={i}
+              href={post.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`group relative rounded-2xl overflow-hidden border border-black/10 aspect-square bg-slate-100 bs-animate-hidden bs-stagger-${Math.min(i + 1, 6)}`}
+              data-animate
+            >
+              <img
+                src={post.image}
+                alt={post.caption}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                <p className="text-white text-sm font-medium line-clamp-2">{post.caption}</p>
+                <div className="flex items-center gap-1.5 mt-2 text-white/80 text-xs">
+                  <InstagramIcon size={14} />
+                  <span>View on Instagram</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            to="/gallery"
+            className="inline-flex items-center gap-2 rounded-full border border-black/15 hover:bg-[#0A0A0A] hover:text-white px-6 py-3 text-sm font-bold transition-colors"
+          >
+            View all posts <ArrowRight size={16} />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ── Pamphlet Banner ── */
 function PamphletBanner() {
   const ref = useScrollReveal();
@@ -609,6 +679,7 @@ export default function Home() {
       <ProgramsSection />
       <FacilitiesSection />
       <TestimonialsSection />
+      <InstagramSection />
       <PamphletBanner />
       <CtaSection />
     </div>

@@ -1,0 +1,63 @@
+{
+  "sectionTitle": "Follow Us on Instagram",
+  "handle": "@bestsolutionindore",
+  "profileUrl": "https://instagram.com/bestsolutionindore",
+  "posts": [
+    {
+      "image": "/images/instagram/post1.jpg",
+      "caption": "JEE Advanced 2026 — Our warriors aced it again! Top selections from Indore. 🎯🔥",
+      "instagramUrl": "https://www.instagram.com/p/example1/",
+      "date": "2026-07-15",
+      "featured": true
+    },
+    {
+      "image": "/images/instagram/post2.jpg",
+      "caption": "Weekend doubt-clearing marathon in full swing. No question goes unanswered at Best Solution! 📚",
+      "instagramUrl": "https://www.instagram.com/p/example2/",
+      "date": "2026-07-10",
+      "featured": true
+    },
+    {
+      "image": "/images/instagram/post3.jpg",
+      "caption": "Our new batch of NEET Aspirants getting started. Welcome to the Best Solution family! 🩺",
+      "instagramUrl": "https://www.instagram.com/p/example3/",
+      "date": "2026-07-05",
+      "featured": true
+    },
+    {
+      "image": "/images/instagram/post4.jpg",
+      "caption": "Faculty workshop day — our teachers constantly upgrade to give you the best! 👨‍🏫",
+      "instagramUrl": "https://www.instagram.com/p/example4/",
+      "date": "2026-06-28",
+      "featured": true
+    },
+    {
+      "image": "/images/instagram/post5.jpg",
+      "caption": "Olympiad winners felicitated at Best Solution annual function. Proud moments! 🏆",
+      "instagramUrl": "https://www.instagram.com/p/example5/",
+      "date": "2026-06-20",
+      "featured": true
+    },
+    {
+      "image": "/images/instagram/post6.jpg",
+      "caption": "Physics lab session — learning is always better with hands-on experiments! ⚡",
+      "instagramUrl": "https://www.instagram.com/p/example6/",
+      "date": "2026-06-15",
+      "featured": true
+    },
+    {
+      "image": "/images/instagram/post7.jpg",
+      "caption": "Career counselling session for Class 10 students. Choosing the right stream matters! 🎓",
+      "instagramUrl": "https://www.instagram.com/p/example7/",
+      "date": "2026-06-10",
+      "featured": false
+    },
+    {
+      "image": "/images/instagram/post8.jpg",
+      "caption": "Mock test day vibes! Simulating the real exam environment for JEE Main. 📝",
+      "instagramUrl": "https://www.instagram.com/p/example8/",
+      "date": "2026-06-05",
+      "featured": false
+    }
+  ]
+}

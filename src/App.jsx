@@ -9,6 +9,7 @@ import Fees from './pages/Fees';
 import Admissions from './pages/Admissions';
 import Testimonials from './pages/Testimonials';
 import Results from './pages/Results';
+import Gallery from './pages/Gallery';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/results" element={<Results />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
