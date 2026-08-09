@@ -1,8 +1,24 @@
 {
   "stats": [
-    { "value": "3800+", "label": "Students Trained" },
-    { "value": "99.48", "label": "Top %ile JEE 2023" },
-    { "value": "AIR 1833", "label": "JEE Advanced 2025" },
-    { "value": "77%", "label": "Selection Ratio 2024" }
+    {
+      "value": "3800+",
+      "label": "Students Trained"
+    },
+    {
+      "value": "99.48",
+      "label": "Top %ile JEE 2023"
+    },
+    {
+      "value": "AIR 1833",
+      "label": "JEE Advanced 2025"
+    },
+    {
+      "value": "77%",
+      "label": "Selection Ratio 2024"
+    },
+    {
+      "label": "Under 2000 rank",
+      "value": "500+"
+    }
   ]
 }
