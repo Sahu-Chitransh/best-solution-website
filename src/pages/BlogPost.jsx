@@ -36,11 +36,6 @@ export default function BlogPost() {
 
   const post = blogData.posts.find((p) => String(p.id) === String(id));
 
-  // If post is not found, redirect to blog listing or show fallback
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [id]);
-
   if (!post) {
     return (
       <div className="min-h-screen bg-white pt-32 pb-20 px-6 text-center max-w-xl mx-auto">
