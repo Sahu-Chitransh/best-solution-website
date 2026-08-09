@@ -404,16 +404,36 @@ function ResultsGallery() {
   const [activeTab, setActiveTab] = useState('jee');
   const [lightbox, setLightbox] = useState({ open: false, idx: 0 });
 
-  const images = activeTab === 'jee' ? resultsData.jee : resultsData.neet;
+  const rawImages = activeTab === 'jee' ? resultsData.jee : resultsData.neet;
+  const images = (rawImages || []).map((img) =>
+    typeof img === 'string' ? img : img.image || Object.values(img)[0] || ''
+  );
 
   const openLightbox = (idx) => setLightbox({ open: true, idx });
   const closeLightbox = () => setLightbox({ open: false, idx: 0 });
   const prevImage = () => setLightbox((s) => ({ ...s, idx: (s.idx - 1 + images.length) % images.length }));
   const nextImage = () => setLightbox((s) => ({ ...s, idx: (s.idx + 1) % images.length }));
 
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    setLightbox({ open: false, idx: 0 });
+  };
+
+  // Lock body scroll when lightbox is open
+  useEffect(() => {
+    if (lightbox.open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [lightbox.open]);
+
   // Keyboard navigation
   useEffect(() => {
-    if (!lightbox.open) return;
+    if (!lightbox.open || images.length === 0) return;
 
     const handler = (e) => {
       if (e.key === 'Escape') setLightbox({ open: false, idx: 0 });
@@ -424,6 +444,8 @@ function ResultsGallery() {
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, [lightbox.open, images.length]);
+
+  const currentLightboxImg = images[lightbox.idx] || images[0] || '';
 
   return (
     <section className="bg-[#FAFAFA] border-y border-black/5 py-24" ref={ref}>
@@ -437,24 +459,24 @@ function ResultsGallery() {
         {/* Tabs */}
         <div className="mt-10 flex items-center gap-1 border-b border-black/10 pb-0">
           <button
-            onClick={() => setActiveTab('jee')}
+            onClick={() => handleTabChange('jee')}
             className={`bs-tab px-5 py-3 text-sm font-bold uppercase tracking-widest transition-colors ${
               activeTab === 'jee'
                 ? 'text-[#D32F2F] bs-tab-active'
                 : 'text-slate-500 hover:text-slate-800'
             }`}
           >
-            JEE Results
+            JEE Results ({resultsData.jee?.length || 0})
           </button>
           <button
-            onClick={() => setActiveTab('neet')}
+            onClick={() => handleTabChange('neet')}
             className={`bs-tab px-5 py-3 text-sm font-bold uppercase tracking-widest transition-colors ${
               activeTab === 'neet'
                 ? 'text-[#D32F2F] bs-tab-active'
                 : 'text-slate-500 hover:text-slate-800'
             }`}
           >
-            NEET Results
+            NEET Results ({resultsData.neet?.length || 0})
           </button>
         </div>
 
@@ -463,7 +485,7 @@ function ResultsGallery() {
           {images.map((src, i) => (
             <div
               key={`${activeTab}-${i}`}
-              className={`bs-gallery-img rounded-2xl overflow-hidden border border-slate-200/80 bg-white shadow-sm hover:shadow-md flex items-center justify-center p-1.5 aspect-[3/4] bs-animate-hidden bs-stagger-${Math.min(i % 6 + 1, 6)}`}
+              className={`bs-gallery-img rounded-2xl overflow-hidden border border-slate-200/80 bg-white shadow-sm hover:shadow-md flex items-center justify-center p-1.5 aspect-[3/4] bs-animate-hidden bs-stagger-${(i % 6) + 1}`}
               data-animate
               onClick={() => openLightbox(i)}
             >
@@ -475,6 +497,16 @@ function ResultsGallery() {
               />
             </div>
           ))}
+        </div>
+
+        {/* Link to full results page */}
+        <div className="mt-12 text-center">
+          <Link
+            to="/results"
+            className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white text-[#0A0A0A] hover:border-[#D32F2F] hover:text-[#D32F2F] px-7 py-3.5 text-sm font-bold shadow-sm transition-all duration-200"
+          >
+            View full Hall of Fame & Toppers <ArrowRight size={16} />
+          </Link>
         </div>
       </div>
 
@@ -504,8 +536,8 @@ function ResultsGallery() {
 
           {/* Image */}
           <img
-            key={lightbox.idx}
-            src={images[lightbox.idx]}
+            key={`${activeTab}-${lightbox.idx}`}
+            src={currentLightboxImg}
             alt={`${activeTab.toUpperCase()} result ${lightbox.idx + 1}`}
             className="bs-lightbox-img max-h-[85vh] max-w-[90vw] rounded-2xl object-contain shadow-2xl"
             onClick={(e) => e.stopPropagation()}
