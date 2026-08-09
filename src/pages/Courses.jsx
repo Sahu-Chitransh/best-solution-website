@@ -93,28 +93,34 @@ export default function Courses() {
               {/* Subject tags */}
               <div>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {p.subjects.map((s) => (
-                    <span
-                      key={s}
-                      className="inline-block text-[11px] font-semibold uppercase tracking-widest text-[#0A0A0A] border border-black/15 rounded-full px-3.5 py-1"
-                    >
-                      {s}
-                    </span>
-                  ))}
+                  {(p.subjects || []).map((s, sIdx) => {
+                    const sText = typeof s === 'string' ? s : s.subject || Object.values(s)[0] || '';
+                    return (
+                      <span
+                        key={sIdx}
+                        className="inline-block text-[11px] font-semibold uppercase tracking-widest text-[#0A0A0A] border border-black/15 rounded-full px-3.5 py-1"
+                      >
+                        {sText}
+                      </span>
+                    );
+                  })}
                 </div>
 
                 {/* Features grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
-                  {p.features.map((f) => (
-                    <div key={f} className="flex items-start gap-2.5">
-                      <Check
-                        size={18}
-                        className="text-green-600 mt-0.5 flex-shrink-0"
-                        strokeWidth={2.5}
-                      />
-                      <span className="text-sm text-slate-700">{f}</span>
-                    </div>
-                  ))}
+                  {(p.features || []).map((f, fIdx) => {
+                    const fText = typeof f === 'string' ? f : f.feature || Object.values(f)[0] || '';
+                    return (
+                      <div key={fIdx} className="flex items-start gap-2.5">
+                        <Check
+                          size={18}
+                          className="text-green-600 mt-0.5 flex-shrink-0"
+                          strokeWidth={2.5}
+                        />
+                        <span className="text-sm text-slate-700">{fText}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 

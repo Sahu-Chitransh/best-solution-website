@@ -165,12 +165,15 @@ export default function BlogPost() {
               EXECUTIVE SUMMARY & CORE TAKEAWAYS
             </h3>
             <ul className="space-y-3">
-              {post.keyTakeaways.map((takeaway, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-slate-800">
-                  <CheckCircle2 size={18} className="text-[#D32F2F] mt-0.5 shrink-0" />
-                  <span>{takeaway}</span>
-                </li>
-              ))}
+              {(post.keyTakeaways || []).map((takeaway, idx) => {
+                const tText = typeof takeaway === 'string' ? takeaway : takeaway.takeaway || Object.values(takeaway)[0] || '';
+                return (
+                  <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-slate-800">
+                    <CheckCircle2 size={18} className="text-[#D32F2F] mt-0.5 shrink-0" />
+                    <span>{tText}</span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
@@ -186,11 +189,14 @@ export default function BlogPost() {
                   {section.heading}
                 </h2>
               )}
-              {section.paragraphs && section.paragraphs.map((pText, pIdx) => (
-                <p key={pIdx} className="text-slate-700 leading-relaxed">
-                  {pText}
-                </p>
-              ))}
+              {(section.paragraphs || []).map((pText, pIdx) => {
+                const paragraphString = typeof pText === 'string' ? pText : pText.paragraph || Object.values(pText)[0] || '';
+                return (
+                  <p key={pIdx} className="text-slate-700 leading-relaxed">
+                    {paragraphString}
+                  </p>
+                );
+              })}
             </section>
           ))}
         </div>

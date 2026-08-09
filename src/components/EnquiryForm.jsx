@@ -102,9 +102,10 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
             onChange={update('grade')}
           >
             <option value="">Select…</option>
-            {settingsData.gradeOptions.map((g) => (
-              <option key={g} value={g}>{g}</option>
-            ))}
+            {(settingsData.gradeOptions || []).map((g, gIdx) => {
+              const gText = typeof g === 'string' ? g : g.grade || Object.values(g)[0] || '';
+              return <option key={gIdx} value={gText}>{gText}</option>;
+            })}
           </select>
         </Field>
       </div>
@@ -117,9 +118,10 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
             onChange={update('course')}
           >
             <option value="">Select course…</option>
-            {settingsData.courseOptions.map((c) => (
-              <option key={c} value={c}>{c}</option>
-            ))}
+            {(settingsData.courseOptions || []).map((c, cIdx) => {
+              const cText = typeof c === 'string' ? c : c.course || Object.values(c)[0] || '';
+              return <option key={cIdx} value={cText}>{cText}</option>;
+            })}
           </select>
         </Field>
       </div>

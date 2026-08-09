@@ -18,7 +18,7 @@ collections:
             widget: "list"
             fields:
               - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Title", name: "title", widget: "list", field: {label: "Line", widget: "string"}}
+              - {label: "Title", name: "title", widget: "list", field: {name: "line", label: "Line", widget: "string"}}
               - {label: "Body", name: "body", widget: "text"}
               - name: "primaryCta"
                 label: "Primary CTA"
@@ -64,7 +64,7 @@ collections:
           - name: "items"
             label: "Items"
             widget: "list"
-            field: {label: "Item", widget: "string"}
+            field: {name: "item", label: "Item", widget: "string"}
 
   - name: "why-us"
     label: "Why Us"
@@ -110,7 +110,7 @@ collections:
               - {label: "Grade", name: "grade", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Tagline", name: "tagline", widget: "string"}
-              - {label: "Subjects", name: "subjects", widget: "list", field: {label: "Subject", widget: "string"}}
+              - {label: "Subjects", name: "subjects", widget: "list", field: {name: "subject", label: "Subject", widget: "string"}}
               - {label: "Price", name: "price", widget: "string"}
               - {label: "Color", name: "color", widget: "color"}
               - {label: "Span", name: "span", widget: "number"}
@@ -130,8 +130,8 @@ collections:
               - {label: "Grade", name: "grade", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Tagline", name: "tagline", widget: "string"}
-              - {label: "Subjects", name: "subjects", widget: "list", field: {label: "Subject", widget: "string"}}
-              - {label: "Features", name: "features", widget: "list", field: {label: "Feature", widget: "string"}}
+              - {label: "Subjects", name: "subjects", widget: "list", field: {name: "subject", label: "Subject", widget: "string"}}
+              - {label: "Features", name: "features", widget: "list", field: {name: "feature", label: "Feature", widget: "string"}}
               - {label: "Fee", name: "fee", widget: "string"}
               - {label: "Color", name: "color", widget: "color"}
               - {label: "Color Dark", name: "colorDark", widget: "color"}
@@ -212,7 +212,7 @@ collections:
           - name: "documents"
             label: "Documents"
             widget: "list"
-            field: {label: "Document", widget: "string"}
+            field: {name: "document", label: "Document", widget: "string"}
           - name: "keyDates"
             label: "Key Dates"
             widget: "object"
@@ -248,11 +248,11 @@ collections:
           - name: "jee"
             label: "JEE"
             widget: "list"
-            field: {label: "Image", widget: "image"}
+            field: {name: "image", label: "Image", widget: "image"}
           - name: "neet"
             label: "NEET"
             widget: "list"
-            field: {label: "Image", widget: "image"}
+            field: {name: "image", label: "Image", widget: "image"}
           - name: "stats"
             label: "Stats"
             widget: "list"
@@ -284,7 +284,7 @@ collections:
                 label: "Key Takeaways"
                 widget: "list"
                 required: false
-                field: {label: "Takeaway", widget: "string"}
+                field: {name: "takeaway", label: "Takeaway", widget: "string"}
               - name: "content"
                 label: "Article Content"
                 widget: "list"
@@ -294,7 +294,7 @@ collections:
                   - name: "paragraphs"
                     label: "Paragraphs"
                     widget: "list"
-                    field: {label: "Paragraph", widget: "text"}
+                    field: {name: "paragraph", label: "Paragraph", widget: "text"}
 
   - name: "contact"
     label: "Contact"
@@ -307,7 +307,7 @@ collections:
           - name: "phones"
             label: "Phones"
             widget: "list"
-            field: {label: "Phone", widget: "string"}
+            field: {name: "phone", label: "Phone", widget: "string"}
           - {label: "Email", name: "email", widget: "string"}
           - name: "instagram"
             label: "Instagram"
@@ -365,11 +365,11 @@ collections:
           - name: "gradeOptions"
             label: "Grade Options"
             widget: "list"
-            field: {label: "Grade", widget: "string"}
+            field: {name: "grade", label: "Grade", widget: "string"}
           - name: "courseOptions"
             label: "Course Options"
             widget: "list"
-            field: {label: "Course", widget: "string"}
+            field: {name: "course", label: "Course", widget: "string"}
 
   - name: "instagram"
     label: "Instagram Gallery"

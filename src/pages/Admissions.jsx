@@ -81,14 +81,17 @@ export default function Admissions() {
             <div className="space-y-6">
               <h2 className="text-2xl font-black text-[#0A0A0A]">Documents you'll need</h2>
               <ul className="space-y-4">
-                {documents.map((doc, idx) => (
-                  <li key={idx} className="flex items-center gap-4">
-                    <span className="text-[#D32F2F] font-mono font-bold text-lg">
-                      {String(idx + 1).padStart(2, '0')}
-                    </span>
-                    <span className="text-slate-700 font-medium">{doc}</span>
-                  </li>
-                ))}
+                {(documents || []).map((doc, idx) => {
+                  const docText = typeof doc === 'string' ? doc : doc.document || Object.values(doc)[0] || '';
+                  return (
+                    <li key={idx} className="flex items-center gap-4">
+                      <span className="text-[#D32F2F] font-mono font-bold text-lg">
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
+                      <span className="text-slate-700 font-medium">{docText}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
 

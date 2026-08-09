@@ -48,15 +48,17 @@ function HeroSlider() {
 
   const s = heroData.slides[current];
 
+  const titleLines = (s.title || []).map((t) => (typeof t === 'string' ? t : t.line || Object.values(t)[0] || ''));
+
   return (
-    <section className="relative overflow-hidden bg-white bs-grid-bg">
+    <section className="relative overflow-hidden bg-white pt-24 pb-16 md:pt-32 md:pb-24">
       {/* Decorative blurs */}
       <div className="absolute -top-40 -right-40 w-[520px] h-[520px] rounded-full bg-[#FFEBEE] blur-3xl opacity-70 pointer-events-none" />
       <div className="absolute -bottom-24 -left-24 w-[380px] h-[380px] rounded-full bg-[#FFC107]/20 blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 md:pt-24 md:pb-28 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Text side */}
-        <div className="lg:col-span-7 relative z-10">
+        <div className="lg:col-span-7">
           <div key={animKey} className="bs-hero-animate">
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 rounded-full border border-[#D32F2F]/20 bg-[#FFEBEE] text-[#B71C1C] px-3 py-1 text-xs font-semibold uppercase tracking-widest">
@@ -66,9 +68,9 @@ function HeroSlider() {
 
             {/* Title */}
             <h1 className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tighter">
-              {s.title[0]}
+              {titleLines[0]}
               <br />
-              <span className="text-[#D32F2F]">{s.title[1]}</span>
+              <span className="text-[#D32F2F]">{titleLines[1]}</span>
             </h1>
 
             {/* Body */}
@@ -118,7 +120,7 @@ function HeroSlider() {
           <div key={`img-${animKey}`} className="relative bs-hero-image-animate">
             <div className="absolute -inset-4 rounded-3xl bg-[#0A0A0A] -rotate-2" />
             <img
-              alt={s.title?.join(' ') || 'Best Solution'}
+              alt={titleLines.join(' ') || 'Best Solution'}
               className="relative rounded-3xl w-full aspect-[4/5] object-contain bg-slate-900 border-4 border-white shadow-xl p-2"
               src={s.image}
             />
@@ -139,7 +141,9 @@ function HeroSlider() {
 
 /* ── Marquee ── */
 function Marquee() {
-  const items = marqueeData.items;
+  const items = (marqueeData.items || []).map((item) =>
+    typeof item === 'string' ? item : item.item || Object.values(item)[0] || ''
+  );
   return (
     <div className="border-y border-black/10 bg-[#0A0A0A] text-white overflow-hidden">
       <div className="bs-marquee-track py-4 whitespace-nowrap">
@@ -266,14 +270,17 @@ function ProgramsSection() {
               </h3>
               <p className="mt-3 text-slate-600">{c.tagline}</p>
               <div className="mt-6 flex flex-wrap gap-2">
-                {c.subjects.map((sub) => (
-                  <span
-                    key={sub}
-                    className="text-xs font-semibold uppercase tracking-widest bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full"
-                  >
-                    {sub}
-                  </span>
-                ))}
+                {(c.subjects || []).map((sub, sIdx) => {
+                  const subText = typeof sub === 'string' ? sub : sub.subject || Object.values(sub)[0] || '';
+                  return (
+                    <span
+                      key={sIdx}
+                      className="text-xs font-semibold uppercase tracking-widest bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full"
+                    >
+                      {subText}
+                    </span>
+                  );
+                })}
               </div>
               <div className="mt-6 flex items-center justify-between">
                 <div className="text-sm font-bold text-[#D32F2F]">{c.price}</div>

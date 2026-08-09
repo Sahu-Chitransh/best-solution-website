@@ -33,9 +33,13 @@ const Reveal = ({ children, className = '', delay = 0 }) => {
   );
 };
 
-const jeeResults = resultsData.jee;
+const jeeResults = (resultsData.jee || []).map((img) =>
+  typeof img === 'string' ? img : img.image || Object.values(img)[0] || ''
+);
 
-const neetResults = resultsData.neet;
+const neetResults = (resultsData.neet || []).map((img) =>
+  typeof img === 'string' ? img : img.image || Object.values(img)[0] || ''
+);
 
 const Results = () => {
   const [activeTab, setActiveTab] = useState('JEE');
