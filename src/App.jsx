@@ -11,6 +11,7 @@ import Testimonials from './pages/Testimonials';
 import Results from './pages/Results';
 import Gallery from './pages/Gallery';
 import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
 
 export default function App() {
@@ -29,7 +30,7 @@ export default function App() {
           <Route path="/results" element={<Results />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Home />} />
         </Route>
