@@ -612,6 +612,29 @@ All uploaded images go to the `public/images/` folder in the website's repositor
 3. Click **"Copy Link"**
 4. Paste it into the **Instagram URL** field
 
+#### ⚡ Automated Instagram Scraper (CLI)
+
+You can scrape and sync your latest Instagram posts automatically using the built-in Playwright scraper:
+
+**Option 1: Interactive Wizard**
+```bash
+npm run scrape:instagram
+```
+- Follow the on-screen prompts to choose the target Instagram handle (default: `@bestsolutionindore`), number of posts to fetch (e.g. `12`), and whether to mark them as featured.
+- Images are automatically downloaded to `/images/instagram/` and `src/content/instagram.json` is updated instantly.
+
+**Option 2: Log into Instagram (One-time Setup / Updating Session)**
+```bash
+npm run scrape:login
+```
+- Opens a browser window where you can log in to your Instagram account (including 2FA).
+- Your session is securely preserved locally in `.instagram-profile/` for subsequent automated runs.
+
+**Option 3: Non-interactive CLI Flags**
+```bash
+node scripts/scrape-instagram.js --handle @bestsolutionindore --limit 12 --headless
+```
+
 ---
 
 ### 5.19 Site Settings

@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Instagram Scraper Session & Profile Data
+.instagram-profile/
+.instagram-session.json
+.instagram-cookies.json
