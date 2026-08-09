@@ -485,13 +485,12 @@ function ResultsGallery() {
           {images.map((src, i) => (
             <div
               key={`${activeTab}-${i}`}
-              className={`bs-gallery-img rounded-2xl overflow-hidden border border-slate-200/80 bg-white shadow-sm hover:shadow-md flex items-center justify-center p-1.5 aspect-[3/4] bs-animate-hidden bs-stagger-${(i % 6) + 1}`}
-              data-animate
+              className="bs-gallery-img rounded-2xl overflow-hidden border border-slate-200/80 bg-white shadow-sm hover:shadow-md flex items-center justify-center p-1.5 aspect-[3/4] transition-all duration-300"
               onClick={() => openLightbox(i)}
             >
               <img
                 alt={`${activeTab.toUpperCase()} result ${i + 1}`}
-                className="w-full h-full object-contain rounded-xl bg-white"
+                className="w-full h-full object-contain rounded-xl bg-white select-none"
                 src={src}
                 loading="lazy"
               />
