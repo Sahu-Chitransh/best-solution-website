@@ -6,8 +6,163 @@
   <meta name="robots" content="noindex" />
   <title>Best Solution — Content Manager</title>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style>
+    /* Custom Deploy Widget Styles */
+    #cms-deploy-bar {
+      position: fixed;
+      top: 10px;
+      right: 16px;
+      z-index: 999999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .cms-deploy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #D32F2F;
+      color: #FFFFFF;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 9999px;
+      padding: 7px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(211, 47, 47, 0.35);
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .cms-deploy-btn:hover:not(:disabled) {
+      background: #B71C1C;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(211, 47, 47, 0.45);
+    }
+
+    .cms-deploy-btn:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    .cms-deploy-btn:disabled {
+      background: #4B5563;
+      color: #E5E7EB;
+      cursor: not-allowed;
+      box-shadow: none;
+      opacity: 0.85;
+    }
+
+    .cms-deploy-badge {
+      display: none;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      background: #F3F4F6;
+      color: #374151;
+      border: 1px solid #E5E7EB;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .cms-deploy-badge.visible {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+  </style>
 </head>
 <body>
+  <!-- Custom Deploy Widget -->
+  <div id="cms-deploy-bar">
+    <div id="cms-deploy-status" class="cms-deploy-badge"></div>
+    <button id="cms-deploy-btn" class="cms-deploy-btn" type="button">
+      <span>🚀 Publish All Changes Live</span>
+    </button>
+  </div>
+
+  <script>
+    (function () {
+      const COOLDOWN_MS = 3 * 60 * 1000; // 3 Minutes Cooldown
+      const STORAGE_KEY = 'best_solution_cms_deploy_cooldown';
+      const btn = document.getElementById('cms-deploy-btn');
+      const statusBadge = document.getElementById('cms-deploy-status');
+      let timerInterval = null;
+
+      function updateUI() {
+        const cooldownUntil = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
+        const now = Date.now();
+
+        if (cooldownUntil > now) {
+          const remainingSecs = Math.ceil((cooldownUntil - now) / 1000);
+          const mins = Math.floor(remainingSecs / 60);
+          const secs = remainingSecs % 60;
+          const timeString = `${mins}m ${secs < 10 ? '0' : ''}${secs}s`;
+
+          btn.disabled = true;
+          btn.innerHTML = `<span>⏳ Deploying... (${timeString})</span>`;
+          statusBadge.className = 'cms-deploy-badge visible';
+          statusBadge.innerHTML = `<span>⚡ Live build in progress</span>`;
+        } else {
+          clearInterval(timerInterval);
+          localStorage.removeItem(STORAGE_KEY);
+          btn.disabled = false;
+          btn.innerHTML = `<span>🚀 Publish All Changes Live</span>`;
+          statusBadge.className = 'cms-deploy-badge';
+        }
+      }
+
+      function startCooldown(durationMs) {
+        const until = Date.now() + durationMs;
+        localStorage.setItem(STORAGE_KEY, until.toString());
+        clearInterval(timerInterval);
+        timerInterval = setInterval(updateUI, 1000);
+        updateUI();
+      }
+
+      btn.addEventListener('click', async function () {
+        const confirmDeploy = window.confirm(
+          "Are you ready to publish all saved changes to the live website?\n\nThis will trigger a production build on Netlify."
+        );
+        if (!confirmDeploy) return;
+
+        btn.disabled = true;
+        btn.innerHTML = `<span>⏳ Contacting Netlify...</span>`;
+
+        try {
+          const res = await fetch('/.netlify/functions/trigger-deploy', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title: 'Manual Publish from CMS Admin' }),
+          });
+
+          const data = await res.json();
+
+          if (res.ok && data.success) {
+            alert("✅ Build Triggered Successfully!\n\nNetlify is now building and publishing your updates. Changes will be live in ~1-2 minutes.");
+            startCooldown(COOLDOWN_MS);
+          } else {
+            alert(`⚠️ Unable to trigger build:\n\n${data.error || 'Check that NETLIFY_BUILD_HOOK_URL is set in Netlify environment variables.'}`);
+            btn.disabled = false;
+            btn.innerHTML = `<span>🚀 Publish All Changes Live</span>`;
+          }
+        } catch (err) {
+          alert(`❌ Request Error: ${err.message}`);
+          btn.disabled = false;
+          btn.innerHTML = `<span>🚀 Publish All Changes Live</span>`;
+        }
+      });
+
+      // Initialize timer on load if active cooldown exists
+      const savedCooldown = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
+      if (savedCooldown > Date.now()) {
+        timerInterval = setInterval(updateUI, 1000);
+      }
+      updateUI();
+    })();
+  </script>
+
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>

@@ -80,18 +80,46 @@ After logging in, you'll see a **left sidebar** with all the content sections (c
 
 ---
 
-## 3. How Editing Works
+## 3. How Editing & Publishing Works (Credit-Saving Workflow)
 
-### The Basic Workflow
+### The Credit-Saving Batched Workflow
+
+To save your Netlify build minutes and avoid exhausting your plan, automatic builds on every minor edit are disabled. You can make as many edits as you want throughout the day without using any build credits!
 
 ```
-1. Click a collection in the sidebar (e.g., "Fees")
-2. Click the file name that appears (e.g., "Fees")
-3. You see a form with all the editable fields
-4. Make your changes
-5. Click the blue "Publish" button (top-right corner)
-6. Wait ~60 seconds — your changes are live on the website!
+1. Click a collection in the sidebar (e.g., "Faculty", "Fees", "Blog")
+2. Click the file name that appears
+3. Make your changes and click the blue "Save" button inside the CMS
+   -> Your changes are saved directly to GitHub (0 build minutes consumed!)
+4. Repeat for any other pages or blogs you want to edit today
+5. When ALL edits are complete, click the top-right button:
+   [ 🚀 Publish All Changes Live ]
+6. Netlify builds once and deploys all changes together (only 1 build minute used!)
 ```
+
+### Anti-Spam Cooldown Timer (3 Minutes)
+
+After clicking **"🚀 Publish All Changes Live"**, the button will show:
+`⏳ Deploying... (2m 45s remaining)`
+
+* This 3-minute timer ensures Netlify has adequate time to compile and publish your updates without getting spammed by multiple simultaneous builds.
+* The timer persists across page refreshes. Once the 3 minutes complete, the button becomes active again for your next deployment.
+
+---
+
+### One-Time Netlify Setup (If not already configured)
+
+1. **Stop Auto-Builds:**
+   * Go to **Netlify Dashboard** → Your Site → **Site Configuration** → **Build & deploy** → **Continuous deployment**
+   * Under **Build status**, click **Stop builds**.
+2. **Create Build Hook:**
+   * Under **Build & deploy**, scroll to **Build hooks** → click **Add build hook**.
+   * Name: `CMS Admin Deploy` · Branch: `main` → click **Save**.
+   * Copy the generated webhook URL.
+3. **Add Environment Variable:**
+   * Go to **Site Configuration** → **Environment variables** → **Add a variable**.
+   * Key: `NETLIFY_BUILD_HOOK_URL`
+   * Value: *(paste your webhook URL)*
 
 ### Understanding Field Types
 
