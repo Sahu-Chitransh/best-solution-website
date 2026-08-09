@@ -93,7 +93,7 @@ async function main() {
     }
 
     try {
-      const match = instagramUrl.match(/\/p\/([^\/?#]+)/) || instagramUrl.match(/\/reel\/([^\/?#]+)/);
+      const match = instagramUrl.match(/\/p\/([^/?#]+)/) || instagramUrl.match(/\/reel\/([^/?#]+)/);
       if (!match) {
         throw new Error(`Could not extract shortcode from ${instagramUrl}`);
       }

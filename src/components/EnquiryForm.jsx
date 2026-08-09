@@ -16,16 +16,49 @@ const inputClass =
   'w-full bg-white border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-[#0A0A0A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D32F2F]/20 focus:border-[#D32F2F] transition-colors';
 
 export default function EnquiryForm({ title = 'Book a free demo class', subtitle = 'Fill this quick form. Our counsellor will call you within 2 hours.' }) {
+  const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
     name: '', phone: '', email: '', grade: '', course: '', message: '',
   });
 
   const update = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!form.name || !form.phone) return;
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <div className="rounded-3xl border border-black/10 bg-white shadow-sm p-8 sm:p-10 text-center flex flex-col items-center justify-center">
+        <div className="w-14 h-14 rounded-full bg-green-50 text-green-600 flex items-center justify-center mb-4 text-2xl font-bold">
+          ✓
+        </div>
+        <h3 className="text-2xl font-black text-[#0A0A0A] tracking-tight">
+          Enquiry Received!
+        </h3>
+        <p className="mt-2 text-sm text-slate-600 max-w-md">
+          Thank you <span className="font-semibold text-black">{form.name}</span>. Our counsellor will call you at <span className="font-mono font-semibold text-black">{form.phone}</span> within 2 hours to answer all your questions.
+        </p>
+        <button
+          onClick={() => {
+            setSubmitted(false);
+            setForm({ name: '', phone: '', email: '', grade: '', course: '', message: '' });
+          }}
+          className="mt-6 text-xs font-bold uppercase tracking-wider text-[#D32F2F] hover:underline"
+        >
+          Submit another enquiry
+        </button>
+      </div>
+    );
+  }
+
   return (
     <form
       className="rounded-3xl border border-black/10 bg-white shadow-sm p-6 sm:p-8"
-      onSubmit={(e) => e.preventDefault()}
+      onSubmit={handleSubmit}
+      name="enquiry"
     >
       <div className="mb-6">
         <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-[#0A0A0A]">

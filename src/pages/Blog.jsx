@@ -96,7 +96,7 @@ export default function Blog() {
             .filter((post) => {
               if (!searchQuery) return true;
               const q = searchQuery.toLowerCase();
-              return post.title.toLowerCase().includes(q) || post.snippet.toLowerCase().includes(q);
+              return (post.title || '').toLowerCase().includes(q) || (post.snippet || '').toLowerCase().includes(q);
             })
             .map((post) => (
             <article key={post.id} className="rounded-2xl border border-black/8 bg-white overflow-hidden hover:shadow-md transition-shadow group flex flex-col h-full">

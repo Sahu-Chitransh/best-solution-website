@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MapPin, Phone, Mail, MessageSquare, Send, ArrowRight } from 'lucide-react';
+import InstagramIcon from '../components/InstagramIcon';
 import contactData from '../content/contact.json';
 
 // Scroll reveal hook
@@ -31,29 +32,13 @@ const useScrollReveal = () => {
   return ref;
 };
 
-const InstagramIcon = ({ className }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-  </svg>
-);
-
 const Contact = () => {
   const heroRef = useScrollReveal();
   const leftColRef = useScrollReveal();
   const rightColRef = useScrollReveal();
   const mapRef = useScrollReveal();
 
+  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     mobile: '',
@@ -71,8 +56,8 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle submission logic here
+    if (!formData.name || !formData.mobile) return;
+    setSubmitted(true);
   };
 
   return (
@@ -130,10 +115,10 @@ const Contact = () => {
               CALL US
             </div>
             <div className="font-bold text-[#0A0A0A] text-base mt-1">
-              {contactData.phones.join(' · ')}
+              {contactData.phones?.join(' · ') || ''}
             </div>
             <a 
-              href={`tel:+91${contactData.phones[0].replace(/\s/g, '')}`} 
+              href={`tel:+91${contactData.phones?.[0]?.replace(/\s/g, '') || ''}`} 
               className="text-[#D32F2F] font-semibold text-sm mt-2 hover:underline inline-flex items-center gap-1"
             >
               Tap to call <ArrowRight size={14} />
@@ -198,6 +183,26 @@ const Contact = () => {
               We respond to every message within a business day.
             </p>
 
+            {submitted ? (
+              <div className="bg-[#FFEBEE]/50 border border-[#D32F2F]/20 rounded-2xl p-8 text-center flex flex-col items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-[#D32F2F] text-white flex items-center justify-center text-xl font-bold mb-4">
+                  ✓
+                </div>
+                <h3 className="text-xl font-bold text-[#0A0A0A]">Message Received!</h3>
+                <p className="text-sm text-slate-600 mt-2 max-w-sm">
+                  Thanks for reaching out, <span className="font-semibold text-black">{formData.name}</span>. We'll get back to you shortly.
+                </p>
+                <button
+                  onClick={() => {
+                    setSubmitted(false);
+                    setFormData({ name: '', mobile: '', email: '', message: '' });
+                  }}
+                  className="mt-6 text-xs font-bold uppercase tracking-wider text-[#D32F2F] hover:underline"
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
@@ -266,6 +271,7 @@ const Contact = () => {
                 Send message <Send size={16} />
               </button>
             </form>
+            )}
           </div>
         </div>
       </div>

@@ -2,11 +2,15 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Info } from 'lucide-react';
 import feesData from '../content/fees.json';
+import contactData from '../content/contact.json';
 
 function useScrollReveal() {
   const ref = useRef(null);
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -20,8 +24,8 @@ function useScrollReveal() {
       { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll('.scroll-reveal');
-    elements.forEach((el) => observer.observe(el));
+    const elements = el.querySelectorAll('.scroll-reveal');
+    elements.forEach((elem) => observer.observe(elem));
 
     return () => observer.disconnect();
   }, []);
@@ -30,12 +34,12 @@ function useScrollReveal() {
 }
 
 export default function Fees() {
-  useScrollReveal();
+  const revealRef = useScrollReveal();
 
   const feeData = feesData.rows;
 
   return (
-    <main className="w-full min-h-screen bg-white pt-24 pb-20 px-6 sm:px-12 lg:px-24 font-sans">
+    <main ref={revealRef} className="w-full min-h-screen bg-white pt-24 pb-20 px-6 sm:px-12 lg:px-24 font-sans">
       <div className="max-w-6xl mx-auto space-y-16">
         
         {/* HERO SECTION */}
@@ -95,7 +99,7 @@ export default function Fees() {
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 flex items-start gap-4">
             <Info className="text-amber-600 shrink-0 w-6 h-6 mt-0.5" />
             <p className="text-amber-900 text-base leading-relaxed">
-              <span className="font-bold">Note:</span> {feesData.note} <span className="font-bold">94259 59956</span>.
+              <span className="font-bold">Note:</span> {feesData.note} <span className="font-bold">{contactData.phones?.[0] || '94259 59956'}</span>.
             </p>
           </div>
         </div>

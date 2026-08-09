@@ -33,7 +33,7 @@ export default function Admissions() {
 
   const steps = admissionsData.steps.map(step => ({
     ...step,
-    icon: iconMap[step.icon]
+    icon: iconMap[step.icon] || ClipboardList
   }));
 
   const documents = admissionsData.documents;

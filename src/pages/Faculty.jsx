@@ -1,10 +1,12 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import facultyDataJson from '../content/faculty.json';
 
 function useScrollReveal() {
   const ref = useRef(null);
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -14,11 +16,9 @@ function useScrollReveal() {
       },
       { threshold: 0.1 }
     );
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(el);
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      observer.unobserve(el);
     };
   }, []);
   return ref;

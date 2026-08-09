@@ -4,15 +4,7 @@ import contactData from '../content/contact.json';
 import settingsData from '../content/settings.json';
 
 // Instagram icon removed from lucide-react in v1.x — using inline SVG
-function InstagramIcon({ size = 16 }) {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-    </svg>
-  );
-}
+import InstagramIcon from './InstagramIcon';
 import { FOOTER_EXPLORE } from '../data/site';
 
 export default function Footer() {
@@ -76,7 +68,7 @@ export default function Footer() {
               <div className="flex gap-3 text-sm text-slate-400">
                 <Phone size={16} className="text-[#D32F2F] flex-shrink-0 mt-0.5" />
                 <span className="tracking-wide">
-                  {contactData.phones.join(' · ')}
+                  {contactData.phones?.join(' · ') || ''}
                 </span>
               </div>
               <div className="flex gap-3 text-sm text-slate-400">

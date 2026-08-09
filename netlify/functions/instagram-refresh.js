@@ -24,7 +24,7 @@ function httpsGetJson(url) {
   return httpsGet(url).then(buffer => JSON.parse(buffer.toString('utf-8')));
 }
 
-export const handler = async function (event, context) {
+export const handler = async function (event) {
   if (!TOKEN) {
     return {
       statusCode: 500,
@@ -32,10 +32,22 @@ export const handler = async function (event, context) {
     };
   }
 
-  // Sample post URLs to test the token validity
-  const testPosts = [
-    { instagramUrl: 'https://www.instagram.com/p/example1/' },
-  ];
+  // Accept URL(s) from query string or request body, or test with a known public post
+  let testPosts = [];
+  
+  try {
+    const body = event.body ? JSON.parse(event.body) : {};
+    if (body.urls && Array.isArray(body.urls)) {
+      testPosts = body.urls.map(url => ({ instagramUrl: url }));
+    }
+  } catch {
+    // ignore parse errors
+  }
+
+  // If no URLs provided, just validate the token with a simple API call
+  if (testPosts.length === 0) {
+    testPosts = [{ instagramUrl: 'https://www.instagram.com/p/CrBvnQ8MFMG/' }];
+  }
 
   const results = [];
   let successCount = 0;
@@ -47,8 +59,8 @@ export const handler = async function (event, context) {
 
     try {
       const match =
-        instagramUrl.match(/\/p\/([^\/?#]+)/) ||
-        instagramUrl.match(/\/reel\/([^\/?#]+)/);
+        instagramUrl.match(/\/p\/([^/?#]+)/) ||
+        instagramUrl.match(/\/reel\/([^/?#]+)/);
       const shortcode = match ? match[1] : 'unknown';
 
       const apiUrl = `https://graph.facebook.com/v21.0/instagram_oembed?url=${encodeURIComponent(instagramUrl)}&access_token=${TOKEN}`;

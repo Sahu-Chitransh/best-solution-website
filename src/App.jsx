@@ -29,7 +29,9 @@ export default function App() {
           <Route path="/results" element={<Results />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Home />} />
         </Route>
       </Routes>
     </BrowserRouter>

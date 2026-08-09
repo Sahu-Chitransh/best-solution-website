@@ -118,7 +118,7 @@ function HeroSlider() {
           <div key={`img-${animKey}`} className="relative bs-hero-image-animate">
             <div className="absolute -inset-4 rounded-3xl bg-[#0A0A0A] -rotate-2" />
             <img
-              alt=""
+              alt={s.title?.join(' ') || 'Best Solution'}
               className="relative rounded-3xl w-full aspect-[4/5] object-contain bg-slate-900 border-4 border-white shadow-xl p-2"
               src={s.image}
             />
@@ -170,7 +170,7 @@ function StatsSection() {
       />
       <div className="mt-14 grid grid-cols-2 md:grid-cols-4 divide-x divide-black/10 border-y border-black/10">
         {statsData.stats.map((s, i) => (
-          <div key={i} className={`p-6 md:p-8 bs-animate-hidden bs-stagger-${i + 1}`} data-animate>
+          <div key={i} className={`p-6 md:p-8 bs-animate-hidden bs-stagger-${(i % 6) + 1}`} data-animate>
             <div className="text-4xl md:text-5xl font-black text-[#D32F2F] tracking-tight">
               {s.value}
             </div>
@@ -217,7 +217,7 @@ function WhySection() {
             return (
               <div
                 key={i}
-                className={`rounded-2xl bg-white border border-black/10 p-5 hover:border-[#D32F2F] transition-colors bs-animate-hidden bs-stagger-${i + 1}`}
+                className={`rounded-2xl bg-white border border-black/10 p-5 hover:border-[#D32F2F] transition-colors bs-animate-hidden bs-stagger-${(i % 6) + 1}`}
                 data-animate
               >
                 {Icon && <Icon size={22} strokeWidth={2.4} className="text-[#D32F2F]" />}
@@ -247,7 +247,7 @@ function ProgramsSection() {
         {coursesData.courses.map((c, i) => (
           <div
             key={i}
-            className={`${COL_SPAN[c.span]} group relative rounded-3xl border border-black/10 bg-white overflow-hidden p-7 md:p-9 hover:-translate-y-1 hover:border-[#D32F2F] transition-[transform,border-color] duration-300 bs-animate-hidden bs-stagger-${i + 1}`}
+            className={`${COL_SPAN[c.span] || 'md:col-span-4'} group relative rounded-3xl border border-black/10 bg-white overflow-hidden p-7 md:p-9 hover:-translate-y-1 hover:border-[#D32F2F] transition-[transform,border-color] duration-300 bs-animate-hidden bs-stagger-${(i % 6) + 1}`}
             data-animate
           >
             {/* Decorative circle */}
@@ -350,7 +350,7 @@ function TestimonialsSection() {
           {testimonialsData.testimonials.map((t, i) => (
             <div
               key={i}
-              className={`rounded-3xl bg-white/5 border border-white/10 p-7 hover:border-[#D32F2F] transition-colors bs-animate-hidden bs-stagger-${i + 1}`}
+              className={`rounded-3xl bg-white/5 border border-white/10 p-7 hover:border-[#D32F2F] transition-colors bs-animate-hidden bs-stagger-${(i % 6) + 1}`}
               data-animate
             >
               <div className="flex items-center gap-4">
@@ -407,14 +407,16 @@ function ResultsGallery() {
   // Keyboard navigation
   useEffect(() => {
     if (!lightbox.open) return;
+
     const handler = (e) => {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') prevImage();
-      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'Escape') setLightbox({ open: false, idx: 0 });
+      if (e.key === 'ArrowLeft') setLightbox((s) => ({ ...s, idx: (s.idx - 1 + images.length) % images.length }));
+      if (e.key === 'ArrowRight') setLightbox((s) => ({ ...s, idx: (s.idx + 1) % images.length }));
     };
+
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  });
+  }, [lightbox.open, images.length]);
 
   return (
     <section className="bg-[#FAFAFA] border-y border-black/5 py-24" ref={ref}>

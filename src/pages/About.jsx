@@ -80,7 +80,7 @@ export default function About() {
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {aboutData.values.map((v, i) => {
-            const Icon = iconMap[v.icon];
+            const Icon = iconMap[v.icon] || Award;
             return (
             <div
               key={v.title}

@@ -9,7 +9,7 @@ export default function FloatingSocials() {
   const socials = [
     {
       label: 'WhatsApp',
-      href: `https://wa.me/91${contactData.phones[0].replace(/\s/g, '')}`,
+      href: `https://wa.me/91${contactData.phones?.[0]?.replace(/\s/g, '') || ''}`,
       target: '_blank',
       bg: '#25D366',
       icon: (

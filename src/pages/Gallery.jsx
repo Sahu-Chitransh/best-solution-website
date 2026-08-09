@@ -5,9 +5,9 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import instagramData from '../content/instagram.json';
 
 const Gallery = () => {
-  const { ref: headerRef } = useScrollReveal();
-  const { ref: statsRef } = useScrollReveal();
-  const { ref: gridRef } = useScrollReveal();
+  const headerRef = useScrollReveal();
+  const statsRef = useScrollReveal();
+  const gridRef = useScrollReveal();
 
   const truncateCaption = (caption, maxLength = 80) => {
     if (!caption) return '';
@@ -24,7 +24,7 @@ const Gallery = () => {
     <div className="min-h-screen bg-gray-50 pt-24 pb-16">
       {/* Hero Section */}
       <section ref={headerRef} className="container mx-auto px-4 mb-12">
-        <div className="max-w-4xl mx-auto text-center data-animate bs-animate-hidden">
+        <div className="max-w-4xl mx-auto text-center bs-animate-hidden" data-animate>
           <div className="inline-flex items-center justify-center p-3 bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 rounded-full mb-6 text-white shadow-lg shadow-red-500/20">
             <InstagramIcon size={32} />
           </div>
@@ -47,7 +47,7 @@ const Gallery = () => {
 
       {/* Stats Bar */}
       <section ref={statsRef} className="container mx-auto px-4 mb-12">
-        <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-sm border border-black/10 p-6 flex flex-col sm:flex-row items-center justify-between data-animate bs-animate-hidden">
+        <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-sm border border-black/10 p-6 flex flex-col sm:flex-row items-center justify-between bs-animate-hidden" data-animate>
           <div className="flex items-center gap-4 mb-4 sm:mb-0">
             <div className="bg-gray-100 p-3 rounded-xl text-gray-700">
               <Camera size={24} />
@@ -72,7 +72,7 @@ const Gallery = () => {
       {/* Masonry Grid */}
       <section ref={gridRef} className="container mx-auto px-4">
         {(!posts || posts.length === 0) ? (
-          <div className="max-w-2xl mx-auto text-center py-20 bg-white rounded-2xl border border-black/10 data-animate bs-animate-hidden">
+          <div className="max-w-2xl mx-auto text-center py-20 bg-white rounded-2xl border border-black/10 bs-animate-hidden" data-animate>
             <InstagramIcon className="mx-auto text-gray-300 mb-4" size={48} />
             <h3 className="text-xl font-bold text-gray-700 mb-2">No posts yet</h3>
             <p className="text-gray-500">Check back soon for updates from our Instagram feed.</p>
@@ -85,7 +85,8 @@ const Gallery = () => {
                 href={post.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`block break-inside-avoid relative rounded-2xl border border-black/10 overflow-hidden group hover:shadow-md transition-shadow data-animate bs-animate-hidden bs-stagger-${(index % 5) + 1}`}
+                className={`block break-inside-avoid relative rounded-2xl border border-black/10 overflow-hidden group hover:shadow-md transition-shadow bs-animate-hidden bs-stagger-${(index % 5) + 1}`}
+                data-animate
               >
                 {getPostImage(post) ? (
                   <>
