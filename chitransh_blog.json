@@ -4,16 +4,16 @@
       "id": 1,
       "category": "IIT-JEE",
       "readTime": "6 MIN",
-      "title": "Top 10 Tips to Ace IIT-JEE 2026 \u2014 From Our Coaches",
-      "snippet": "A tactical playbook combining our teaching floor's most repeated advice \u2014 from timetable to test-day rituals.",
+      "title": "Top 10 Tips to Ace IIT-JEE 2026 — From Our Coaches",
+      "snippet": "A tactical playbook combining our teaching floor's most repeated advice — from timetable to test-day rituals.",
       "date": "12 Jan 2026",
       "author": "Dr. Ajay Sharma",
-      "authorRole": "Head of Physics \u00b7 IIT Roorkee, ex-Allen",
+      "authorRole": "Head of Physics · IIT Roorkee, ex-Allen",
       "bgColor": "bg-slate-200",
       "keyTakeaways": [
         "Master foundational NCERT derivations before diving into shortcut tricks.",
         "Maintain a dedicated Mistake Notebook to turn negative marks into guaranteed scoring areas.",
-        "Treat Chemistry as your rank accelerator \u2014 Inorganic NCERT must be revised weekly.",
+        "Treat Chemistry as your rank accelerator — Inorganic NCERT must be revised weekly.",
         "Simulate full 3-hour exam conditions with negative marking at least twice a week."
       ],
       "content": [
@@ -36,14 +36,14 @@
         {
           "heading": "3. The 'Mistake Notebook' Discipline",
           "paragraphs": [
-            "Top rankers don't solve twice as many questions as average students \u2014 they make half as many repeated mistakes. Maintain a physical A4 notebook strictly partitioned into Calculation Slips, Conceptual Misunderstandings, and Question Misreads.",
-            "Review this notebook every Sunday night before your mock test. Eliminating 4 silly mistakes per paper boosts your score by 20 marks \u2014 often the difference between a top-5 IIT branch and missing out entirely."
+            "Top rankers don't solve twice as many questions as average students — they make half as many repeated mistakes. Maintain a physical A4 notebook strictly partitioned into Calculation Slips, Conceptual Misunderstandings, and Question Misreads.",
+            "Review this notebook every Sunday night before your mock test. Eliminating 4 silly mistakes per paper boosts your score by 20 marks — often the difference between a top-5 IIT branch and missing out entirely."
           ]
         },
         {
           "heading": "4. Chemistry: The Silent Rank Decider",
           "paragraphs": [
-            "Physics and Mathematics determine selection, but Chemistry determines your All India Rank. Inorganic Chemistry requires line-by-line NCERT absorption \u2014 treat exceptions, trends, and laboratory tests as non-negotiable memory anchors.",
+            "Physics and Mathematics determine selection, but Chemistry determines your All India Rank. Inorganic Chemistry requires line-by-line NCERT absorption — treat exceptions, trends, and laboratory tests as non-negotiable memory anchors.",
             "For Organic Chemistry, focus on reaction mechanisms and stereochemistry pathways rather than memorizing isolated end products."
           ]
         },
@@ -54,8 +54,7 @@
             "This diagnostic feedback loop is the heartbeat of our rank-building program at Vijay Nagar."
           ]
         }
-      ],
-      "image": "/blog-images/iitjee-tips.png"
+      ]
     },
     {
       "id": 2,
@@ -65,7 +64,7 @@
       "snippet": "A framework used by our top NEET rankers, broken down into high-yield weekly cycles.",
       "date": "05 Jan 2026",
       "author": "Dr. Sneha Verma",
-      "authorRole": "Senior NEET Mentor \u00b7 MBBS",
+      "authorRole": "Senior NEET Mentor · MBBS",
       "bgColor": "bg-blue-100",
       "keyTakeaways": [
         "Aim for a 360/360 in Biology by memorizing NCERT diagrams, summaries, and scientist bios.",
@@ -103,8 +102,7 @@
             "Pass 3 (130 to 180 mins): Tackle lengthy calculations, double-check tricky assertions, and finalize OMR fills with 10 minutes reserved for contingency."
           ]
         }
-      ],
-      "image": "/blog-images/neet-crack.png"
+      ]
     },
     {
       "id": 3,
@@ -114,7 +112,7 @@
       "snippet": "If your child is exploring commerce, management, law or multidisciplinary careers, this integrated program is built for them.",
       "date": "28 Dec 2025",
       "author": "Mr. Arjun Deshmukh",
-      "authorRole": "Program Director \u00b7 IIM Indore Alumnus",
+      "authorRole": "Program Director · IIM Indore Alumnus",
       "bgColor": "bg-amber-100",
       "keyTakeaways": [
         "CCG blends Quantitative Aptitude, Logical Reasoning, Verbal Ability & Applied Economics.",
@@ -146,18 +144,17 @@
             "They routinely score in the 99th percentile because problem-solving has become second nature rather than an eleventh-hour struggle."
           ]
         }
-      ],
-      "image": "/blog-images/ccg-program.png"
+      ]
     },
     {
       "id": 4,
       "category": "BOARDS",
       "readTime": "7 MIN",
-      "title": "Board Exam Strategy 2026 \u2014 The 90+% Roadmap",
+      "title": "Board Exam Strategy 2026 — The 90+% Roadmap",
       "snippet": "Practical, weekly milestones for Class 10 & 12 board students, tuned for CBSE and MP Board.",
       "date": "20 Dec 2025",
       "author": "Prof. Neeraj Mishra",
-      "authorRole": "Senior Academic Lead \u00b7 IIT BHU",
+      "authorRole": "Senior Academic Lead · IIT BHU",
       "bgColor": "bg-rose-100",
       "keyTakeaways": [
         "Competitive MCQs and Board subjective answers require fundamentally different presentation skills.",
@@ -188,18 +185,17 @@
             "Days 15 to 1: Focus on revision of definitions, named reactions in Chemistry, ray diagrams in Physics, and theorem proofs in Mathematics."
           ]
         }
-      ],
-      "image": "/blog-images/board-exam.png"
+      ]
     },
     {
       "id": 5,
       "category": "OLYMPIAD",
       "readTime": "5 MIN",
       "title": "Why Early Olympiad Coaching Actually Matters",
-      "snippet": "Olympiads aren't about extra syllabus \u2014 they build a reasoning core that IIT/NEET exploit later.",
+      "snippet": "Olympiads aren't about extra syllabus — they build a reasoning core that IIT/NEET exploit later.",
       "date": "10 Dec 2025",
       "author": "Ms. Kavya Iyer",
-      "authorRole": "Olympiad Division Head \u00b7 CMI, RMO Mentor",
+      "authorRole": "Olympiad Division Head · CMI, RMO Mentor",
       "bgColor": "bg-emerald-100",
       "keyTakeaways": [
         "Olympiad training replaces superficial memorization with rigorous mathematical reasoning.",
@@ -229,8 +225,7 @@
             "At Best Solution, our specialized Olympiad batches mentor students from Class 6 onwards with curated problem sets from global competitions."
           ]
         }
-      ],
-      "image": "/blog-images/olympiad.png"
+      ]
     },
     {
       "id": 6,
@@ -240,7 +235,7 @@
       "snippet": "Written with our in-house counsellor for parents and students juggling boards + entrance exams.",
       "date": "01 Dec 2025",
       "author": "Ms. Ritu Jain",
-      "authorRole": "Head of Student Counselling \u00b7 MA Psychology",
+      "authorRole": "Head of Student Counselling · MA Psychology",
       "bgColor": "bg-violet-100",
       "keyTakeaways": [
         "Adopt the 50-10 study rhythm with zero-screen rest intervals.",
@@ -253,7 +248,7 @@
           "heading": "1. The 50-10 Focus Cycle (Zero-Screen Rest)",
           "paragraphs": [
             "Human working memory peaks for 45 to 50 minutes before neural fatigue sets in. Study in focused 50-minute blocks followed by a 10-minute break.",
-            "Crucially, your break must not involve scrolling social media or watching short-form videos \u2014 which overstimulates dopamine and wipes working memory. Instead, stretch, hydrate, or look out a window."
+            "Crucially, your break must not involve scrolling social media or watching short-form videos — which overstimulates dopamine and wipes working memory. Instead, stretch, hydrate, or look out a window."
           ]
         },
         {
@@ -277,58 +272,7 @@
             "Our counselling desk at Best Solution is always open for one-on-one student and parent mentorship sessions."
           ]
         }
-      ],
-      "image": "/blog-images/exam-stress.png"
-    },
-    {
-      "id": 7,
-      "category": "IIT-JEE",
-      "readTime": "7 MIN",
-      "title": "Time Management Hacks for JEE Aspirants \u2014 The 16-Hour Formula",
-      "snippet": "How our toppers split 16 waking hours between school, self-study, coaching and rest \u2014 without burning out before Mains.",
-      "date": "15 Feb 2026",
-      "image": "/blog-images/time-management.png",
-      "bgColor": "bg-orange-100"
-    },
-    {
-      "id": 8,
-      "category": "IIT-JEE",
-      "readTime": "9 MIN",
-      "title": "Physics Shortcuts That Actually Work in JEE \u2014 20 Tricks from Our Faculty",
-      "snippet": "Dimensional analysis, energy conservation tricks, and symmetry arguments that save 5\u20138 minutes per paper. Compiled by our senior physics faculty.",
-      "date": "22 Feb 2026",
-      "image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop",
-      "bgColor": "bg-sky-100"
-    },
-    {
-      "id": 9,
-      "category": "NEET",
-      "readTime": "6 MIN",
-      "title": "A Parent's Guide to Supporting Your NEET Aspirant",
-      "snippet": "What to say, what not to say, and how to create a home environment that reduces pressure while keeping motivation high.",
-      "date": "01 Mar 2026",
-      "image": "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=600&h=400&fit=crop",
-      "bgColor": "bg-pink-100"
-    },
-    {
-      "id": 10,
-      "category": "NEET",
-      "readTime": "10 MIN",
-      "title": "Organic Chemistry Made Easy \u2014 The Reaction Map Method",
-      "snippet": "Stop rote-learning 200 reactions. Our chemistry faculty's visual 'reaction map' connects named reactions into one logical flowchart.",
-      "date": "10 Mar 2026",
-      "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop",
-      "bgColor": "bg-teal-100"
-    },
-    {
-      "id": 11,
-      "category": "BOARDS",
-      "readTime": "5 MIN",
-      "title": "How Mock Tests Doubled Our Students' Board Scores",
-      "snippet": "Data from 300+ students shows that weekly timed mocks improve speed by 22% and accuracy by 18%. Here's our exact mock schedule.",
-      "date": "18 Mar 2026",
-      "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop",
-      "bgColor": "bg-red-100"
+      ]
     }
   ]
 }
