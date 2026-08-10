@@ -4,233 +4,51 @@
       "id": 1,
       "category": "IIT-JEE",
       "readTime": "6 MIN",
-      "title": "Top 10 Tips to Ace IIT-JEE 2026 \u2014 From Our Coaches",
-      "snippet": "A tactical playbook combining our teaching floor's most repeated advice \u2014 from timetable to test-day rituals.",
+      "title": "Top 10 Tips to Ace IIT-JEE 2026 — From Our Coaches",
+      "snippet": "A tactical playbook combining our teaching floor's most repeated advice — from timetable to test-day rituals.",
       "date": "12 Jan 2026",
-      "author": "Dr. Ajay Sharma",
-      "authorRole": "Head of Physics \u00b7 IIT Roorkee, ex-Allen",
-      "bgColor": "bg-slate-200",
-      "keyTakeaways": [
-        "Master foundational NCERT derivations before diving into shortcut tricks.",
-        "Maintain a dedicated Mistake Notebook to turn negative marks into guaranteed scoring areas.",
-        "Treat Chemistry as your rank accelerator \u2014 Inorganic NCERT must be revised weekly.",
-        "Simulate full 3-hour exam conditions with negative marking at least twice a week."
-      ],
-      "content": [
-        {
-          "heading": "1. Master Fundamentals Before Chasing Shortcut Formulas",
-          "paragraphs": [
-            "Every year, thousands of aspirants jump straight into 500-page formula compendiums hoping for quick breakthroughs. At Best Solution, our 14 years of mentoring top rankers in Indore have proven the exact opposite: JEE Advanced tests conceptual depth, not formula recall.",
-            "Spend the initial 40% of your study cycle proving formulas from first principles. When you understand how a thermodynamic equation or rotational mechanics theorem is derived, twisted questions in the exam hall will never throw you off."
-          ]
-        },
-        {
-          "heading": "2. The 3-Tier Problem Solving Hierarchy",
-          "paragraphs": [
-            "Structure your daily practice using our verified three-tier system:",
-            "Level 1: NCERT textbook and Exemplar problems to build bulletproof fundamentals.",
-            "Level 2: Standard coaching module sheets with single-correct and numerical type questions.",
-            "Level 3: Last 15 years' JEE Advanced multi-correct and matrix-match problems under strict timer constraints."
-          ]
-        },
-        {
-          "heading": "3. The 'Mistake Notebook' Discipline",
-          "paragraphs": [
-            "Top rankers don't solve twice as many questions as average students \u2014 they make half as many repeated mistakes. Maintain a physical A4 notebook strictly partitioned into Calculation Slips, Conceptual Misunderstandings, and Question Misreads.",
-            "Review this notebook every Sunday night before your mock test. Eliminating 4 silly mistakes per paper boosts your score by 20 marks \u2014 often the difference between a top-5 IIT branch and missing out entirely."
-          ]
-        },
-        {
-          "heading": "4. Chemistry: The Silent Rank Decider",
-          "paragraphs": [
-            "Physics and Mathematics determine selection, but Chemistry determines your All India Rank. Inorganic Chemistry requires line-by-line NCERT absorption \u2014 treat exceptions, trends, and laboratory tests as non-negotiable memory anchors.",
-            "For Organic Chemistry, focus on reaction mechanisms and stereochemistry pathways rather than memorizing isolated end products."
-          ]
-        },
-        {
-          "heading": "5. Time-Boxed Mock Tests & Analysis Ratios",
-          "paragraphs": [
-            "Taking a 3-hour mock test without 3 hours of subsequent question-by-question analysis is a wasted opportunity. Categorize every unattempted or wrong question into: 'Knew but ran out of time', 'Guessed incorrectly', and 'Concept unknown'.",
-            "This diagnostic feedback loop is the heartbeat of our rank-building program at Vijay Nagar."
-          ]
-        }
-      ],
-      "image": "/blog-images/iitjee-tips.png"
+      "image": "/blog-images/iitjee-tips.png",
+      "bgColor": "bg-slate-200"
     },
     {
       "id": 2,
       "category": "NEET",
       "readTime": "8 MIN",
       "title": "How to Crack NEET in Your First Attempt",
-      "snippet": "A framework used by our top NEET rankers, broken down into high-yield weekly cycles.",
+      "snippet": "A framework used by 4 of our AIR<3000 NEET rankers, broken down into weekly cycles.",
       "date": "05 Jan 2026",
-      "author": "Dr. Sneha Verma",
-      "authorRole": "Senior NEET Mentor \u00b7 MBBS",
-      "bgColor": "bg-blue-100",
-      "keyTakeaways": [
-        "Aim for a 360/360 in Biology by memorizing NCERT diagrams, summaries, and scientist bios.",
-        "Overcome Physics anxiety by focusing on high-weightage topics like Modern Physics & Optics.",
-        "Practice on physical OMR sheets weekly to eliminate fatal bubbling and sequence errors.",
-        "Adopt a 3-pass question paper attempt strategy on exam day."
-      ],
-      "content": [
-        {
-          "heading": "1. Biology: The 360/360 Non-Negotiable Standard",
-          "paragraphs": [
-            "With NEET cutoffs soaring, scoring anything less than 340+ in Biology severely restricts government medical college seats. NCERT is not just a reference book; it is the question bank.",
-            "Pay special attention to diagram labels, introductory scientist biographies, and summary paragraphs at the end of each chapter. Over 95% of questions in Botany and Zoology directly mirror NCERT phrasing."
-          ]
-        },
-        {
-          "heading": "2. Conquering Physics Anxiety for Medical Students",
-          "paragraphs": [
-            "Most NEET aspirants struggle with Physics due to basic mathematical disconnects. Break this barrier by mastering Basic Math (Calculus, Vectors, Graphs) in week one.",
-            "Target high-yield, high-accuracy units first: Modern Physics, Optics, Thermal Physics, and Current Electricity. These four units alone contribute 50-60 marks with relatively direct formula applications."
-          ]
-        },
-        {
-          "heading": "3. Physical OMR Sheet Practice",
-          "paragraphs": [
-            "Digital mock tests are great for analytics, but NEET is strictly pen-and-paper. At least once a week, sit with a printed OMR sheet and bubble answers in real time.",
-            "Practice bubbling after every completed subject section (e.g. all Biology first) rather than question-by-question or all at the very end. This eliminates sequence shift catastrophes."
-          ]
-        },
-        {
-          "heading": "4. The 3-Pass Exam Room Strategy",
-          "paragraphs": [
-            "Pass 1 (0 to 60 mins): Solve all direct, memory-based Biology and Chemistry questions.",
-            "Pass 2 (60 to 130 mins): Solve standard Physics calculation questions and remaining Chemistry numericals.",
-            "Pass 3 (130 to 180 mins): Tackle lengthy calculations, double-check tricky assertions, and finalize OMR fills with 10 minutes reserved for contingency."
-          ]
-        }
-      ],
-      "image": "/blog-images/neet-crack.png"
+      "image": "/blog-images/neet-crack.png",
+      "bgColor": "bg-blue-100"
     },
     {
       "id": 3,
       "category": "CCG",
       "readTime": "5 MIN",
       "title": "What Is the CCG Program? A Complete Guide",
-      "snippet": "If your child is exploring commerce, management, law or multidisciplinary careers, this integrated program is built for them.",
+      "snippet": "If your child is undecided between commerce, science or humanities, this new integrated program is built for them.",
       "date": "28 Dec 2025",
-      "author": "Mr. Arjun Deshmukh",
-      "authorRole": "Program Director \u00b7 IIM Indore Alumnus",
-      "bgColor": "bg-amber-100",
-      "keyTakeaways": [
-        "CCG blends Quantitative Aptitude, Logical Reasoning, Verbal Ability & Applied Economics.",
-        "Direct preparation for IPMAT (IIM Indore/Rohtak/Ranchi), CUET, CLAT & SAT.",
-        "Starting in Class 9 or 10 provides a 3x compounding advantage in aptitude competitions.",
-        "Designed to run harmoniously alongside regular CBSE and State Board school curriculums."
-      ],
-      "content": [
-        {
-          "heading": "1. Moving Beyond the Binary of Traditional Streams",
-          "paragraphs": [
-            "For decades, parents in central India felt forced into an all-or-nothing choice between Engineering and Medicine. Today, premier national programs like IIM Indore's 5-Year Integrated Program in Management (IPMAT), top law universities (NLUs via CLAT), and Central Universities via CUET offer exceptional career trajectories.",
-            "The CCG (Commerce, Corporate & General Aptitude) Program at Best Solution is our proprietary curriculum designed specifically to prepare students for these modern high-prestige admissions."
-          ]
-        },
-        {
-          "heading": "2. Four Core Pillars of the Curriculum",
-          "paragraphs": [
-            "Quantitative Aptitude: Number systems, arithmetic progression, combinatorics, and data interpretation taught with high-speed mental math techniques.",
-            "Verbal Ability & Reading Comprehension: Critical reasoning, vocabulary in context, grammar mechanics, and speed reading protocols.",
-            "Logical & Analytical Reasoning: Puzzles, syllogisms, linear arrangements, and critical decision-making sets.",
-            "General Awareness & Business Fundamentals: Current affairs, macroeconomics, and commercial awareness."
-          ]
-        },
-        {
-          "heading": "3. The Early-Starter Advantage",
-          "paragraphs": [
-            "Aptitude cannot be crammed in 2 months after 12th board exams. Students who begin foundation training in Class 9 or 10 build neuro-pathways for fast analytical thinking.",
-            "They routinely score in the 99th percentile because problem-solving has become second nature rather than an eleventh-hour struggle."
-          ]
-        }
-      ],
-      "image": "/blog-images/ccg-program.png"
+      "image": "/blog-images/ccg-program.png",
+      "bgColor": "bg-amber-100"
     },
     {
       "id": 4,
       "category": "BOARDS",
       "readTime": "7 MIN",
-      "title": "Board Exam Strategy 2026 \u2014 The 90+% Roadmap",
-      "snippet": "Practical, weekly milestones for Class 10 & 12 board students, tuned for CBSE and MP Board.",
+      "title": "Board Exam Strategy 2026 — The 90+% Roadmap",
+      "snippet": "Practical, weekly milestones for Class 12 board students, tuned for CBSE and MP Board.",
       "date": "20 Dec 2025",
-      "author": "Prof. Neeraj Mishra",
-      "authorRole": "Senior Academic Lead \u00b7 IIT BHU",
-      "bgColor": "bg-rose-100",
-      "keyTakeaways": [
-        "Competitive MCQs and Board subjective answers require fundamentally different presentation skills.",
-        "Step-wise marks in Physics, Chemistry, and Math can salvage 15+ marks in every paper.",
-        "Do not leave English and optional subjects until the final 10 days before exams.",
-        "Solve 5 full previous-year papers with strict word count and margin guidelines."
-      ],
-      "content": [
-        {
-          "heading": "1. Bridging the MCQ vs. Subjective Presentation Gap",
-          "paragraphs": [
-            "Students preparing for JEE/NEET often lose silly marks in board exams not due to lack of knowledge, but poor presentation. Competitive exams reward speed; board examiners reward step-by-step clarity, neat diagrams, and explicit state equations.",
-            "Always state the governing formula, define variables, show unit cancellations, and box final answers with appropriate SI units."
-          ]
-        },
-        {
-          "heading": "2. The Step-Marking Treasure Hunt",
-          "paragraphs": [
-            "In both CBSE and MP Board evaluation rubrics, every long-answer question has allocated sub-marks for: (a) Formula statement, (b) Circuit/Ray diagram, (c) Substitution, (d) Final computation.",
-            "Even if numerical calculations go wrong in the final step, a cleanly presented derivation guarantees 80-90% of the available question marks."
-          ]
-        },
-        {
-          "heading": "3. The 45-Day Countdown Schedule",
-          "paragraphs": [
-            "Days 45 to 30: Complete all NCERT back-of-chapter exercises and exemplar proofs.",
-            "Days 30 to 15: Solve 5 official sample question papers published by the respective board under strict 3-hour exam timing.",
-            "Days 15 to 1: Focus on revision of definitions, named reactions in Chemistry, ray diagrams in Physics, and theorem proofs in Mathematics."
-          ]
-        }
-      ],
-      "image": "/blog-images/board-exam.png"
+      "image": "/blog-images/board-exam.png",
+      "bgColor": "bg-rose-100"
     },
     {
       "id": 5,
       "category": "OLYMPIAD",
       "readTime": "5 MIN",
       "title": "Why Early Olympiad Coaching Actually Matters",
-      "snippet": "Olympiads aren't about extra syllabus \u2014 they build a reasoning core that IIT/NEET exploit later.",
+      "snippet": "Olympiads aren't about extra syllabus — they build a reasoning core that IIT/NEET exploit later.",
       "date": "10 Dec 2025",
-      "author": "Ms. Kavya Iyer",
-      "authorRole": "Olympiad Division Head \u00b7 CMI, RMO Mentor",
-      "bgColor": "bg-emerald-100",
-      "keyTakeaways": [
-        "Olympiad training replaces superficial memorization with rigorous mathematical reasoning.",
-        "Competitions like PRMO, RMO, NSEJS and INPhO provide early national benchmark exposure.",
-        "Students trained in Olympiad problem-solving find Class 11-12 transition smooth and natural.",
-        "Builds psychological resilience against complex, multi-layered problem statements."
-      ],
-      "content": [
-        {
-          "heading": "1. The Truth About School Marks vs. True Problem Solving",
-          "paragraphs": [
-            "Scoring 98% in middle school often creates a false sense of security. School exams reward syllabus coverage and formula reproduction, but competitive exams test unstructured problem solving.",
-            "Science and Math Olympiads (like PRMO/IOQM and NSEJS) present questions where no standard template works. Students learn to sit with an unsolved problem for 30 minutes, testing hypotheses, drawing representations, and discovering elegance."
-          ]
-        },
-        {
-          "heading": "2. Smooth Transition into Senior Competitive Coaching",
-          "paragraphs": [
-            "The biggest drop in student confidence occurs in Class 11, when syllabus difficulty increases by 400%. Students who have experienced Olympiad coaching in Class 7, 8, or 9 breeze through this transition because their analytical stamina is already conditioned.",
-            "They understand that feeling challenged is part of the learning curve, not a sign of failure."
-          ]
-        },
-        {
-          "heading": "3. Prestigious Credentials & Global Recognition",
-          "paragraphs": [
-            "Olympiad stage qualifiers (RMO, INPhO, INChO, KVPY) earn direct recognition from IISc Bangalore, CMI, ISI, and international university admissions boards.",
-            "At Best Solution, our specialized Olympiad batches mentor students from Class 6 onwards with curated problem sets from global competitions."
-          ]
-        }
-      ],
-      "image": "/blog-images/olympiad.png"
+      "image": "/blog-images/olympiad.png",
+      "bgColor": "bg-emerald-100"
     },
     {
       "id": 6,
@@ -239,53 +57,15 @@
       "title": "5 Habits to Beat Exam Stress (That Actually Work)",
       "snippet": "Written with our in-house counsellor for parents and students juggling boards + entrance exams.",
       "date": "01 Dec 2025",
-      "author": "Ms. Ritu Jain",
-      "authorRole": "Head of Student Counselling \u00b7 MA Psychology",
-      "bgColor": "bg-violet-100",
-      "keyTakeaways": [
-        "Adopt the 50-10 study rhythm with zero-screen rest intervals.",
-        "Physical movement and 7 hours of consistent sleep directly correlate with memory consolidation.",
-        "Normalize mock test fluctuations: score dips are diagnostics, not character verdicts.",
-        "Practice the 4-7-8 breathing technique before opening question papers."
-      ],
-      "content": [
-        {
-          "heading": "1. The 50-10 Focus Cycle (Zero-Screen Rest)",
-          "paragraphs": [
-            "Human working memory peaks for 45 to 50 minutes before neural fatigue sets in. Study in focused 50-minute blocks followed by a 10-minute break.",
-            "Crucially, your break must not involve scrolling social media or watching short-form videos \u2014 which overstimulates dopamine and wipes working memory. Instead, stretch, hydrate, or look out a window."
-          ]
-        },
-        {
-          "heading": "2. Sleep as a Cognitive Multiplier",
-          "paragraphs": [
-            "Pulling all-nighters right before tests produces a 20-30% drop in cognitive processing speed. During Stage 3 and REM sleep, the brain's hippocampus transfers short-term study memories into permanent neural networks.",
-            "Protect a non-negotiable 7-hour sleep window, particularly in the final 60 days leading up to competitive exams."
-          ]
-        },
-        {
-          "heading": "3. The Pre-Exam Grounding Routine",
-          "paragraphs": [
-            "When exam stress triggers adrenaline surges, heart rate spikes and working memory narrows. Use the 4-7-8 breathing technique: inhale through the nose for 4 counts, hold for 7 counts, and exhale slowly through the mouth for 8 counts.",
-            "Doing this three times immediately resets the parasympathetic nervous system and restores calm problem-solving focus."
-          ]
-        },
-        {
-          "heading": "4. A Word for Parents: Reframe Mock Results",
-          "paragraphs": [
-            "Mock test scores will fluctuate. Treat low scores as valuable diagnostics pointing out exact weak concepts while there is still time to fix them. Celebrate effort and discipline over rank numbers.",
-            "Our counselling desk at Best Solution is always open for one-on-one student and parent mentorship sessions."
-          ]
-        }
-      ],
-      "image": "/blog-images/exam-stress.png"
+      "image": "/blog-images/exam-stress.png",
+      "bgColor": "bg-violet-100"
     },
     {
       "id": 7,
       "category": "IIT-JEE",
       "readTime": "7 MIN",
-      "title": "Time Management Hacks for JEE Aspirants \u2014 The 16-Hour Formula",
-      "snippet": "How our toppers split 16 waking hours between school, self-study, coaching and rest \u2014 without burning out before Mains.",
+      "title": "Time Management Hacks for JEE Aspirants — The 16-Hour Formula",
+      "snippet": "How our toppers split 16 waking hours between school, self-study, coaching and rest — without burning out before Mains.",
       "date": "15 Feb 2026",
       "image": "/blog-images/time-management.png",
       "bgColor": "bg-orange-100"
@@ -294,8 +74,8 @@
       "id": 8,
       "category": "IIT-JEE",
       "readTime": "9 MIN",
-      "title": "Physics Shortcuts That Actually Work in JEE \u2014 20 Tricks from Our Faculty",
-      "snippet": "Dimensional analysis, energy conservation tricks, and symmetry arguments that save 5\u20138 minutes per paper. Compiled by our senior physics faculty.",
+      "title": "Physics Shortcuts That Actually Work in JEE — 20 Tricks from Our Faculty",
+      "snippet": "Dimensional analysis, energy conservation tricks, and symmetry arguments that save 5–8 minutes per paper. Compiled by our senior physics faculty.",
       "date": "22 Feb 2026",
       "image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop",
       "bgColor": "bg-sky-100"
@@ -314,7 +94,7 @@
       "id": 10,
       "category": "NEET",
       "readTime": "10 MIN",
-      "title": "Organic Chemistry Made Easy \u2014 The Reaction Map Method",
+      "title": "Organic Chemistry Made Easy — The Reaction Map Method",
       "snippet": "Stop rote-learning 200 reactions. Our chemistry faculty's visual 'reaction map' connects named reactions into one logical flowchart.",
       "date": "10 Mar 2026",
       "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop",
@@ -329,6 +109,166 @@
       "date": "18 Mar 2026",
       "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop",
       "bgColor": "bg-red-100"
+    }
+  ],
+  "news": [
+    {
+      "id": "n1",
+      "category": "JEE",
+      "tag": "BREAKING",
+      "title": "JEE Advanced 2026 Results Declared — Shubham Kumar Bags AIR 1 with 330/360",
+      "snippet": "IIT Roorkee declared JEE Advanced 2026 results on June 1. Shubham Kumar from IIT Delhi zone topped with 330/360. Arohi Deshpande secured top female rank at CRL 77. A total of 56,880 out of 1,79,694 candidates qualified.",
+      "date": "01 Jun 2026",
+      "source": "jeeadv.ac.in",
+      "sourceUrl": "https://jeeadv.ac.in",
+      "image": "/news-images/jee-advanced-results.png",
+      "isHot": true
+    },
+    {
+      "id": "n2",
+      "category": "NEET",
+      "tag": "COUNSELLING",
+      "title": "NEET UG 2026 AIQ Counselling Round 1 — Registration Open Till Aug 12",
+      "snippet": "MCC has opened Round 1 registration for All India Quota counselling. Choice filling is live since Aug 7. Round 1 seat allotment results will be announced on August 17, 2026. Ensure all documents are ready for reporting.",
+      "date": "07 Aug 2026",
+      "source": "mcc.nic.in",
+      "sourceUrl": "https://mcc.nic.in",
+      "image": "/news-images/neet-results.png",
+      "isHot": true
+    },
+    {
+      "id": "n3",
+      "category": "NEET",
+      "tag": "RESULTS",
+      "title": "NEET 2026 Re-Exam Results Out — 11.21 Lakh Candidates Qualify",
+      "snippet": "After the May 3 exam was cancelled due to paper leak allegations, the re-exam was held on June 21. NTA declared results on July 16. General category qualifying range: 715–213 marks. Download scorecards from neet.nta.nic.in.",
+      "date": "16 Jul 2026",
+      "source": "neet.nta.nic.in",
+      "sourceUrl": "https://neet.nta.nic.in",
+      "image": "/news-images/neet-results.png",
+      "isHot": false
+    },
+    {
+      "id": "n4",
+      "category": "JEE",
+      "tag": "ADMISSION",
+      "title": "CSAB Special Round 2 Seat Allotment on Aug 12 — Physical Reporting Aug 13–18",
+      "snippet": "The final phase of JEE-based admissions is underway. CSAB special round 2 allotment is scheduled for August 12. Students must complete physical reporting at allotted NIT/IIIT/GFTI institutes between August 13 and 18.",
+      "date": "10 Aug 2026",
+      "source": "csab.nic.in",
+      "sourceUrl": "https://csab.nic.in",
+      "image": "/news-images/jee-advanced-results.png",
+      "isHot": true
+    },
+    {
+      "id": "n5",
+      "category": "BOARDS",
+      "tag": "RESULTS",
+      "title": "CBSE Class 12 Results 2026 — 85.20% Pass Rate, Girls Outshine Boys Again",
+      "snippet": "CBSE declared Class 12 results on May 13. Overall pass percentage: 85.20%. Female students achieved 88.86% vs 82.13% for male students. Trivandrum region topped with 95.62% pass rate. Download marksheets via DigiLocker.",
+      "date": "13 May 2026",
+      "source": "cbse.gov.in",
+      "sourceUrl": "https://cbse.gov.in",
+      "image": "/news-images/cbse-results.png",
+      "isHot": false
+    },
+    {
+      "id": "n6",
+      "category": "NEET",
+      "tag": "SUPREME COURT",
+      "title": "SC Monitors NTA Reform — NEET May Shift to Computer-Based Testing",
+      "snippet": "The Supreme Court is overseeing NTA restructuring after the 2026 paper leak. The Centre has proposed a multi-layered security architecture. A Nandan Nilekani-led task force is evaluating a phased shift to CBT mode for NEET. Next hearing: August 19.",
+      "date": "05 Aug 2026",
+      "source": "livelaw.in",
+      "sourceUrl": "https://livelaw.in",
+      "image": "/news-images/nta-reform.png",
+      "isHot": true
+    },
+    {
+      "id": "n7",
+      "category": "BOARDS",
+      "tag": "UPDATE",
+      "title": "CBSE Class 10 Second Board Exam Results Declared on July 18 Under NEP Format",
+      "snippet": "In line with NEP 2020, CBSE introduced two board exams for Class 10 in 2026. The second exam was held May 15–21. Final results (best of two) were declared on July 18. Revaluation and photocopy applications are open through August.",
+      "date": "18 Jul 2026",
+      "source": "cbse.gov.in",
+      "sourceUrl": "https://cbse.gov.in",
+      "image": "/news-images/cbse-results.png",
+      "isHot": false
+    },
+    {
+      "id": "n8",
+      "category": "JEE",
+      "tag": "UPCOMING",
+      "title": "JEE Main 2027 Registration Expected Oct–Nov 2026 — Start Preparing Now",
+      "snippet": "NTA has not yet released the official notification for JEE Main 2027, but based on previous years, registration for Session 1 (January) is expected to open in October–November 2026. The exam format is expected to remain the same.",
+      "date": "08 Aug 2026",
+      "source": "jeemain.nta.nic.in",
+      "sourceUrl": "https://jeemain.nta.nic.in",
+      "image": "/news-images/jee-main-2027.png",
+      "isHot": false
+    },
+    {
+      "id": "n9",
+      "category": "CUET",
+      "tag": "RESULTS",
+      "title": "CUET UG 2026 Results Declared — Scorecards Available on NTA Portal",
+      "snippet": "NTA declared CUET UG 2026 results on June 23. The exam was held from May 11 to June 7. Final answer keys were released on June 21. A re-exam was conducted June 6–7 for candidates affected by technical glitches on May 30.",
+      "date": "23 Jun 2026",
+      "source": "cuet.nta.nic.in",
+      "sourceUrl": "https://cuet.nta.nic.in",
+      "image": "/news-images/cbse-results.png",
+      "isHot": false
+    },
+    {
+      "id": "n10",
+      "category": "NEET",
+      "tag": "CUTOFF",
+      "title": "NEET 2026 Category-Wise Cutoff: General 715–213, OBC/SC/ST 212–177",
+      "snippet": "NTA released qualifying cutoffs for NEET UG 2026. General/EWS at 50th percentile (715–213 marks), OBC/SC/ST at 40th percentile (212–177 marks). Note: Admission to top GMCs typically requires 600+ marks depending on state and category.",
+      "date": "16 Jul 2026",
+      "source": "neet.nta.nic.in",
+      "sourceUrl": "https://neet.nta.nic.in",
+      "image": "/news-images/neet-cutoff.png",
+      "isHot": false
+    }
+  ],
+  "newspaperCuttings": [
+    {
+      "id": "nc1",
+      "image": "/news-images/jee-advanced-results.png",
+      "caption": "JEE Advanced 2026 — Shubham Kumar AIR 1 (330/360)",
+      "source": "Times of India, 2 Jun 2026"
+    },
+    {
+      "id": "nc2",
+      "image": "/news-images/neet-results.png",
+      "caption": "NEET UG 2026 Re-Exam Results — 11.21 Lakh Qualify",
+      "source": "Dainik Jagran, 17 Jul 2026"
+    },
+    {
+      "id": "nc3",
+      "image": "/news-images/cbse-results.png",
+      "caption": "CBSE Class 12 Results 2026 — 85.20% Pass Rate",
+      "source": "Hindustan Times, 14 May 2026"
+    },
+    {
+      "id": "nc4",
+      "image": "/news-images/nta-reform.png",
+      "caption": "Supreme Court Orders NTA Overhaul — NEET May Go CBT",
+      "source": "The Hindu, 6 Aug 2026"
+    },
+    {
+      "id": "nc5",
+      "image": "/news-images/neet-cutoff.png",
+      "caption": "NEET 2026 Cutoff — General 213, OBC/SC/ST 177",
+      "source": "Navbharat Times, 17 Jul 2026"
+    },
+    {
+      "id": "nc6",
+      "image": "/news-images/jee-main-2027.png",
+      "caption": "JEE Main 2027 Registration Likely Oct–Nov 2026",
+      "source": "Times of India, 9 Aug 2026"
     }
   ]
 }

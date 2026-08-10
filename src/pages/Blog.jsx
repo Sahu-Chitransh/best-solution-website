@@ -102,8 +102,6 @@ export default function Blog() {
   const tickerRef     = useScrollReveal();
   const filterRef     = useScrollReveal();
   const cuttingsRef   = useScrollReveal();
-  const tableRef1     = useScrollReveal();
-  const tableRef2     = useScrollReveal();
   const linksRef      = useScrollReveal();
 
   /* Hot news for the ticker */
@@ -452,7 +450,7 @@ export default function Blog() {
 
           {/* NEET Cutoff Table */}
           {(activeNewsCat === 'ALL' || activeNewsCat === 'NEET') && !searchQuery && (
-            <div ref={tableRef1} className="mt-12 rounded-2xl border border-black/8 bg-white overflow-hidden opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+            <div className="mt-12 rounded-2xl border border-black/8 bg-white overflow-hidden">
               <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-4">
                 <div className="flex items-center gap-2">
                   <TrendingUp size={18} className="text-white" />
@@ -494,7 +492,7 @@ export default function Blog() {
 
           {/* JEE Advanced Cutoff Table */}
           {(activeNewsCat === 'ALL' || activeNewsCat === 'JEE') && !searchQuery && (
-            <div ref={tableRef2} className="mt-8 rounded-2xl border border-black/8 bg-white overflow-hidden opacity-0 translate-y-8 transition-all duration-1000 ease-out">
+            <div className="mt-8 rounded-2xl border border-black/8 bg-white overflow-hidden">
               <div className="bg-gradient-to-r from-orange-500 to-red-600 px-6 py-4">
                 <div className="flex items-center gap-2">
                   <TrendingUp size={18} className="text-white" />
