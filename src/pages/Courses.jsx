@@ -133,12 +133,6 @@ export default function Courses() {
                   {p.enrollLabel}
                   <ArrowRight size={16} />
                 </Link>
-                <Link
-                  to="/fees"
-                  className="inline-flex items-center rounded-full border border-black/15 bg-white text-[#0A0A0A] px-6 py-3 text-sm font-semibold hover:bg-slate-50 transition-colors"
-                >
-                  See fee structure
-                </Link>
               </div>
             </div>
           </div>

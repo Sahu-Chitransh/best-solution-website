@@ -21,17 +21,15 @@
    - [Homepage Courses](#56-homepage-courses)
    - [Courses (Full)](#57-courses-full)
    - [Faculty](#58-faculty)
-   - [Timetable](#59-timetable)
-   - [Fees](#510-fees)
-   - [Admissions](#511-admissions)
-   - [Testimonials](#512-testimonials)
-   - [Results](#513-results)
-   - [Blog](#514-blog)
-   - [Contact](#515-contact)
-   - [Brochure](#516-brochure)
-   - [About](#517-about)
-   - [Instagram Gallery](#518-instagram-gallery)
-   - [Site Settings](#519-site-settings)
+   - [Admissions](#59-admissions)
+   - [Testimonials](#510-testimonials)
+   - [Results](#511-results)
+   - [Blog](#512-blog)
+   - [Contact](#513-contact)
+   - [Brochure](#514-brochure)
+   - [About](#515-about)
+   - [Instagram Gallery](#516-instagram-gallery)
+   - [Site Settings](#517-site-settings)
 6. [Common Tasks (Step-by-Step)](#6-common-tasks-step-by-step)
 7. [Important Rules and Warnings](#7-important-rules-and-warnings)
 8. [Troubleshooting](#8-troubleshooting)
@@ -66,8 +64,6 @@ After logging in, you'll see a **left sidebar** with all the content sections (c
 | Homepage Courses | Course preview cards on homepage |
 | Courses (Full) | The full `/courses` page with all program details |
 | Faculty | All teacher profiles on the `/faculty` page |
-| Timetable | Batch schedule table on the `/timetable` page |
-| Fees | Fee structure table on the `/fees` page |
 | Admissions | Steps, documents, and dates on the `/admissions` page |
 | Testimonials | Student reviews on the `/testimonials` page |
 | Results | JEE and NEET result photos on the `/results` page |
@@ -345,58 +341,7 @@ All uploaded images go to the `public/images/` folder in the website's repositor
 
 ---
 
-### 5.9 Timetable
-
-**What it controls:** The batch schedule table on the `/timetable` page.
-
-**Fields per batch:**
-
-| Field | Example |
-|---|---|
-| **Batch** | `JEE Advanced — Grade 12` |
-| **Days** | `Mon — Sat` |
-| **Time** | `6:00 AM - 9:30 AM` |
-| **Room** | `Hall A` |
-
-**Example — Adding a new batch:**
-1. Click **Timetable** then **Timetable**
-2. Click **"Add Batches"**
-3. Fill in: Batch = `Foundation — Grade 9`, Days = `Mon, Wed, Fri`, Time = `4:00 PM - 6:00 PM`, Room = `Hall F`
-4. Click **Publish**
-
----
-
-### 5.10 Fees
-
-**What it controls:** The fee structure table on the `/fees` page.
-
-**Top-level fields:**
-
-| Field | Example |
-|---|---|
-| **Session Year** | `2026-27` |
-| **Note** | Footnote text below the table |
-
-**Fields per fee row:**
-
-| Field | Example |
-|---|---|
-| **Program** | `IIT-JEE (Main + Adv)` |
-| **Registration** | `Rs.2,000` |
-| **Tuition** | `Rs.75,000` |
-| **Installments** | `3 x Rs.25,000` |
-| **Scholarship** | `Up to 90%` |
-
-**Example — Updating fees for next session:**
-1. Click **Fees** then **Fees**
-2. Change **Session Year** to `2027-28`
-3. Update the tuition amounts in each row
-4. Update the **Note** if needed
-5. Click **Publish**
-
----
-
-### 5.11 Admissions
+### 5.9 Admissions
 
 **What it controls:** The admissions process page at `/admissions`.
 
@@ -671,60 +616,12 @@ node scripts/scrape-instagram.js --handle @bestsolutionindore --limit 12 --headl
 
 ## 6. Common Tasks (Step-by-Step)
 
-### Task 1: Update fees for the new session
+### Task 1: Update session year for a new academic year
 
-1. Go to **Fees** then **Fees**
-2. Change **Session Year** from `2026-27` to `2027-28`
-3. Update each fee row's amounts
-4. Update the **Note** if any scholarship rules changed
-5. Click **Publish**
-6. Go to **Site Settings** and update **Session Year** to `2027-28`
-7. Click **Publish**
-8. Go to **Admissions** and update **Session Year** to `2027-28`
-9. Update the **Key Dates** with new dates
-10. Click **Publish**
-
-### Task 2: Add new JEE/NEET results after exams
-
-1. Go to **Results** then **Results**
-2. In the **JEE** section (or **NEET**), click **"Add"**
-3. Upload the student's result card photo
-4. Repeat for each student
-5. Update the **Stats** section with new numbers
-6. Click **Publish**
-
-### Task 3: Add a new Instagram post
-
-1. Save the image from Instagram to your computer
-2. Go to **Instagram Gallery** then **Instagram Gallery**
-3. Click **"Add Posts"**
-4. Upload the saved image
-5. Copy-paste the caption from Instagram
-6. Copy-paste the post URL
-7. Enter the date in `YYYY-MM-DD` format
-8. Toggle **"Featured on Homepage"** ON if you want it on the homepage
-9. Click **Publish**
-
-### Task 4: Change the phone number everywhere
-
-1. Go to **Site Settings** and change **Phone** and **Phone Link**
+1. Go to **Site Settings** and update **Session Year** to `2027-28`
 2. Click **Publish**
-3. Go to **Contact** and change the phone in the **Phones** list
-4. Click **Publish**
-
-### Task 5: Add a new faculty member
-
-1. Go to **Faculty** then **Faculty**
-2. Click **"Add Members"**
-3. Fill in all fields (see section 5.8 for details)
-4. Click **Publish**
-
-### Task 6: Update the timetable for a new session
-
-1. Go to **Timetable** then **Timetable**
-2. Edit existing batches (change times, rooms, days)
-3. Or click **"Add Batches"** to add new ones
-4. Delete old batches by clicking the **x** icon
+3. Go to **Admissions** and update **Session Year** to `2027-28`
+4. Update the **Key Dates** with new dates
 5. Click **Publish**
 
 ### Task 7: Upload a new brochure
@@ -764,7 +661,7 @@ node scripts/scrape-instagram.js --handle @bestsolutionindore --limit 12 --headl
 2. **Changes take ~60 seconds** to appear on the live website after publishing.
 3. **Keep image sizes small** (under 2 MB). Large images slow down the website.
 4. **Do not delete all items** from a list — always keep at least one. Deleting all items may cause the page to break.
-5. **Session Year appears in multiple places.** When updating for a new session, update it in: Fees, Admissions, and Site Settings.
+5. **Session Year appears in multiple places.** When updating for a new session, update it in: Admissions and Site Settings.
 6. **Phone number appears in multiple places.** Update it in both Site Settings and Contact.
 
 ---
