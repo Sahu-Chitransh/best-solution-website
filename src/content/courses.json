@@ -1,75 +1,49 @@
 {
   "programs": [
     {
-      "slug": "iit-jee",
-      "grade": "Class 11 – 12 + Droppers · 1 – 2 Year Program",
-      "title": "IIT-JEE (Main + Advanced)",
-      "tagline": "Rank-focused. Concept-first.",
-      "subjects": ["Physics", "Chemistry", "Mathematics"],
-      "features": [
-        "Weekly full-length mock tests aligned with JEE pattern",
-        "Small batches of 25 — 30 students",
-        "Doubt-clearing sessions daily 6—8 PM",
-        "Personal mentor for every enrolled student"
-      ],
-      "fee": "From ₹75,000 / year",
-      "color": "#D32F2F",
-      "colorDark": "#B71C1C",
-      "enrollLabel": "Enroll in IIT-JEE",
-      "enrollHref": "/admissions"
-    },
-    {
-      "slug": "neet",
-      "grade": "Class 11 – 12 + Droppers · 1 – 2 Year Program",
-      "title": "NEET (Medical)",
-      "tagline": "White-coat begins here.",
-      "subjects": ["Biology", "Physics", "Chemistry"],
-      "features": [
-        "NCERT-mastery framework by senior faculty",
-        "Diagram lab & NEET biology practicals",
-        "Weekly NEET-pattern MCQ marathon",
-        "Rank-improvement guarantee for droppers"
-      ],
-      "fee": "From ₹68,000 / year",
+      "slug": "nurture",
+      "title": "Nurture Section",
+      "grade": "Class 6th, 7th & 8th",
+      "exams": ["NSTSE", "Olympiad"],
+      "tagline": "Building strong roots and curiosity from an early age.",
       "color": "#2E7D32",
-      "colorDark": "#1B5E20",
-      "enrollLabel": "Enroll in NEET",
-      "enrollHref": "/admissions"
+      "colorDark": "#1B5E20"
     },
     {
-      "slug": "olympiads",
-      "grade": "Class 6 – 10 · Annual Program",
-      "title": "Olympiads & NTSE / KVPY",
-      "tagline": "Sharpen the champion mind, early.",
-      "subjects": ["Maths", "Science", "Reasoning"],
-      "features": [
-        "PRMO, RMO, NSO, IMO, IJSO foundation",
-        "Stage-wise mentored preparation",
-        "Puzzle-based reasoning sprints"
-      ],
-      "fee": "From ₹22,000 / year",
-      "color": "#1a1a1a",
-      "colorDark": "#0A0A0A",
-      "enrollLabel": "Enroll in Olympiads",
-      "enrollHref": "/admissions"
+      "slug": "pioneer",
+      "title": "Pioneer Section",
+      "grade": "Class 9th & 10th",
+      "exams": ["NSTSE", "Olympiad"],
+      "tagline": "Sharpening competitive instincts ahead of the curve.",
+      "color": "#AD1457",
+      "colorDark": "#880E4F"
     },
     {
-      "slug": "ccg",
-      "grade": "Class 9 – 12 · Flexible Modules",
-      "title": "CCG – Career & Competitive Guidance",
-      "tagline": "Find your track. Own the race.",
-      "subjects": ["Aptitude", "Career Mapping", "Board + Exam Blend"],
-      "features": [
-        "Integrated Board + JEE/NEET foundation",
-        "1-on-1 counselling with mentors",
-        "Aptitude & career psychometrics",
-        "Perfect for students undecided about stream"
-      ],
-      "fee": "From ₹18,000 / year",
-      "color": "#1a1a1a",
-      "colorDark": "#0A0A0A",
-      "enrollLabel": "Enroll in CCG",
-      "enrollHref": "/admissions"
+      "slug": "booster",
+      "title": "Booster Section",
+      "grade": "Class 11th & 12th",
+      "exams": ["PCM", "PCB", "Commerce"],
+      "tagline": "School-oriented preparation with board exam mastery.",
+      "color": "#F9A825",
+      "colorDark": "#F57F17"
+    },
+    {
+      "slug": "medical-explorer",
+      "title": "Medical Explorer",
+      "grade": "Class 11th, 12th & Dropper",
+      "exams": ["NEET", "CUET"],
+      "tagline": "Your journey to the white coat starts here.",
+      "color": "#D32F2F",
+      "colorDark": "#B71C1C"
+    },
+    {
+      "slug": "engineering-explorer",
+      "title": "Engineering Explorer",
+      "grade": "Class 11th, 12th & Dropper",
+      "exams": ["IIT-JEE", "BIT-SAT", "VITEEE"],
+      "tagline": "Solving problems others are afraid to face.",
+      "color": "#E65100",
+      "colorDark": "#BF360C"
     }
   ]
 }

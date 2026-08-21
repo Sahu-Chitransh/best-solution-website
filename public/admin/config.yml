@@ -127,16 +127,12 @@ collections:
             widget: "list"
             fields:
               - {label: "Slug", name: "slug", widget: "string"}
-              - {label: "Grade", name: "grade", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
+              - {label: "Grade", name: "grade", widget: "string"}
+              - {label: "Exams / Focus Areas", name: "exams", widget: "list", field: {name: "exam", label: "Exam", widget: "string"}}
               - {label: "Tagline", name: "tagline", widget: "string"}
-              - {label: "Subjects", name: "subjects", widget: "list", field: {name: "subject", label: "Subject", widget: "string"}}
-              - {label: "Features", name: "features", widget: "list", field: {name: "feature", label: "Feature", widget: "string"}}
-              - {label: "Fee", name: "fee", widget: "string"}
               - {label: "Color", name: "color", widget: "color"}
               - {label: "Color Dark", name: "colorDark", widget: "color"}
-              - {label: "Enroll Label", name: "enrollLabel", widget: "string"}
-              - {label: "Enroll Href", name: "enrollHref", widget: "string"}
 
   - name: "faculty"
     label: "Faculty"

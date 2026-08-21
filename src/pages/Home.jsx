@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Sparkles, ArrowRight, Trophy, Award, Target,
-  BookOpen, Stethoscope, GraduationCap,
+  Sparkles, ArrowRight, Sprout, Compass,
+  BookOpen, Stethoscope, Rocket,
   X, ChevronLeft, ChevronRight, Download,
 } from 'lucide-react';
 import InstagramIcon from '../components/InstagramIcon';
@@ -181,40 +181,49 @@ function Marquee() {
 /* ── Select Your Goal ── */
 const GOAL_CATEGORIES = [
   {
-    icon: Target,
-    title: 'IIT-JEE',
-    subtitle: 'Main + Advanced',
-    description: 'Comprehensive JEE preparation with problem-solving from Day 1',
-    color: 'bg-blue-50 border-blue-200 hover:border-blue-400',
-    iconColor: 'text-blue-600',
-    bgAccent: 'bg-blue-500',
+    icon: Sprout,
+    title: 'Nurture',
+    subtitle: 'Class 6–8',
+    description: 'Building strong roots and curiosity from an early age',
+    color: '#2E7D32',
+    bgClass: 'bg-green-50 border-green-200 hover:border-green-400',
+    iconClass: 'text-green-600',
+  },
+  {
+    icon: Compass,
+    title: 'Pioneer',
+    subtitle: 'Class 9–10',
+    description: 'Sharpening competitive instincts ahead of the curve',
+    color: '#AD1457',
+    bgClass: 'bg-pink-50 border-pink-200 hover:border-pink-400',
+    iconClass: 'text-pink-600',
+  },
+  {
+    icon: Rocket,
+    title: 'Booster',
+    subtitle: 'Class 11–12',
+    description: 'School-oriented prep with board exam mastery',
+    color: '#F9A825',
+    bgClass: 'bg-amber-50 border-amber-200 hover:border-amber-400',
+    iconClass: 'text-amber-600',
   },
   {
     icon: Stethoscope,
-    title: 'NEET',
-    subtitle: 'Medical Entrance',
-    description: 'Biology-intensive program with NCERT mastery and daily practice',
-    color: 'bg-green-50 border-green-200 hover:border-green-400',
-    iconColor: 'text-green-600',
-    bgAccent: 'bg-green-500',
+    title: 'Medical Explorer',
+    subtitle: 'NEET · CUET',
+    description: 'Your journey to the white coat starts here',
+    color: '#D32F2F',
+    bgClass: 'bg-red-50 border-red-200 hover:border-red-400',
+    iconClass: 'text-red-600',
   },
   {
     icon: BookOpen,
-    title: 'Foundation',
-    subtitle: 'Class 8–10',
-    description: 'Early start program building strong fundamentals for competitive exams',
-    color: 'bg-amber-50 border-amber-200 hover:border-amber-400',
-    iconColor: 'text-amber-600',
-    bgAccent: 'bg-amber-500',
-  },
-  {
-    icon: GraduationCap,
-    title: 'Boards',
-    subtitle: 'CBSE / State',
-    description: 'Board exam preparation with focus on conceptual clarity and scoring',
-    color: 'bg-purple-50 border-purple-200 hover:border-purple-400',
-    iconColor: 'text-purple-600',
-    bgAccent: 'bg-purple-500',
+    title: 'Engineering Explorer',
+    subtitle: 'IIT-JEE · BIT-SAT',
+    description: 'Solving problems others are afraid to face',
+    color: '#E65100',
+    bgClass: 'bg-orange-50 border-orange-200 hover:border-orange-400',
+    iconClass: 'text-orange-600',
   },
 ];
 
@@ -232,36 +241,40 @@ function GoalSelector() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
           {GOAL_CATEGORIES.map((goal, i) => {
             const Icon = goal.icon;
             return (
               <Link
                 key={i}
                 to="/courses"
-                className={`group relative rounded-2xl sm:rounded-3xl border-2 ${goal.color} p-5 sm:p-7 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bs-animate-hidden bs-stagger-${i + 1}`}
+                className={`group relative rounded-2xl sm:rounded-3xl border-2 ${goal.bgClass} p-5 sm:p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bs-animate-hidden bs-stagger-${i + 1}`}
                 data-animate
               >
                 {/* Icon */}
-                <div className={`mx-auto w-14 h-14 sm:w-16 sm:h-16 rounded-2xl ${goal.bgAccent}/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <Icon size={28} className={goal.iconColor} strokeWidth={2} />
+                <div className="mx-auto w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform"
+                  style={{ backgroundColor: `${goal.color}12` }}
+                >
+                  <Icon size={26} className={goal.iconClass} strokeWidth={2} />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg sm:text-xl font-black text-[#0A0A0A] tracking-tight">
+                <h3 className="text-base sm:text-lg font-black text-[#0A0A0A] tracking-tight leading-tight">
                   {goal.title}
                 </h3>
-                <div className="text-xs font-semibold uppercase tracking-widest text-slate-500 mt-1">
+                <div className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-slate-500 mt-1">
                   {goal.subtitle}
                 </div>
 
                 {/* Description */}
-                <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed hidden sm:block">
+                <p className="mt-2 text-xs text-slate-500 leading-relaxed hidden sm:block">
                   {goal.description}
                 </p>
 
                 {/* Arrow */}
-                <div className="mt-4 inline-flex items-center gap-1 text-xs font-bold text-[#D32F2F] uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity"
+                  style={{ color: goal.color }}
+                >
                   Explore <ArrowRight size={14} />
                 </div>
               </Link>
