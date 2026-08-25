@@ -3,6 +3,8 @@ import { MapPin, Phone, Mail, MessageSquare, Send, ArrowRight } from 'lucide-rea
 import InstagramIcon from '../components/InstagramIcon';
 import contactData from '../content/contact.json';
 
+const phoneStr = (p) => typeof p === 'string' ? p : (p && (p.phone || Object.values(p)[0])) || '';
+
 // Scroll reveal hook
 const useScrollReveal = () => {
   const ref = useRef(null);
@@ -115,10 +117,10 @@ const Contact = () => {
               CALL US
             </div>
             <div className="font-bold text-[#0A0A0A] text-base mt-1">
-              {contactData.phones?.join(' · ') || ''}
+              {contactData.phones ? contactData.phones.map(phoneStr).join(' · ') : ''}
             </div>
             <a 
-              href={`tel:+91${contactData.phones?.[0]?.replace(/\s/g, '') || ''}`} 
+              href={`tel:+91${phoneStr(contactData.phones?.[0]).replace(/\s/g, '')}`} 
               className="text-[#D32F2F] font-semibold text-sm mt-2 hover:underline inline-flex items-center gap-1"
             >
               Tap to call <ArrowRight size={14} />

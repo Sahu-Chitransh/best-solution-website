@@ -7,6 +7,8 @@ import settingsData from '../content/settings.json';
 import InstagramIcon from './InstagramIcon';
 import { FOOTER_EXPLORE } from '../data/site';
 
+const phoneStr = (p) => typeof p === 'string' ? p : (p && (p.phone || Object.values(p)[0])) || '';
+
 export default function Footer() {
   return (
     <footer className="bg-[#0A0A0A] text-white">
@@ -68,7 +70,7 @@ export default function Footer() {
               <div className="flex gap-3 text-sm text-slate-400">
                 <Phone size={16} className="text-[#D32F2F] flex-shrink-0 mt-0.5" />
                 <span className="tracking-wide">
-                  {contactData.phones?.join(' · ') || ''}
+                  {contactData.phones ? contactData.phones.map(phoneStr).join(' · ') : ''}
                 </span>
               </div>
               <div className="flex gap-3 text-sm text-slate-400">

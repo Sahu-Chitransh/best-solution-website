@@ -5,8 +5,6 @@
 
 import https from 'https';
 
-const BUILD_HOOK_URL = process.env.NETLIFY_BUILD_HOOK_URL;
-
 function httpsPost(url, payload) {
   return new Promise((resolve, reject) => {
     const parsed = new URL(url);
@@ -41,10 +39,12 @@ function httpsPost(url, payload) {
 }
 
 export const handler = async function (event) {
+  const BUILD_HOOK_URL = process.env.NETLIFY_BUILD_HOOK_URL;
   // Only allow POST requests
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ error: 'Method Not Allowed. Use POST.' }),
     };
   }
@@ -52,6 +52,7 @@ export const handler = async function (event) {
   if (!BUILD_HOOK_URL) {
     return {
       statusCode: 500,
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         error:
           'NETLIFY_BUILD_HOOK_URL is not configured in Netlify environment variables. Please add it under Site Configuration > Environment variables.',

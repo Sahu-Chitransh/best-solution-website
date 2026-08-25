@@ -66,55 +66,6 @@ collections:
             widget: "list"
             field: {name: "item", label: "Item", widget: "string"}
 
-  - name: "why-us"
-    label: "Why Us"
-    files:
-      - file: "src/content/why-us.json"
-        label: "Why Us"
-        name: "why-us"
-        fields:
-          - name: "cards"
-            label: "Cards"
-            widget: "list"
-            fields:
-              - {label: "Icon", name: "icon", widget: "select", options: ["Trophy", "Users", "Target", "ClipboardCheck", "Award", "Sparkles"]}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: "text"}
-
-  - name: "facilities"
-    label: "Facilities"
-    files:
-      - file: "src/content/facilities.json"
-        label: "Facilities"
-        name: "facilities"
-        fields:
-          - name: "items"
-            label: "Items"
-            widget: "list"
-            fields:
-              - {label: "Icon", name: "icon", widget: "select", options: ["Presentation", "BookOpen", "House", "Bus", "Coffee", "Utensils"]}
-              - {label: "Title", name: "title", widget: "string"}
-
-  - name: "homepage-courses"
-    label: "Homepage Courses"
-    files:
-      - file: "src/content/homepage-courses.json"
-        label: "Homepage Courses"
-        name: "homepage-courses"
-        fields:
-          - name: "courses"
-            label: "Courses"
-            widget: "list"
-            fields:
-              - {label: "Slug", name: "slug", widget: "string"}
-              - {label: "Grade", name: "grade", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Tagline", name: "tagline", widget: "string"}
-              - {label: "Subjects", name: "subjects", widget: "list", field: {name: "subject", label: "Subject", widget: "string"}}
-              - {label: "Price", name: "price", widget: "string"}
-              - {label: "Color", name: "color", widget: "color"}
-              - {label: "Span", name: "span", widget: "number"}
-
   - name: "courses"
     label: "Courses (Full)"
     files:
@@ -240,7 +191,8 @@ collections:
               - {label: "Read Time", name: "readTime", widget: "string"}
               - {label: "Author", name: "author", widget: "string", required: false}
               - {label: "Author Role", name: "authorRole", widget: "string", required: false}
-              - {label: "BgColor", name: "bgColor", widget: "select", options: ["bg-slate-200", "bg-blue-100", "bg-amber-50", "bg-emerald-50", "bg-rose-50", "bg-violet-50", "bg-cyan-50", "bg-orange-50"]}
+              - {label: "BgColor", name: "bgColor", widget: "select", options: ["bg-slate-200", "bg-blue-100", "bg-amber-100", "bg-rose-100", "bg-emerald-100", "bg-violet-100", "bg-orange-100", "bg-sky-100", "bg-pink-100", "bg-teal-100", "bg-red-100", "bg-amber-50", "bg-emerald-50", "bg-rose-50", "bg-violet-50", "bg-cyan-50", "bg-orange-50"]}
+              - {label: "Image", name: "image", widget: "image", required: false}
               - name: "keyTakeaways"
                 label: "Key Takeaways"
                 widget: "list"
@@ -256,6 +208,28 @@ collections:
                     label: "Paragraphs"
                     widget: "list"
                     field: {name: "paragraph", label: "Paragraph", widget: "text"}
+          - name: "news"
+            label: "News"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Tag", name: "tag", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Snippet", name: "snippet", widget: "text"}
+              - {label: "Date", name: "date", widget: "string"}
+              - {label: "Source", name: "source", widget: "string"}
+              - {label: "Source URL", name: "sourceUrl", widget: "string"}
+              - {label: "Image", name: "image", widget: "image", required: false}
+              - {label: "Is Hot", name: "isHot", widget: "boolean"}
+          - name: "newspaperCuttings"
+            label: "Newspaper Cuttings"
+            widget: "list"
+            fields:
+              - {label: "ID", name: "id", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Caption", name: "caption", widget: "string"}
+              - {label: "Source", name: "source", widget: "string"}
 
   - name: "contact"
     label: "Contact"

@@ -3,13 +3,15 @@ import { Phone, MessageCircle, X } from 'lucide-react';
 import contactData from '../content/contact.json';
 import settings from '../content/settings.json';
 
+const phoneStr = (p) => typeof p === 'string' ? p : (p && (p.phone || Object.values(p)[0])) || '';
+
 export default function FloatingSocials() {
   const [open, setOpen] = useState(false);
 
   const socials = [
     {
       label: 'WhatsApp',
-      href: `https://wa.me/91${contactData.phones?.[0]?.replace(/\s/g, '') || ''}`,
+      href: `https://wa.me/91${phoneStr(contactData.phones?.[0]).replace(/\s/g, '')}`,
       target: '_blank',
       bg: '#25D366',
       icon: (

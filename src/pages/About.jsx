@@ -79,7 +79,7 @@ export default function About() {
       {/* ============ MISSION / VALUES 2×2 ============ */}
       <section className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {aboutData.values.map((v, i) => {
+          {(aboutData.values || []).map((v, i) => {
             const Icon = iconMap[v.icon] || Award;
             return (
             <div
@@ -112,7 +112,7 @@ export default function About() {
             <div className="absolute left-[7px] md:left-[9px] top-2 bottom-2 w-[2px] bg-[#D32F2F]/40" />
 
             <div className="space-y-12 md:space-y-16">
-              {aboutData.timeline.map((item, i) => (
+              {(aboutData.timeline || []).map((item, i) => (
                 <div
                   key={item.year}
                   className={`relative bs-animate-hidden bs-stagger-${Math.min(i + 1, 6)}`}

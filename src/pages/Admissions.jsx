@@ -31,7 +31,7 @@ export default function Admissions() {
   const revealRef2 = useScrollReveal();
   const revealRef3 = useScrollReveal();
 
-  const steps = admissionsData.steps.map(step => ({
+  const steps = (admissionsData.steps || []).map(step => ({
     ...step,
     icon: iconMap[step.icon] || ClipboardList
   }));
@@ -102,15 +102,15 @@ export default function Admissions() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center border-b border-white/10 pb-3">
                   <span className="text-slate-400 text-sm">Registration opens</span>
-                  <span className="text-white font-bold font-mono text-sm">{admissionsData.keyDates.registrationOpens}</span>
+                  <span className="text-white font-bold font-mono text-sm">{admissionsData.keyDates?.registrationOpens}</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-white/10 pb-3">
                   <span className="text-slate-400 text-sm">Scholarship Test</span>
-                  <span className="text-white font-bold font-mono text-sm">{admissionsData.keyDates.scholarshipTest}</span>
+                  <span className="text-white font-bold font-mono text-sm">{admissionsData.keyDates?.scholarshipTest}</span>
                 </div>
                 <div className="flex justify-between items-center pb-1">
                   <span className="text-slate-400 text-sm">Batch commences</span>
-                  <span className="text-white font-bold font-mono text-sm">{admissionsData.keyDates.batchCommences}</span>
+                  <span className="text-white font-bold font-mono text-sm">{admissionsData.keyDates?.batchCommences}</span>
                 </div>
               </div>
             </div>

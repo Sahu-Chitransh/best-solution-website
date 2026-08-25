@@ -93,7 +93,7 @@ export default function Faculty() {
       {/* Faculty Grid */}
       <section className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {facultyDataJson.members.map((faculty, index) => (
+          {(facultyDataJson.members || []).map((faculty, index) => (
             <FacultyCard key={index} faculty={faculty} index={index} />
           ))}
         </div>

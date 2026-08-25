@@ -27,29 +27,31 @@ const HERO_GRADIENTS = [
 /* ── Full-Width Hero Banner Carousel ── */
 function HeroSlider() {
   const [current, setCurrent] = useState(0);
-  const [animKey, setAnimKey] = useState(0);
+  const slides = heroData?.slides || [];
+  const slideCount = slides.length || 1;
 
   const next = useCallback(() => {
-    setCurrent((c) => (c + 1) % heroData.slides.length);
+    setCurrent((c) => (c + 1) % slideCount);
     setAnimKey((k) => k + 1);
-  }, []);
+  }, [slideCount]);
 
   const prev = useCallback(() => {
-    setCurrent((c) => (c - 1 + heroData.slides.length) % heroData.slides.length);
+    setCurrent((c) => (c - 1 + slideCount) % slideCount);
     setAnimKey((k) => k + 1);
-  }, []);
+  }, [slideCount]);
 
   useEffect(() => {
+    if (slideCount <= 1) return;
     const id = setInterval(next, 6000);
     return () => clearInterval(id);
-  }, [next]);
+  }, [next, slideCount]);
 
   const goTo = (i) => {
     setCurrent(i);
     setAnimKey((k) => k + 1);
   };
 
-  const s = heroData.slides[current];
+  const s = slides[current] || slides[0] || {};
   const titleLines = (s.title || []).map((t) =>
     typeof t === 'string' ? t : t.line || Object.values(t)[0] || ''
   );
@@ -93,29 +95,35 @@ function HeroSlider() {
 
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link
-                to={s.primaryCta.href}
-                className="inline-flex items-center gap-2 rounded-full bg-[#D32F2F] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#B71C1C] hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-[#D32F2F]/30"
-              >
-                {s.primaryCta.label} <ArrowRight size={16} />
-              </Link>
-              <Link
-                to={s.secondaryCta.href}
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 text-white px-7 py-3.5 text-sm font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-200 backdrop-blur-sm"
-              >
-                {s.secondaryCta.label}
-              </Link>
+              {s.primaryCta?.href && (
+                <Link
+                  to={s.primaryCta.href}
+                  className="inline-flex items-center gap-2 rounded-full bg-[#D32F2F] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#B71C1C] hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-[#D32F2F]/30"
+                >
+                  {s.primaryCta.label || 'Learn More'} <ArrowRight size={16} />
+                </Link>
+              )}
+              {s.secondaryCta?.href && (
+                <Link
+                  to={s.secondaryCta.href}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/25 text-white px-7 py-3.5 text-sm font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-200 backdrop-blur-sm"
+                >
+                  {s.secondaryCta.label || 'Details'}
+                </Link>
+              )}
             </div>
 
             {/* Stat badge */}
-            <div className="mt-8 inline-flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-5 py-3">
-              <div className="text-2xl sm:text-3xl font-black text-[#D32F2F] leading-none">
-                {s.stat.value}
+            {s.stat && (
+              <div className="mt-8 inline-flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-5 py-3">
+                <div className="text-2xl sm:text-3xl font-black text-[#D32F2F] leading-none">
+                  {s.stat.value}
+                </div>
+                <div className="text-xs uppercase tracking-widest text-slate-300 max-w-[180px]">
+                  {s.stat.label}
+                </div>
               </div>
-              <div className="text-xs uppercase tracking-widest text-slate-300 max-w-[180px]">
-                {s.stat.label}
-              </div>
-            </div>
+            )}
           </div>
         </div>
 
@@ -297,7 +305,7 @@ function StatsSection() {
         description="Every number here is a real student — with a real rank and a real family who believed in the process."
       />
       <div className="mt-14 grid grid-cols-2 md:grid-cols-4 divide-x divide-black/10 border-y border-black/10">
-        {statsData.stats.map((s, i) => (
+        {(statsData?.stats || []).map((s, i) => (
           <div key={i} className={`p-6 md:p-8 bs-animate-hidden bs-stagger-${(i % 6) + 1}`} data-animate>
             <div className="text-4xl md:text-5xl font-black text-[#D32F2F] tracking-tight">
               {s.value}
@@ -478,7 +486,7 @@ function TestimonialsSection() {
           dark
         />
         <div className="mt-14 grid md:grid-cols-3 gap-5">
-          {testimonialsData.testimonials.map((t, i) => (
+          {(testimonialsData?.testimonials || []).map((t, i) => (
             <div
               key={i}
               className={`rounded-3xl bg-white/5 border border-white/10 p-7 hover:border-[#D32F2F] transition-colors bs-animate-hidden bs-stagger-${(i % 6) + 1}`}
@@ -527,7 +535,7 @@ function InstagramSection() {
   const ref = useScrollReveal();
   const getPostImage = (post) => post.image || post.fetchedImage || '';
   const getPostCaption = (post) => post.caption || post.fetchedCaption || '';
-  const featuredPosts = instagramData.posts
+  const featuredPosts = (instagramData?.posts || [])
     .filter(p => p.featured)
     .sort((a, b) => new Date(b.date) - new Date(a.date))
     .slice(0, 6);
@@ -538,18 +546,20 @@ function InstagramSection() {
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <SectionHeader
             eyebrow="Life at Best Solution"
-            title={instagramData.sectionTitle}
+            title={instagramData?.sectionTitle || "Follow Our Journey"}
             description="A glimpse into daily life, achievements, and celebrations at our coaching center."
           />
-          <a
-            href={instagramData.profileUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F77737] px-5 py-2.5 text-sm font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap self-start"
-          >
-            <InstagramIcon size={16} />
-            {instagramData.handle}
-          </a>
+          {instagramData?.profileUrl && (
+            <a
+              href={instagramData.profileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F77737] px-5 py-2.5 text-sm font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap self-start"
+            >
+              <InstagramIcon size={16} />
+              {instagramData?.handle || 'Instagram'}
+            </a>
+          )}
         </div>
 
         <div className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-4">

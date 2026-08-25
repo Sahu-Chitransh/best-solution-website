@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, Calendar, User, BookOpen, Share2, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, BookOpen, Share2, ArrowRight, CheckCircle2 } from 'lucide-react';
 import blogData from '../content/blog.json';
-import SectionHeader from '../components/SectionHeader';
 
 function useScrollReveal() {
   const ref = useRef(null);
@@ -34,7 +33,7 @@ export default function BlogPost() {
   const contentRef = useScrollReveal();
   const relatedRef = useScrollReveal();
 
-  const post = blogData.posts.find((p) => String(p.id) === String(id));
+  const post = (blogData.posts || []).find((p) => String(p.id) === String(id));
 
   if (!post) {
     return (
@@ -55,7 +54,7 @@ export default function BlogPost() {
   }
 
   // Related posts (excluding current)
-  const relatedPosts = blogData.posts
+  const relatedPosts = (blogData.posts || [])
     .filter((p) => p.id !== post.id)
     .slice(0, 3);
 

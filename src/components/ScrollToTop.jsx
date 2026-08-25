@@ -11,10 +11,14 @@ export default function ScrollToTop() {
   useEffect(() => {
     // If navigating to a specific hash anchor (e.g. #section-id)
     if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        return;
+      try {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          return;
+        }
+      } catch {
+        // Ignore invalid CSS selector in hash
       }
     }
 

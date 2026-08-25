@@ -27,12 +27,20 @@ function NavDropdown({ link, isActive }) {
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
+  useEffect(() => {
+    return () => clearTimeout(timeout.current);
+  }, []);
+
   return (
     <div
       ref={ref}
       className="relative"
       onMouseEnter={enter}
       onMouseLeave={leave}
+      onFocus={enter}
+      onBlur={leave}
+      aria-haspopup="true"
+      aria-expanded={open}
     >
       <Link
         to={link.href}

@@ -26,7 +26,7 @@ function useScrollReveal() {
 }
 
 /* ── Data ── */
-const blogPosts = blogData.posts;
+const blogPosts = blogData.posts || [];
 const newsItems = blogData.news || [];
 const newspaperCuttings = blogData.newspaperCuttings || [];
 
@@ -63,15 +63,15 @@ function CuttingLightbox({ cutting, cuttings, onClose, onNav }) {
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
       <div className="relative z-10 max-w-4xl w-full mx-4" onClick={(e) => e.stopPropagation()}>
         {/* Close */}
-        <button onClick={onClose} className="absolute -top-12 right-0 text-white/60 hover:text-white transition-colors">
+        <button onClick={onClose} aria-label="Close lightbox" className="absolute -top-12 right-0 text-white/60 hover:text-white transition-colors">
           <X size={28} />
         </button>
         {/* Nav Left */}
-        <button onClick={() => onNav(-1)} className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 text-white/50 hover:text-white transition-colors hidden md:block">
+        <button onClick={() => onNav(-1)} aria-label="Previous cutting" className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 text-white/50 hover:text-white transition-colors hidden md:block">
           <ChevronLeft size={36} />
         </button>
         {/* Nav Right */}
-        <button onClick={() => onNav(1)} className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 text-white/50 hover:text-white transition-colors hidden md:block">
+        <button onClick={() => onNav(1)} aria-label="Next cutting" className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 text-white/50 hover:text-white transition-colors hidden md:block">
           <ChevronRight size={36} />
         </button>
         {/* Image */}
@@ -330,7 +330,7 @@ export default function Blog() {
                     <div className="w-full md:w-5/12 flex justify-center md:justify-start">
                       <div className="relative bg-[#0A0A0A] p-2.5 rounded-[2rem] -rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-2xl max-w-md w-full">
                         <div className="relative bg-[#1a1a2e] rounded-3xl overflow-hidden border border-white/10 aspect-[4/5] flex items-center justify-center">
-                          <img src={filteredNews[0].image} alt="" className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" />
+                          <img src={filteredNews[0].image} alt={filteredNews[0].title || "News article"} className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                           
                           {/* Overlapping white badge */}
@@ -388,7 +388,7 @@ export default function Blog() {
                   {/* Newspaper image */}
                   {item.image && (
                     <div className="relative h-40 overflow-hidden bg-amber-50">
-                      <img src={item.image} alt="" className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                      <img src={item.image} alt={item.title || "News clipping"} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
                       <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                       {/* Category badge on image */}
                       <div className={`absolute top-3 left-3 h-1.5 w-12 rounded-full ${

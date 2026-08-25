@@ -106,13 +106,13 @@ const Results = () => {
 
           <Reveal delay={200}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-slate-200">
-              {resultsData.stats.map((stat, index) => (
+              {(resultsData.stats || []).map((stat, index) => (
                 <React.Fragment key={index}>
                   <div>
                     <div className="text-4xl font-bold text-[#0A0A0A] mb-1">{stat.value}</div>
                     <div className="text-sm font-medium text-slate-500">{stat.label}</div>
                   </div>
-                  {index < resultsData.stats.length - 1 && (
+                  {index < (resultsData.stats || []).length - 1 && (
                     <div className="hidden md:block w-px h-12 bg-slate-200 mx-auto"></div>
                   )}
                 </React.Fragment>
@@ -182,6 +182,7 @@ const Results = () => {
           <div className="absolute inset-0" onClick={closeLightbox}></div>
           <button
             onClick={closeLightbox}
+            aria-label="Close lightbox"
             className="absolute top-6 right-6 z-50 text-white/80 hover:text-white transition-colors p-2 bg-black/50 rounded-full"
           >
             <X className="w-8 h-8" />
@@ -189,6 +190,7 @@ const Results = () => {
           
           <button
             onClick={(e) => { e.stopPropagation(); showPrev(); }}
+            aria-label="Previous result"
             className="absolute left-4 md:left-10 z-50 text-white/80 hover:text-white transition-colors p-3 bg-black/50 hover:bg-black/80 rounded-full"
           >
             <ChevronLeft className="w-8 h-8" />
@@ -203,6 +205,7 @@ const Results = () => {
 
           <button
             onClick={(e) => { e.stopPropagation(); showNext(); }}
+            aria-label="Next result"
             className="absolute right-4 md:right-10 z-50 text-white/80 hover:text-white transition-colors p-3 bg-black/50 hover:bg-black/80 rounded-full"
           >
             <ChevronRight className="w-8 h-8" />

@@ -44,7 +44,7 @@ const Reveal = ({ children, className = '', delay = 0 }) => {
 };
 
 const Testimonials = () => {
-  const testimonials = testimonialsData.testimonials;
+  const testimonials = testimonialsData.testimonials || [];
 
   return (
     <div className="bg-white min-h-screen pt-24 pb-20">
@@ -86,9 +86,15 @@ const Testimonials = () => {
               <div className="rounded-2xl border border-black/8 bg-white p-7 hover:border-[#D32F2F] transition-colors h-full flex flex-col">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-14 h-14 rounded-full bg-[#FFEBEE] flex items-center justify-center text-[#D32F2F] font-bold text-lg shrink-0">
-                      {t.initials}
-                    </div>
+                    {t.image ? (
+                      <div className="w-14 h-14 rounded-full overflow-hidden shrink-0">
+                        <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
+                      </div>
+                    ) : (
+                      <div className="w-14 h-14 rounded-full bg-[#FFEBEE] flex items-center justify-center text-[#D32F2F] font-bold text-lg shrink-0">
+                        {t.initials}
+                      </div>
+                    )}
                     <div>
                       <div className="font-bold text-[#0A0A0A]">{t.name}</div>
                       <div className="text-xs font-bold uppercase tracking-wider text-[#D32F2F] mt-0.5">
