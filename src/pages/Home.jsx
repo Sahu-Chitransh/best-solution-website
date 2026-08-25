@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Sparkles, ArrowRight, Sprout, Compass,
@@ -17,149 +17,127 @@ import testimonialsData from '../content/testimonials.json';
 import resultsData from '../content/results.json';
 import instagramData from '../content/instagram.json';
 
-/* ── Gradient presets for hero slides (placeholder until real banners) ── */
-const HERO_GRADIENTS = [
-  'from-[#0A0A0A] via-[#1A1A2E] to-[#16213E]',
-  'from-[#1A1A2E] via-[#0F3460] to-[#0A0A0A]',
-  'from-[#16213E] via-[#0A0A0A] to-[#1A1A2E]',
-];
-
 /* ── Full-Width Hero Banner Carousel ── */
 function HeroSlider() {
   const [current, setCurrent] = useState(0);
-  const [animKey, setAnimKey] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
   const slides = heroData?.slides || [];
   const slideCount = slides.length || 1;
+  const autoplayInterval = heroData?.autoplayInterval || 5000;
 
   const next = useCallback(() => {
     setCurrent((c) => (c + 1) % slideCount);
-    setAnimKey((k) => k + 1);
   }, [slideCount]);
 
   const prev = useCallback(() => {
     setCurrent((c) => (c - 1 + slideCount) % slideCount);
-    setAnimKey((k) => k + 1);
   }, [slideCount]);
 
   useEffect(() => {
-    if (slideCount <= 1) return;
-    const id = setInterval(next, 6000);
+    if (slideCount <= 1 || isPaused) return;
+    const id = setInterval(next, autoplayInterval);
     return () => clearInterval(id);
-  }, [next, slideCount]);
+  }, [next, slideCount, isPaused, autoplayInterval]);
 
   const goTo = (i) => {
     setCurrent(i);
-    setAnimKey((k) => k + 1);
   };
 
-  const s = slides[current] || slides[0] || {};
-  const titleLines = (s.title || []).map((t) =>
-    typeof t === 'string' ? t : t.line || Object.values(t)[0] || ''
-  );
+  // Touch swipe handlers
+  const onTouchStart = (e) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const diff = touchStartX.current - touchEndX.current;
+    if (diff > 50) {
+      next(); // swipe left
+    } else if (diff < -50) {
+      prev(); // swipe right
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#0A0A0A]">
-      {/* Background gradient (placeholder for future banner images) */}
-      <div
-        className={`absolute inset-0 bg-gradient-to-r ${HERO_GRADIENTS[current % HERO_GRADIENTS.length]} transition-all duration-700`}
-      />
-
-      {/* Decorative pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-      }} />
-
-      {/* Gradient overlays for depth */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/20" />
-
-      {/* Content */}
-      <div className="relative min-h-[480px] sm:min-h-[520px] md:min-h-[560px] flex items-center">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-32">
-          <div key={animKey} className="bs-hero-animate max-w-3xl">
-            {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#D32F2F]/40 bg-[#D32F2F]/15 text-[#FF8A80] px-4 py-1.5 text-xs font-bold uppercase tracking-widest backdrop-blur-sm">
-              <Sparkles size={14} aria-hidden="true" />
-              {s.eyebrow}
+    <section
+      className="relative w-full overflow-hidden bg-[#0A0A0A] select-none"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+      aria-roledescription="carousel"
+      aria-label="Campus Brochure Highlights"
+    >
+      {/* Slides Container */}
+      <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] lg:aspect-[21/9] max-h-[640px] flex items-center justify-center bg-black">
+        {slides.map((slide, idx) => {
+          const isActive = idx === current;
+          return (
+            <div
+              key={slide.id || idx}
+              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+              }`}
+              aria-hidden={!isActive}
+            >
+              <img
+                src={slide.image}
+                alt={slide.alt || `Best Solution Banner ${idx + 1}`}
+                className="w-full h-full object-cover sm:object-contain object-center"
+                loading={idx === 0 ? 'eager' : 'lazy'}
+              />
             </div>
-
-            {/* Title */}
-            <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tighter text-white">
-              {titleLines[0]}
-              <br />
-              <span className="text-[#D32F2F]">{titleLines[1]}</span>
-            </h1>
-
-            {/* Body */}
-            <p className="mt-6 text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed">
-              {s.body}
-            </p>
-
-            {/* CTAs */}
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              {s.primaryCta?.href && (
-                <Link
-                  to={s.primaryCta.href}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#D32F2F] px-7 py-3.5 text-sm font-bold text-white hover:bg-[#B71C1C] hover:-translate-y-0.5 transition-all duration-200 shadow-lg shadow-[#D32F2F]/30"
-                >
-                  {s.primaryCta.label || 'Learn More'} <ArrowRight size={16} />
-                </Link>
-              )}
-              {s.secondaryCta?.href && (
-                <Link
-                  to={s.secondaryCta.href}
-                  className="inline-flex items-center gap-2 rounded-full border border-white/25 text-white px-7 py-3.5 text-sm font-bold hover:bg-white hover:text-[#0A0A0A] transition-all duration-200 backdrop-blur-sm"
-                >
-                  {s.secondaryCta.label || 'Details'}
-                </Link>
-              )}
-            </div>
-
-            {/* Stat badge */}
-            {s.stat && (
-              <div className="mt-8 inline-flex items-center gap-4 bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-5 py-3">
-                <div className="text-2xl sm:text-3xl font-black text-[#D32F2F] leading-none">
-                  {s.stat.value}
-                </div>
-                <div className="text-xs uppercase tracking-widest text-slate-300 max-w-[180px]">
-                  {s.stat.label}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Navigation arrows */}
-        <button
-          onClick={prev}
-          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-all backdrop-blur-sm border border-white/10"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft size={22} />
-        </button>
-        <button
-          onClick={next}
-          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-all backdrop-blur-sm border border-white/10"
-          aria-label="Next slide"
-        >
-          <ChevronRight size={22} />
-        </button>
+          );
+        })}
       </div>
 
-      {/* Slide indicators */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2.5">
-        {heroData.slides.map((_, i) => (
+      {/* Navigation arrows */}
+      {slideCount > 1 && (
+        <>
           <button
-            key={i}
-            aria-label={`Go to slide ${i + 1}`}
-            onClick={() => goTo(i)}
-            className={`rounded-full transition-all duration-300 ${
-              i === current
-                ? 'w-8 h-2.5 bg-[#D32F2F]'
-                : 'w-2.5 h-2.5 bg-white/40 hover:bg-white/60'
-            }`}
-          />
-        ))}
-      </div>
+            onClick={prev}
+            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/70 text-white/80 hover:text-white transition-all backdrop-blur-md border border-white/20 shadow-lg"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/70 text-white/80 hover:text-white transition-all backdrop-blur-md border border-white/20 shadow-lg"
+            aria-label="Next slide"
+          >
+            <ChevronRight size={24} />
+          </button>
+        </>
+      )}
+
+      {/* Slide Indicator Dots */}
+      {slideCount > 1 && (
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-2.5 bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/10">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              aria-label={`Go to slide ${i + 1}`}
+              onClick={() => goTo(i)}
+              className={`rounded-full transition-all duration-300 ${
+                i === current
+                  ? 'w-7 sm:w-8 h-2 sm:h-2.5 bg-[#D32F2F] shadow-sm'
+                  : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/50 hover:bg-white/80'
+              }`}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 }

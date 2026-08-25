@@ -1,67 +1,30 @@
 {
+  "autoplayInterval": 5000,
   "slides": [
     {
-      "eyebrow": "JEE Advanced 2025 · AIR 1833",
-      "title": [
-        "Highest Selection",
-        "Ratio in Indore."
-      ],
-      "body": "22 of 36 students in our Pinnacle Program crossed 95%ile in JEE Main 2025. Our teaching floor is built on rigour, not luck.",
-      "primaryCta": {
-        "label": "See JEE Program",
-        "href": "/courses"
-      },
-      "secondaryCta": {
-        "label": "Book a demo",
-        "href": "/admissions"
-      },
-      "image": "/images/08.png",
-      "stat": {
-        "value": "AIR 1833",
-        "label": "Samarth Khandelwal · JEE Adv. 2025"
-      }
+      "id": 1,
+      "image": "/images/hero/slide-1.jpg",
+      "alt": "Best Solution - Write the Future with BEST for IIT-JEE | NEET - Since 2010"
     },
     {
-      "eyebrow": "JEE Main 2023 · 99.48%ile",
-      "title": [
-        "Where Toppers",
-        "Are Made."
-      ],
-      "body": "Srujan Gawande scored 99.48%ile in JEE Main 2023 — trained entirely at Best Solution, Vijay Nagar.",
-      "primaryCta": {
-        "label": "Our Results",
-        "href": "/results"
-      },
-      "secondaryCta": {
-        "label": "Meet Faculty",
-        "href": "/faculty"
-      },
-      "image": "/images/05.png",
-      "stat": {
-        "value": "99.48%",
-        "label": "Srujan Gawande · JEE Main 2023"
-      }
+      "id": 2,
+      "image": "/images/hero/slide-2.jpg",
+      "alt": "Best Solution Classroom - जहां Doubt खत्म Rank शुरू"
     },
     {
-      "eyebrow": "NEET 2024 · 620/720",
-      "title": [
-        "Medical Dreams",
-        "Start Here."
-      ],
-      "body": "Ayushi Nandanwar cracked NEET in her second attempt with 620/720. Biology diagrams and NCERT drills — every single day.",
-      "primaryCta": {
-        "label": "See NEET Program",
-        "href": "/courses"
-      },
-      "secondaryCta": {
-        "label": "Book a demo",
-        "href": "/admissions"
-      },
-      "image": "/images/neet/NEET_01.png",
-      "stat": {
-        "value": "620/720",
-        "label": "Ayushi Nandanwar · NEET 2024"
-      }
+      "id": 3,
+      "image": "/images/hero/slide-3.jpg",
+      "alt": "Best Solution Academic Pathways - School Syllabus to Competitive Exams"
+    },
+    {
+      "id": 4,
+      "image": "/images/hero/slide-4.jpg",
+      "alt": "JEE Advanced है आसान - Best Solution IIT Toppers"
+    },
+    {
+      "id": 5,
+      "image": "/images/hero/slide-5.jpg",
+      "alt": "Best Solution Indore Campus - उड़ें परिंदे आसमान में - Vijay Nagar Campus"
     }
   ]
 }

@@ -13,32 +13,14 @@ collections:
         label: "Hero Content"
         name: "hero"
         fields:
+          - {label: "Autoplay Interval (ms)", name: "autoplayInterval", widget: "number", default: 5000}
           - name: "slides"
-            label: "Slides"
+            label: "Banner Slides"
             widget: "list"
             fields:
-              - {label: "Eyebrow", name: "eyebrow", widget: "string"}
-              - {label: "Title", name: "title", widget: "list", field: {name: "line", label: "Line", widget: "string"}}
-              - {label: "Body", name: "body", widget: "text"}
-              - name: "primaryCta"
-                label: "Primary CTA"
-                widget: "object"
-                fields:
-                  - {label: "Label", name: "label", widget: "string"}
-                  - {label: "Href", name: "href", widget: "string"}
-              - name: "secondaryCta"
-                label: "Secondary CTA"
-                widget: "object"
-                fields:
-                  - {label: "Label", name: "label", widget: "string"}
-                  - {label: "Href", name: "href", widget: "string"}
-              - {label: "Image", name: "image", widget: "image"}
-              - name: "stat"
-                label: "Stat"
-                widget: "object"
-                fields:
-                  - {label: "Value", name: "value", widget: "string"}
-                  - {label: "Label", name: "label", widget: "string"}
+              - {label: "Slide ID", name: "id", widget: "number"}
+              - {label: "Banner Image", name: "image", widget: "image"}
+              - {label: "Alt Text / Description", name: "alt", widget: "string"}
 
   - name: "stats"
     label: "Stats"
