@@ -27,6 +27,7 @@ const HERO_GRADIENTS = [
 /* ── Full-Width Hero Banner Carousel ── */
 function HeroSlider() {
   const [current, setCurrent] = useState(0);
+  const [animKey, setAnimKey] = useState(0);
   const slides = heroData?.slides || [];
   const slideCount = slides.length || 1;
 
