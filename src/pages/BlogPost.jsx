@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Clock, Calendar, BookOpen, Share2, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, BookOpen, Share2, CheckCircle2 } from 'lucide-react';
 import blogData from '../content/blog.json';
 
 function useScrollReveal() {

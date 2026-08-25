@@ -1,49 +1,128 @@
 {
-  "programs": [
+  "heading": "Select your goal",
+  "subheading": "to explore our courses",
+  "goals": [
     {
-      "slug": "nurture",
-      "title": "Nurture Section",
-      "grade": "Class 6th, 7th & 8th",
-      "exams": ["NSTSE", "Olympiad"],
-      "tagline": "Building strong roots and curiosity from an early age.",
-      "color": "#2E7D32",
-      "colorDark": "#1B5E20"
+      "id": "doctor",
+      "title": "Doctor",
+      "subtitle": "Medical (NEET / CUET)",
+      "badge": "Medical Track",
+      "accentColor": "#00A3FF",
+      "description": "Comprehensive medical entrance coaching tailored for AIIMS, JIPMER, and government medical colleges.",
+      "programs": [
+        {
+          "slug": "medical-explorer",
+          "title": "Medical Explorer",
+          "grade": "Class 11th, 12th & Droppers · 1–2 Year Program",
+          "tagline": "NCERT line-by-line mastery, high-yield biology drills, and rank-focused mock test series.",
+          "exams": ["NEET-UG", "CUET", "State Medical"],
+          "features": [
+            "NCERT line-by-line concept dissection with senior faculty",
+            "Weekly 720-mark full syllabus simulation tests",
+            "Biology diagram mastery & high-speed memory techniques",
+            "Dedicated daily doubt clinic (6:00 PM – 8:00 PM)",
+            "Special rank-improvement focus batches for droppers"
+          ],
+          "color": "#D32F2F",
+          "colorDark": "#B71C1C"
+        },
+        {
+          "slug": "booster-pcb",
+          "title": "Booster Section (PCB)",
+          "grade": "Class 11th & 12th · School + Entrance Integration",
+          "tagline": "Board exam excellence with parallel competitive fundamentals in Physics, Chemistry, and Biology.",
+          "exams": ["CBSE / State Boards", "NEET Foundation"],
+          "features": [
+            "100% Board syllabus coverage with scoring answer-writing drills",
+            "Integrated conceptual foundations for competitive medical exams",
+            "Chapter-wise subjective + objective test series",
+            "Practical exam & lab diagram guidance"
+          ],
+          "color": "#00A3FF",
+          "colorDark": "#0084D1"
+        }
+      ]
     },
     {
-      "slug": "pioneer",
-      "title": "Pioneer Section",
-      "grade": "Class 9th & 10th",
-      "exams": ["NSTSE", "Olympiad"],
-      "tagline": "Sharpening competitive instincts ahead of the curve.",
-      "color": "#AD1457",
-      "colorDark": "#880E4F"
+      "id": "engineer",
+      "title": "Engineer",
+      "subtitle": "Engineering (IIT-JEE / BITSAT)",
+      "badge": "Engineering Track",
+      "accentColor": "#FF9800",
+      "description": "Rigorous problem-solving curriculum built for IIT-JEE Main, Advanced, BITSAT & premier engineering institutes.",
+      "programs": [
+        {
+          "slug": "engineering-explorer",
+          "title": "Engineering Explorer",
+          "grade": "Class 11th, 12th & Droppers · 1–2 Year Program",
+          "tagline": "Multi-concept problem solving from Day 1 with personalized rank mentoring.",
+          "exams": ["JEE Main", "JEE Advanced", "BITSAT", "VITEEE"],
+          "features": [
+            "Advanced multi-step problem solving & shortcut technique training",
+            "National-level benchmark test series with detailed rank analysis",
+            "Small focused batches of 25–30 students for maximum attention",
+            "Daily 2-hour faculty-led problem solving workshops",
+            "1-on-1 performance tracking with assigned mentor"
+          ],
+          "color": "#E65100",
+          "colorDark": "#BF360C"
+        },
+        {
+          "slug": "booster-pcm",
+          "title": "Booster Section (PCM)",
+          "grade": "Class 11th & 12th · School + Entrance Integration",
+          "tagline": "Full board syllabus mastery integrated with solid JEE foundation concepts.",
+          "exams": ["CBSE / State Boards", "JEE Foundation"],
+          "features": [
+            "Comprehensive board theory and step-by-step numerical practice",
+            "Formula sheets, derivation drills, and previous 10-year question banks",
+            "Weekly subjective board tests with detailed feedback",
+            "Concept bridging from board level to competitive standards"
+          ],
+          "color": "#F9A825",
+          "colorDark": "#F57F17"
+        }
+      ]
     },
     {
-      "slug": "booster",
-      "title": "Booster Section",
-      "grade": "Class 11th & 12th",
-      "exams": ["PCM", "PCB", "Commerce"],
-      "tagline": "School-oriented preparation with board exam mastery.",
-      "color": "#F9A825",
-      "colorDark": "#F57F17"
-    },
-    {
-      "slug": "medical-explorer",
-      "title": "Medical Explorer",
-      "grade": "Class 11th, 12th & Dropper",
-      "exams": ["NEET", "CUET"],
-      "tagline": "Your journey to the white coat starts here.",
-      "color": "#D32F2F",
-      "colorDark": "#B71C1C"
-    },
-    {
-      "slug": "engineering-explorer",
-      "title": "Engineering Explorer",
-      "grade": "Class 11th, 12th & Dropper",
-      "exams": ["IIT-JEE", "BIT-SAT", "VITEEE"],
-      "tagline": "Solving problems others are afraid to face.",
-      "color": "#E65100",
-      "colorDark": "#BF360C"
+      "id": "foundation",
+      "title": "6-10th",
+      "subtitle": "Junior & Foundation",
+      "badge": "Foundation Track",
+      "accentColor": "#2E7D32",
+      "description": "Early start advantage building critical thinking, analytical mindset, and Olympiad excellence.",
+      "programs": [
+        {
+          "slug": "pioneer",
+          "title": "Pioneer Section",
+          "grade": "Class 9th & 10th · Annual Program",
+          "tagline": "Sharpening competitive instincts and board distinction before senior secondary.",
+          "exams": ["Class 10 Boards", "NSTSE", "PRMO / IOQM", "NTSE / Olympiads"],
+          "features": [
+            "Dual focus: 100% Board exam score + competitive foundation",
+            "Early exposure to Class 11th concepts in Math and Science",
+            "Aptitude, mental ability, and logical reasoning development",
+            "Regular parent-teacher academic reviews"
+          ],
+          "color": "#AD1457",
+          "colorDark": "#880E4F"
+        },
+        {
+          "slug": "nurture",
+          "title": "Nurture Section",
+          "grade": "Class 6th, 7th & 8th · Annual Program",
+          "tagline": "Building strong conceptual roots and sparking curiosity from the very beginning.",
+          "exams": ["School Curriculum", "NSTSE", "Math & Science Olympiads"],
+          "features": [
+            "Activity-based and visual learning for fundamental concepts",
+            "Eliminating fear of Mathematics & Science early on",
+            "Weekly quizzes, puzzle sheets, and speed-math workshops",
+            "Interactive and engaging classroom environment"
+          ],
+          "color": "#2E7D32",
+          "colorDark": "#1B5E20"
+        }
+      ]
     }
   ]
 }

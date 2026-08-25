@@ -197,6 +197,7 @@ const GOAL_CATEGORIES = [
     color: '#2E7D32',
     bgClass: 'bg-green-50 border-green-200 hover:border-green-400',
     iconClass: 'text-green-600',
+    href: '/courses?goal=foundation',
   },
   {
     icon: Compass,
@@ -206,6 +207,7 @@ const GOAL_CATEGORIES = [
     color: '#AD1457',
     bgClass: 'bg-pink-50 border-pink-200 hover:border-pink-400',
     iconClass: 'text-pink-600',
+    href: '/courses?goal=foundation',
   },
   {
     icon: Rocket,
@@ -215,6 +217,7 @@ const GOAL_CATEGORIES = [
     color: '#F9A825',
     bgClass: 'bg-amber-50 border-amber-200 hover:border-amber-400',
     iconClass: 'text-amber-600',
+    href: '/courses?goal=engineer',
   },
   {
     icon: Stethoscope,
@@ -224,6 +227,7 @@ const GOAL_CATEGORIES = [
     color: '#D32F2F',
     bgClass: 'bg-red-50 border-red-200 hover:border-red-400',
     iconClass: 'text-red-600',
+    href: '/courses?goal=doctor',
   },
   {
     icon: BookOpen,
@@ -233,6 +237,7 @@ const GOAL_CATEGORIES = [
     color: '#E65100',
     bgClass: 'bg-orange-50 border-orange-200 hover:border-orange-400',
     iconClass: 'text-orange-600',
+    href: '/courses?goal=engineer',
   },
 ];
 
@@ -256,7 +261,7 @@ function GoalSelector() {
             return (
               <Link
                 key={i}
-                to="/courses"
+                to={goal.href}
                 className={`group relative rounded-2xl sm:rounded-3xl border-2 ${goal.bgClass} p-5 sm:p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bs-animate-hidden bs-stagger-${i + 1}`}
                 data-animate
               >

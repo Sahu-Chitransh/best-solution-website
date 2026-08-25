@@ -67,23 +67,36 @@ collections:
             field: {name: "item", label: "Item", widget: "string"}
 
   - name: "courses"
-    label: "Courses (Full)"
+    label: "Courses (Goals & Programs)"
     files:
       - file: "src/content/courses.json"
         label: "Courses"
         name: "courses"
         fields:
-          - name: "programs"
-            label: "Programs"
+          - {label: "Heading", name: "heading", widget: "string"}
+          - {label: "Subheading", name: "subheading", widget: "string"}
+          - name: "goals"
+            label: "Goals (Doctor, Engineer, 6-10th)"
             widget: "list"
             fields:
-              - {label: "Slug", name: "slug", widget: "string"}
+              - {label: "ID", name: "id", widget: "string"}
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Grade", name: "grade", widget: "string"}
-              - {label: "Exams / Focus Areas", name: "exams", widget: "list", field: {name: "exam", label: "Exam", widget: "string"}}
-              - {label: "Tagline", name: "tagline", widget: "string"}
-              - {label: "Color", name: "color", widget: "color"}
-              - {label: "Color Dark", name: "colorDark", widget: "color"}
+              - {label: "Subtitle", name: "subtitle", widget: "string"}
+              - {label: "Badge", name: "badge", widget: "string"}
+              - {label: "Accent Color", name: "accentColor", widget: "color"}
+              - {label: "Description", name: "description", widget: "text"}
+              - name: "programs"
+                label: "Programs"
+                widget: "list"
+                fields:
+                  - {label: "Slug", name: "slug", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Grade / Duration", name: "grade", widget: "string"}
+                  - {label: "Tagline", name: "tagline", widget: "string"}
+                  - {label: "Exams / Focus", name: "exams", widget: "list", field: {name: "exam", label: "Exam", widget: "string"}}
+                  - {label: "Features / Highlights", name: "features", widget: "list", field: {name: "feature", label: "Feature", widget: "string"}}
+                  - {label: "Color", name: "color", widget: "color"}
+                  - {label: "Color Dark", name: "colorDark", widget: "color"}
 
   - name: "faculty"
     label: "Faculty"
