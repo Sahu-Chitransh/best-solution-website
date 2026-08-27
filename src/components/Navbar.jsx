@@ -165,10 +165,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-black/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-18">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img src={settingsData.logo} alt="Best Solution" className="h-10 w-auto rounded" />
+          <img src={settingsData.logo} alt="Best Solution" className="h-14 w-auto rounded" />
         </Link>
 
         {/* Desktop nav */}

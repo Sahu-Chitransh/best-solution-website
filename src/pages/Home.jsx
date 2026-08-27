@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Sparkles, ArrowRight, Sprout, Compass,
-  BookOpen, Stethoscope, Rocket,
+  Sparkles, ArrowRight,
   X, ChevronLeft, ChevronRight, Download,
 } from 'lucide-react';
+import { DoctorIllustration, EngineerIllustration, RocketIllustration } from '../components/GoalIllustrations';
+import coursesData from '../content/courses.json';
 import InstagramIcon from '../components/InstagramIcon';
 import SectionHeader from '../components/SectionHeader';
 import EnquiryForm from '../components/EnquiryForm';
@@ -188,107 +189,57 @@ function Marquee() {
 }
 
 /* ── Select Your Goal ── */
-const GOAL_CATEGORIES = [
-  {
-    icon: Sprout,
-    title: 'Nurture',
-    subtitle: 'Class 6–8',
-    description: 'Building strong roots and curiosity from an early age',
-    color: '#2E7D32',
-    bgClass: 'bg-green-50 border-green-200 hover:border-green-400',
-    iconClass: 'text-green-600',
-    href: '/courses?goal=foundation',
-  },
-  {
-    icon: Compass,
-    title: 'Pioneer',
-    subtitle: 'Class 9–10',
-    description: 'Sharpening competitive instincts ahead of the curve',
-    color: '#AD1457',
-    bgClass: 'bg-pink-50 border-pink-200 hover:border-pink-400',
-    iconClass: 'text-pink-600',
-    href: '/courses?goal=foundation',
-  },
-  {
-    icon: Rocket,
-    title: 'Booster',
-    subtitle: 'Class 11–12',
-    description: 'School-oriented prep with board exam mastery',
-    color: '#F9A825',
-    bgClass: 'bg-amber-50 border-amber-200 hover:border-amber-400',
-    iconClass: 'text-amber-600',
-    href: '/courses?goal=engineer',
-  },
-  {
-    icon: Stethoscope,
-    title: 'Medical Explorer',
-    subtitle: 'NEET · CUET',
-    description: 'Your journey to the white coat starts here',
-    color: '#D32F2F',
-    bgClass: 'bg-red-50 border-red-200 hover:border-red-400',
-    iconClass: 'text-red-600',
-    href: '/courses?goal=doctor',
-  },
-  {
-    icon: BookOpen,
-    title: 'Engineering Explorer',
-    subtitle: 'IIT-JEE · BIT-SAT',
-    description: 'Solving problems others are afraid to face',
-    color: '#E65100',
-    bgClass: 'bg-orange-50 border-orange-200 hover:border-orange-400',
-    iconClass: 'text-orange-600',
-    href: '/courses?goal=engineer',
-  },
-];
+const GOAL_ILLUSTRATIONS = {
+  doctor: DoctorIllustration,
+  engineer: EngineerIllustration,
+  foundation: RocketIllustration,
+};
 
 function GoalSelector() {
   const ref = useScrollReveal();
+  const goals = coursesData?.goals || [];
+
   return (
     <section className="py-20 bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center" data-animate>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-[#0A0A0A]">
-            Select your goal
+            {coursesData.heading || 'Select your goal'}
           </h2>
           <p className="mt-3 text-xl sm:text-2xl font-bold text-[#D32F2F]">
-            to explore our courses
+            {coursesData.subheading || 'to explore our courses'}
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
-          {GOAL_CATEGORIES.map((goal, i) => {
-            const Icon = goal.icon;
+        <div className="mt-14 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+          {goals.map((goal, i) => {
+            const IllustrationComp = GOAL_ILLUSTRATIONS[goal.id] || RocketIllustration;
             return (
               <Link
-                key={i}
-                to={goal.href}
-                className={`group relative rounded-2xl sm:rounded-3xl border-2 ${goal.bgClass} p-5 sm:p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bs-animate-hidden bs-stagger-${i + 1}`}
+                key={goal.id}
+                to={`/courses?goal=${goal.id}`}
+                className={`group relative flex flex-col items-center justify-between rounded-3xl bg-white p-6 sm:p-7 transition-all duration-300 text-center border border-slate-200/90 hover:border-slate-300 hover:shadow-lg hover:-translate-y-1 shadow-sm bs-animate-hidden bs-stagger-${i + 1}`}
                 data-animate
               >
-                {/* Icon */}
-                <div className="mx-auto w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform"
-                  style={{ backgroundColor: `${goal.color}12` }}
-                >
-                  <Icon size={26} className={goal.iconClass} strokeWidth={2} />
+                {/* Illustration */}
+                <div className="w-full flex justify-center mb-5">
+                  <div className="w-28 h-28 sm:w-32 sm:h-32 transform transition-transform duration-300 group-hover:scale-105">
+                    <IllustrationComp className="w-full h-full" />
+                  </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-base sm:text-lg font-black text-[#0A0A0A] tracking-tight leading-tight">
-                  {goal.title}
-                </h3>
-                <div className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-slate-500 mt-1">
-                  {goal.subtitle}
+                <div className="mt-auto">
+                  <h3 className="text-xl sm:text-2xl font-black text-[#0A0A0A] tracking-tight group-hover:text-[#00A3FF] transition-colors">
+                    {goal.title}
+                  </h3>
+                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">
+                    {goal.subtitle}
+                  </p>
                 </div>
 
-                {/* Description */}
-                <p className="mt-2 text-xs text-slate-500 leading-relaxed hidden sm:block">
-                  {goal.description}
-                </p>
-
-                {/* Arrow */}
-                <div className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity"
-                  style={{ color: goal.color }}
-                >
+                {/* Hover Arrow */}
+                <div className="mt-3 inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-[#00A3FF] opacity-0 group-hover:opacity-100 transition-opacity">
                   Explore <ArrowRight size={14} />
                 </div>
               </Link>
