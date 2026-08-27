@@ -70,7 +70,7 @@ function HeroSlider() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-slate-100 select-none"
+      className="relative w-full overflow-hidden bg-white select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={onTouchStart}
@@ -79,30 +79,8 @@ function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Campus Brochure Highlights"
     >
-      {/* Dynamic Ambient Blur Backdrop (Natural & Bright) */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
-        {slides.map((slide, idx) => {
-          const isActive = idx === current;
-          return (
-            <div
-              key={`bg-${slide.id || idx}`}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                isActive ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <img
-                src={slide.image}
-                alt=""
-                aria-hidden="true"
-                className="w-full h-full object-cover scale-125 filter blur-3xl opacity-90 transform"
-              />
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Foreground Slides Container */}
-      <div className="relative z-10 w-full aspect-[16/9] sm:aspect-[16/8] lg:aspect-[21/9] max-h-[640px] flex items-center justify-center">
+      {/* Slides Container */}
+      <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] lg:aspect-[21/9] max-h-[640px] flex items-center justify-center bg-white">
         {slides.map((slide, idx) => {
           const isActive = idx === current;
           return (
@@ -116,7 +94,7 @@ function HeroSlider() {
               <img
                 src={slide.image}
                 alt={slide.alt || `Best Solution Banner ${idx + 1}`}
-                className="w-full h-full object-cover sm:object-contain object-center drop-shadow-xl"
+                className="w-full h-full object-cover sm:object-contain object-center"
                 loading={idx === 0 ? 'eager' : 'lazy'}
               />
             </div>
@@ -129,14 +107,14 @@ function HeroSlider() {
         <>
           <button
             onClick={prev}
-            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/85 hover:bg-white text-slate-800 hover:text-[#D32F2F] transition-all backdrop-blur-md border border-black/10 shadow-lg"
+            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/90 hover:bg-white text-slate-800 hover:text-[#D32F2F] transition-all backdrop-blur-md border border-slate-200 shadow-md"
             aria-label="Previous slide"
           >
             <ChevronLeft size={24} />
           </button>
           <button
             onClick={next}
-            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/85 hover:bg-white text-slate-800 hover:text-[#D32F2F] transition-all backdrop-blur-md border border-black/10 shadow-lg"
+            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/90 hover:bg-white text-slate-800 hover:text-[#D32F2F] transition-all backdrop-blur-md border border-slate-200 shadow-md"
             aria-label="Next slide"
           >
             <ChevronRight size={24} />
