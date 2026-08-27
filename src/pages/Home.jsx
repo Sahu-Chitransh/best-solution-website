@@ -77,8 +77,8 @@ function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Campus Brochure Highlights"
     >
-      {/* Slides Container (Optimized height for above-the-fold visibility of Marquee) */}
-      <div className="relative w-full aspect-[16/9] sm:aspect-[16/7] lg:aspect-[21/8] max-h-[480px] sm:max-h-[500px] lg:max-h-[520px] flex items-center justify-center bg-white">
+      {/* Slides Container - Sized so the Marquee ticker sits exactly at the bottom of the initial screen */}
+      <div className="relative w-full h-[calc(100vh-130px)] min-h-[480px] max-h-[780px] flex items-center justify-center bg-white">
         {slides.map((slide, idx) => {
           const isActive = idx === current;
           return (
@@ -92,7 +92,7 @@ function HeroSlider() {
               <img
                 src={slide.image}
                 alt={slide.alt || `Best Solution Banner ${idx + 1}`}
-                className="w-full h-full object-cover sm:object-contain object-center"
+                className="w-full h-full object-contain object-center"
                 loading={idx === 0 ? 'eager' : 'lazy'}
               />
             </div>
@@ -122,7 +122,7 @@ function HeroSlider() {
 
       {/* Slide Indicator Dots */}
       {slideCount > 1 && (
-        <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-2.5 bg-black/25 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/20 shadow-sm">
+        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-2.5 bg-black/25 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/20 shadow-sm">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -148,7 +148,7 @@ function Marquee() {
   );
   return (
     <div className="border-y border-black/10 bg-[#0A0A0A] text-white overflow-hidden">
-      <div className="bs-marquee-track py-4 whitespace-nowrap">
+      <div className="bs-marquee-track py-3.5 whitespace-nowrap">
         {[0, 1].map((copy) => (
           <div key={copy} className="flex items-center gap-14 pr-14 text-sm font-semibold uppercase tracking-widest">
             {items.map((item, i) => (
