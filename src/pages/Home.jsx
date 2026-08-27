@@ -277,156 +277,91 @@ function StatsSection() {
   );
 }
 
-/* ── Results Gallery ── */
+/* ── Results Moving Marquee ── */
 function ResultsGallery() {
   const ref = useScrollReveal();
   const [activeTab, setActiveTab] = useState('jee');
-  const [lightbox, setLightbox] = useState({ open: false, idx: 0 });
 
   const rawImages = activeTab === 'jee' ? resultsData.jee : resultsData.neet;
   const images = (rawImages || []).map((img) =>
     typeof img === 'string' ? img : img.image || Object.values(img)[0] || ''
   );
 
-  const openLightbox = (idx) => setLightbox({ open: true, idx });
-  const closeLightbox = () => setLightbox({ open: false, idx: 0 });
-  const prevImage = () => setLightbox((s) => ({ ...s, idx: (s.idx - 1 + images.length) % images.length }));
-  const nextImage = () => setLightbox((s) => ({ ...s, idx: (s.idx + 1) % images.length }));
-
-  const handleTabChange = (tab) => {
-    setActiveTab(tab);
-    setLightbox({ open: false, idx: 0 });
-  };
-
-  // Lock body scroll when lightbox is open
-  useEffect(() => {
-    if (lightbox.open) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [lightbox.open]);
-
-  // Keyboard navigation
-  useEffect(() => {
-    if (!lightbox.open || images.length === 0) return;
-
-    const handler = (e) => {
-      if (e.key === 'Escape') setLightbox({ open: false, idx: 0 });
-      if (e.key === 'ArrowLeft') setLightbox((s) => ({ ...s, idx: (s.idx - 1 + images.length) % images.length }));
-      if (e.key === 'ArrowRight') setLightbox((s) => ({ ...s, idx: (s.idx + 1) % images.length }));
-    };
-
-    window.addEventListener('keydown', handler);
-    return () => window.removeEventListener('keydown', handler);
-  }, [lightbox.open, images.length]);
-
-  const currentLightboxImg = images[lightbox.idx] || images[0] || '';
+  // Duplicate images to create a seamless infinite marquee loop
+  const marqueeImages = [...images, ...images];
 
   return (
-    <section className="bg-[#FAFAFA] border-y border-black/5 py-24" ref={ref}>
+    <section className="bg-[#FAFAFA] border-y border-black/5 py-24 overflow-hidden" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Our Results"
           title="Results that speak louder than promises."
-          description="Year after year, Best Solution students crack the toughest exams in India. Browse our JEE and NEET results below."
+          description="Year after year, Best Solution students crack the toughest exams in India. Browse our top JEE and NEET achievers below."
         />
 
         {/* Tabs */}
-        <div className="mt-10 flex items-center gap-1 border-b border-black/10 pb-0">
+        <div className="mt-10 flex items-center justify-center sm:justify-start gap-2 border-b border-black/10 pb-0">
           <button
-            onClick={() => handleTabChange('jee')}
-            className={`bs-tab px-5 py-3 text-sm font-bold uppercase tracking-widest transition-colors ${
+            onClick={() => setActiveTab('jee')}
+            className={`bs-tab px-6 py-3 text-sm font-bold uppercase tracking-widest transition-colors ${
               activeTab === 'jee'
                 ? 'text-[#D32F2F] bs-tab-active'
                 : 'text-slate-500 hover:text-slate-800'
             }`}
           >
-            JEE Results ({resultsData.jee?.length || 0})
+            JEE Achievers ({resultsData.jee?.length || 0})
           </button>
           <button
-            onClick={() => handleTabChange('neet')}
-            className={`bs-tab px-5 py-3 text-sm font-bold uppercase tracking-widest transition-colors ${
+            onClick={() => setActiveTab('neet')}
+            className={`bs-tab px-6 py-3 text-sm font-bold uppercase tracking-widest transition-colors ${
               activeTab === 'neet'
                 ? 'text-[#D32F2F] bs-tab-active'
                 : 'text-slate-500 hover:text-slate-800'
             }`}
           >
-            NEET Results ({resultsData.neet?.length || 0})
+            NEET Achievers ({resultsData.neet?.length || 0})
           </button>
-        </div>
-
-        {/* Grid */}
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {images.map((src, i) => (
-            <div
-              key={`${activeTab}-${i}`}
-              className="bs-gallery-img rounded-2xl overflow-hidden border border-slate-200/80 bg-white shadow-sm hover:shadow-md flex items-center justify-center p-1.5 aspect-[3/4] transition-all duration-300"
-              onClick={() => openLightbox(i)}
-            >
-              <img
-                alt={`${activeTab.toUpperCase()} result ${i + 1}`}
-                className="w-full h-full object-contain rounded-xl bg-white select-none"
-                src={src}
-                loading="lazy"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Link to full results page */}
-        <div className="mt-12 text-center">
-          <Link
-            to="/results"
-            className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white text-[#0A0A0A] hover:border-[#D32F2F] hover:text-[#D32F2F] px-7 py-3.5 text-sm font-bold shadow-sm transition-all duration-200"
-          >
-            View full Hall of Fame & Toppers <ArrowRight size={16} />
-          </Link>
         </div>
       </div>
 
-      {/* Lightbox */}
-      {lightbox.open && (
+      {/* Horizontal Moving Marquee Ribbon */}
+      <div className="relative mt-10 w-full overflow-hidden">
+        {/* Soft edge gradient fade masks */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-36 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-36 bg-gradient-to-l from-[#FAFAFA] to-transparent z-10" />
+
         <div
-          className="bs-lightbox fixed inset-0 z-[100] flex items-center justify-center bg-black/85 backdrop-blur-sm"
-          onClick={closeLightbox}
+          key={activeTab}
+          className="bs-marquee-track flex gap-5 py-4 select-none hover:[animation-play-state:paused]"
+          style={{ animationDuration: activeTab === 'jee' ? '40s' : '28s' }}
         >
-          <button
-            className="absolute top-4 right-4 text-white/80 hover:text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
-            onClick={closeLightbox}
-            aria-label="Close lightbox"
-          >
-            <X size={24} />
-          </button>
-          <button
-            className="absolute left-4 text-white/80 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
-            onClick={(e) => { e.stopPropagation(); prevImage(); }}
-            aria-label="Previous image"
-          >
-            <ChevronLeft size={28} />
-          </button>
-          <img
-            key={`${activeTab}-${lightbox.idx}`}
-            src={currentLightboxImg}
-            alt={`${activeTab.toUpperCase()} result ${lightbox.idx + 1}`}
-            className="bs-lightbox-img max-h-[85vh] max-w-[90vw] rounded-2xl object-contain shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          />
-          <button
-            className="absolute right-4 text-white/80 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors z-10"
-            onClick={(e) => { e.stopPropagation(); nextImage(); }}
-            aria-label="Next image"
-          >
-            <ChevronRight size={28} />
-          </button>
-          <div className="absolute bottom-6 text-white/60 text-sm font-semibold tracking-widest">
-            {lightbox.idx + 1} / {images.length}
-          </div>
+          {marqueeImages.map((src, idx) => (
+            <Link
+              key={`${activeTab}-${idx}`}
+              to="/results"
+              className="flex-shrink-0 w-48 sm:w-56 md:w-64 aspect-[3/4] rounded-2xl overflow-hidden border border-slate-200/90 bg-white p-2 shadow-sm hover:shadow-xl hover:border-[#D32F2F] hover:-translate-y-1.5 transition-all duration-300 group flex items-center justify-center"
+              aria-label={`View ${activeTab.toUpperCase()} result card`}
+            >
+              <img
+                src={src}
+                alt={`${activeTab.toUpperCase()} Achiever`}
+                className="w-full h-full object-contain rounded-xl bg-white select-none transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </Link>
+          ))}
         </div>
-      )}
+      </div>
+
+      {/* Link to full results page */}
+      <div className="mt-12 text-center px-4">
+        <Link
+          to="/results"
+          className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white text-[#0A0A0A] hover:border-[#D32F2F] hover:text-[#D32F2F] px-8 py-3.5 text-sm font-bold shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md"
+        >
+          View Full Hall of Fame & All Results <ArrowRight size={16} />
+        </Link>
+      </div>
     </section>
   );
 }
