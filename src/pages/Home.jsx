@@ -69,7 +69,7 @@ function HeroSlider() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-slate-950 select-none"
+      className="relative w-full overflow-hidden bg-slate-100 select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={onTouchStart}
@@ -78,7 +78,7 @@ function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Campus Brochure Highlights"
     >
-      {/* Dynamic Ambient Blur Backdrop */}
+      {/* Dynamic Ambient Blur Backdrop (Natural & Bright) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
         {slides.map((slide, idx) => {
           const isActive = idx === current;
@@ -93,14 +93,11 @@ function HeroSlider() {
                 src={slide.image}
                 alt=""
                 aria-hidden="true"
-                className="w-full h-full object-cover scale-125 filter blur-3xl brightness-75 saturate-150 transform"
+                className="w-full h-full object-cover scale-125 filter blur-3xl opacity-90 transform"
               />
             </div>
           );
         })}
-        {/* Subtle Dark Vignette & Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
       </div>
 
       {/* Foreground Slides Container */}
@@ -118,7 +115,7 @@ function HeroSlider() {
               <img
                 src={slide.image}
                 alt={slide.alt || `Best Solution Banner ${idx + 1}`}
-                className="w-full h-full object-cover sm:object-contain object-center drop-shadow-2xl"
+                className="w-full h-full object-cover sm:object-contain object-center drop-shadow-xl"
                 loading={idx === 0 ? 'eager' : 'lazy'}
               />
             </div>
@@ -131,14 +128,14 @@ function HeroSlider() {
         <>
           <button
             onClick={prev}
-            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/70 text-white/80 hover:text-white transition-all backdrop-blur-md border border-white/20 shadow-lg"
+            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/85 hover:bg-white text-slate-800 hover:text-[#D32F2F] transition-all backdrop-blur-md border border-black/10 shadow-lg"
             aria-label="Previous slide"
           >
             <ChevronLeft size={24} />
           </button>
           <button
             onClick={next}
-            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/70 text-white/80 hover:text-white transition-all backdrop-blur-md border border-white/20 shadow-lg"
+            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-full bg-white/85 hover:bg-white text-slate-800 hover:text-[#D32F2F] transition-all backdrop-blur-md border border-black/10 shadow-lg"
             aria-label="Next slide"
           >
             <ChevronRight size={24} />
@@ -148,7 +145,7 @@ function HeroSlider() {
 
       {/* Slide Indicator Dots */}
       {slideCount > 1 && (
-        <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-2.5 bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/10">
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-2.5 bg-black/25 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/20 shadow-sm">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -157,7 +154,7 @@ function HeroSlider() {
               className={`rounded-full transition-all duration-300 ${
                 i === current
                   ? 'w-7 sm:w-8 h-2 sm:h-2.5 bg-[#D32F2F] shadow-sm'
-                  : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/50 hover:bg-white/80'
+                  : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/70 hover:bg-white'
               }`}
             />
           ))}
