@@ -133,20 +133,34 @@ collections:
         label: "Results"
         name: "results"
         fields:
-          - name: "jee"
-            label: "JEE"
-            widget: "list"
-            field: {name: "image", label: "Image", widget: "image"}
-          - name: "neet"
-            label: "NEET"
-            widget: "list"
-            field: {name: "image", label: "Image", widget: "image"}
+          - {label: "Heading", name: "heading", widget: "string"}
+          - {label: "Subheading", name: "subheading", widget: "text"}
           - name: "stats"
             label: "Stats"
             widget: "list"
             fields:
               - {label: "Value", name: "value", widget: "string"}
               - {label: "Label", name: "label", widget: "string"}
+          - name: "spotlights"
+            label: "Top Spotlight Achievers"
+            widget: "list"
+            fields:
+              - {label: "Student Name", name: "name", widget: "string"}
+              - {label: "Exam", name: "exam", widget: "string"}
+              - {label: "Rank / Score", name: "rank", widget: "string"}
+              - {label: "Tag", name: "tag", widget: "string"}
+              - {label: "Batch", name: "batch", widget: "string"}
+              - {label: "Image Card", name: "image", widget: "image"}
+              - {label: "Badge Text", name: "badge", widget: "string"}
+              - {label: "Accent Color", name: "accent", widget: "color"}
+          - name: "jee"
+            label: "JEE Posters"
+            widget: "list"
+            field: {name: "image", label: "Image", widget: "image"}
+          - name: "neet"
+            label: "NEET Posters"
+            widget: "list"
+            field: {name: "image", label: "Image", widget: "image"}
 
   - name: "blog"
     label: "Blog"

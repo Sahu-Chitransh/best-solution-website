@@ -1,4 +1,44 @@
 {
+  "heading": "Results That Speak Volumes.",
+  "subheading": "Every result below is from a verified student of Best Solution. Names, photos, and ranks are used with consent.",
+  "stats": [
+    { "value": "3,800+", "label": "Students Trained" },
+    { "value": "99.48%ile", "label": "Top Score JEE 2023" },
+    { "value": "AIR 1833", "label": "JEE Advanced 2025" },
+    { "value": "77%", "label": "Selection Ratio 2024" }
+  ],
+  "spotlights": [
+    {
+      "name": "Samarth Khandelwal",
+      "exam": "JEE Advanced 2025",
+      "rank": "AIR 1833",
+      "tag": "All India Rank",
+      "batch": "Pinnacle Program · 2-Year Classroom",
+      "image": "/images/results/08.png",
+      "accent": "#FFC107",
+      "badge": "Gold Spotlight"
+    },
+    {
+      "name": "Srujan Gawande",
+      "exam": "JEE Main 2023",
+      "rank": "99.48 %ile",
+      "tag": "Top Percentile",
+      "batch": "Classroom Program · Vijay Nagar",
+      "image": "/images/results/05.png",
+      "accent": "#D32F2F",
+      "badge": "Star Performer"
+    },
+    {
+      "name": "Ayushi Nandanwar",
+      "exam": "NEET 2024",
+      "rank": "620 / 720",
+      "tag": "Medical Pioneer",
+      "batch": "Medical Explorer · 2-Year Intensive",
+      "image": "/images/results/NEET_01.png",
+      "accent": "#00A3FF",
+      "badge": "Medical Star"
+    }
+  ],
   "jee": [
     "/images/results/01.png",
     "/images/results/02.png",
@@ -24,11 +64,5 @@
     "/images/results/NEET_06.png",
     "/images/results/NEET_07.png",
     "/images/results/NEET_08.png"
-  ],
-  "stats": [
-    { "value": "3800+", "label": "Students Trained" },
-    { "value": "99.48", "label": "Top %ile JEE 2023" },
-    { "value": "AIR 1833", "label": "JEE Advanced 2025" },
-    { "value": "77%", "label": "Selection Ratio 2024" }
   ]
 }
