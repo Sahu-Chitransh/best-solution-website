@@ -69,7 +69,7 @@ function HeroSlider() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#0A0A0A] select-none"
+      className="relative w-full overflow-hidden bg-slate-950 select-none"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={onTouchStart}
@@ -78,14 +78,39 @@ function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Campus Brochure Highlights"
     >
-      {/* Slides Container */}
-      <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] lg:aspect-[21/9] max-h-[640px] flex items-center justify-center bg-black">
+      {/* Dynamic Ambient Blur Backdrop */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
+        {slides.map((slide, idx) => {
+          const isActive = idx === current;
+          return (
+            <div
+              key={`bg-${slide.id || idx}`}
+              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                isActive ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt=""
+                aria-hidden="true"
+                className="w-full h-full object-cover scale-125 filter blur-3xl brightness-75 saturate-150 transform"
+              />
+            </div>
+          );
+        })}
+        {/* Subtle Dark Vignette & Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/15 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/40" />
+      </div>
+
+      {/* Foreground Slides Container */}
+      <div className="relative z-10 w-full aspect-[16/9] sm:aspect-[16/8] lg:aspect-[21/9] max-h-[640px] flex items-center justify-center">
         {slides.map((slide, idx) => {
           const isActive = idx === current;
           return (
             <div
               key={slide.id || idx}
-              className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              className={`absolute inset-0 flex items-center justify-center transition-opacity duration-700 ease-in-out ${
                 isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
               }`}
               aria-hidden={!isActive}
@@ -93,7 +118,7 @@ function HeroSlider() {
               <img
                 src={slide.image}
                 alt={slide.alt || `Best Solution Banner ${idx + 1}`}
-                className="w-full h-full object-cover sm:object-contain object-center"
+                className="w-full h-full object-cover sm:object-contain object-center drop-shadow-2xl"
                 loading={idx === 0 ? 'eager' : 'lazy'}
               />
             </div>
