@@ -59,18 +59,20 @@ export default function About() {
 
         {/* Two images row */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 bs-animate-hidden bs-stagger-2">
-          <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+          <div className="rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200/90 shadow-md bg-slate-50">
             <img
-              src="/images/classroom.png"
-              alt="Best Solution classroom"
-              className="w-full h-full object-cover"
+              src={aboutData.images?.[0] || '/images/about/about1.jpg'}
+              alt="Best Solution Campus & Classroom"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              loading="lazy"
             />
           </div>
-          <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+          <div className="rounded-3xl overflow-hidden aspect-[4/3] border border-slate-200/90 shadow-md bg-slate-50">
             <img
-              src="/images/logo.png"
-              alt="Best Solution logo"
-              className="w-full h-full object-cover"
+              src={aboutData.images?.[1] || '/images/about/about2.jpg'}
+              alt="Best Solution Mentorship & Learning"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              loading="lazy"
             />
           </div>
         </div>

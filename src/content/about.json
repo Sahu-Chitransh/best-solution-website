@@ -1,4 +1,8 @@
 {
+  "images": [
+    "/images/about/about1.jpg",
+    "/images/about/about2.jpg"
+  ],
   "values": [
     {
       "icon": "Ban",

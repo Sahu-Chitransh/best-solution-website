@@ -261,6 +261,10 @@ collections:
         label: "About"
         name: "about"
         fields:
+          - name: "images"
+            label: "About Showcase Images"
+            widget: "list"
+            field: {label: "Image", name: "image", widget: "image"}
           - name: "values"
             label: "Values"
             widget: "list"
