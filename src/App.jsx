@@ -4,7 +4,6 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Courses from './pages/Courses';
-import Faculty from './pages/Faculty';
 import Admissions from './pages/Admissions';
 import Testimonials from './pages/Testimonials';
 import Results from './pages/Results';
@@ -22,7 +21,6 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/courses" element={<Courses />} />
-          <Route path="/faculty" element={<Faculty />} />
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/results" element={<Results />} />

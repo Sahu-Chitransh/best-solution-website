@@ -80,25 +80,6 @@ collections:
                   - {label: "Color", name: "color", widget: "color"}
                   - {label: "Color Dark", name: "colorDark", widget: "color"}
 
-  - name: "faculty"
-    label: "Faculty"
-    files:
-      - file: "src/content/faculty.json"
-        label: "Faculty"
-        name: "faculty"
-        fields:
-          - name: "members"
-            label: "Members"
-            widget: "list"
-            fields:
-              - {label: "Category", name: "category", widget: "string"}
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Qualification", name: "qualification", widget: "string"}
-              - {label: "Experience", name: "experience", widget: "string"}
-              - {label: "Initials", name: "initials", widget: "string"}
-              - {label: "BgColor", name: "bgColor", widget: "string"}
-              - {label: "Highlight", name: "highlight", widget: "boolean"}
-
   - name: "admissions"
     label: "Admissions"
     files:
