@@ -161,22 +161,20 @@ export default function Results() {
         </div>
 
         {/* ============ 2. STATS BAR ============ */}
-        <div className="mt-14 max-w-5xl mx-auto rounded-3xl bg-slate-50 border border-slate-200/90 p-6 sm:p-8 shadow-sm">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-slate-200">
-            {statsList.map((stat, idx) => (
-              <div
-                key={idx}
-                className={`pt-4 sm:pt-0 ${idx > 0 ? 'sm:pl-6 lg:pl-8' : ''} text-center sm:text-left`}
-              >
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#D32F2F] tracking-tight">
-                  {stat.value}
-                </div>
-                <div className="mt-1.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-600">
-                  {stat.label}
-                </div>
+        <div className="mt-12 max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+          {statsList.map((stat, idx) => (
+            <div
+              key={idx}
+              className="rounded-2xl bg-slate-50 border border-slate-200/90 p-4 sm:p-5 lg:p-6 text-center hover:border-slate-300 transition-colors shadow-sm flex flex-col justify-center items-center"
+            >
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#D32F2F] tracking-tight whitespace-nowrap">
+                {stat.value}
               </div>
-            ))}
-          </div>
+              <div className="mt-1.5 text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-600">
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
