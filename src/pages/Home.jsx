@@ -21,13 +21,12 @@ import instagramData from '../content/instagram.json';
 /* ── Full-Width Hero Banner Carousel ── */
 function HeroSlider() {
   const [current, setCurrent] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(null);
   const touchEndX = useRef(null);
 
   const slides = heroData?.slides || [];
   const slideCount = slides.length || 1;
-  const autoplayInterval = heroData?.autoplayInterval || 5000;
+  const autoplayInterval = heroData?.autoplayInterval || 4000;
 
   const next = useCallback(() => {
     setCurrent((c) => (c + 1) % slideCount);
@@ -37,11 +36,12 @@ function HeroSlider() {
     setCurrent((c) => (c - 1 + slideCount) % slideCount);
   }, [slideCount]);
 
+  // Unconditional continuous autoplay (4s)
   useEffect(() => {
-    if (slideCount <= 1 || isPaused) return;
+    if (slideCount <= 1) return;
     const id = setInterval(next, autoplayInterval);
     return () => clearInterval(id);
-  }, [next, slideCount, isPaused, autoplayInterval]);
+  }, [next, slideCount, autoplayInterval]);
 
   const goTo = (i) => {
     setCurrent(i);
@@ -71,16 +71,14 @@ function HeroSlider() {
   return (
     <section
       className="relative w-full overflow-hidden bg-white select-none"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
       aria-roledescription="carousel"
       aria-label="Campus Brochure Highlights"
     >
-      {/* Slides Container */}
-      <div className="relative w-full aspect-[16/9] sm:aspect-[16/8] lg:aspect-[21/9] max-h-[640px] flex items-center justify-center bg-white">
+      {/* Slides Container (Optimized height for above-the-fold visibility of Marquee) */}
+      <div className="relative w-full aspect-[16/9] sm:aspect-[16/7] lg:aspect-[21/8] max-h-[480px] sm:max-h-[500px] lg:max-h-[520px] flex items-center justify-center bg-white">
         {slides.map((slide, idx) => {
           const isActive = idx === current;
           return (
@@ -311,7 +309,7 @@ function ResultsGallery() {
         <div
           key={activeTab}
           className="bs-marquee-track flex gap-5 py-4 select-none hover:[animation-play-state:paused]"
-          style={{ animationDuration: activeTab === 'jee' ? '40s' : '28s' }}
+          style={{ animationDuration: activeTab === 'jee' ? '65s' : '50s' }}
         >
           {marqueeImages.map((src, idx) => (
             <Link
