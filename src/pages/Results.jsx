@@ -302,8 +302,8 @@ export default function Results() {
           </div>
         </div>
 
-        {/* Posters Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+        {/* Posters Grid (5 in a row on desktop) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5 sm:gap-4 lg:gap-5">
           {displayItems.map((item, idx) => (
             <div
               key={`${item.type}-${idx}`}
