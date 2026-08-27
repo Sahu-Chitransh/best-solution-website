@@ -166,7 +166,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-black/5">
       {/* Top Red Accent Line */}
-      <div className="h-[3px] w-full bg-[#D32F2F]" />
+      <div className="h-1.5 w-full bg-[#D32F2F]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-18">
         {/* Logo */}
