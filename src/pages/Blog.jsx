@@ -20,7 +20,7 @@ function useScrollReveal() {
       { threshold: 0.1 }
     );
     observer.observe(el);
-    return () => observer.unobserve(el);
+    return () => observer.disconnect();
   }, []);
   return ref;
 }
@@ -45,7 +45,7 @@ const tagColors = {
 };
 
 /* ── Newspaper Cutting Lightbox ── */
-function CuttingLightbox({ cutting, cuttings, onClose, onNav }) {
+function CuttingLightbox({ cutting, onClose, onNav }) {
   useEffect(() => {
     const handler = (e) => {
       if (e.key === 'Escape') onClose();
@@ -143,7 +143,6 @@ export default function Blog() {
       {lightboxIdx !== null && (
         <CuttingLightbox
           cutting={newspaperCuttings[lightboxIdx]}
-          cuttings={newspaperCuttings}
           onClose={() => setLightboxIdx(null)}
           onNav={handleLightboxNav}
         />

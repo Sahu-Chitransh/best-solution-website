@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Trophy, Sparkles, Medal, Award, CheckCircle2,
+  Trophy, Sparkles, Medal,
   ArrowRight, X, ChevronLeft, ChevronRight, ZoomIn, ShieldCheck,
 } from 'lucide-react';
 import resultsData from '../content/results.json';

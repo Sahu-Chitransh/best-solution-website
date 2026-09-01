@@ -6,6 +6,9 @@ const useScrollReveal = () => {
   const ref = useRef(null);
   
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -16,14 +19,10 @@ const useScrollReveal = () => {
       { threshold: 0.1 }
     );
     
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(el);
     
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      observer.disconnect();
     };
   }, []);
   

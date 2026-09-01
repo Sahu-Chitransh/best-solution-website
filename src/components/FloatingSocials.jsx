@@ -8,10 +8,12 @@ const phoneStr = (p) => typeof p === 'string' ? p : (p && (p.phone || Object.val
 export default function FloatingSocials() {
   const [open, setOpen] = useState(false);
 
+  const primaryPhone = phoneStr(contactData.phones?.[0]) || '9425959956';
+
   const socials = [
     {
       label: 'WhatsApp',
-      href: `https://wa.me/91${phoneStr(contactData.phones?.[0]).replace(/\s/g, '')}`,
+      href: `https://wa.me/91${primaryPhone.replace(/\D/g, '')}`,
       target: '_blank',
       bg: '#25D366',
       icon: (

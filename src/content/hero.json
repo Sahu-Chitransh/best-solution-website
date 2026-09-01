@@ -1,5 +1,5 @@
 {
-  "autoplayInterval": 5000,
+  "autoplayInterval": 4000,
   "slides": [
     {
       "id": 1,
@@ -15,16 +15,6 @@
       "id": 3,
       "image": "/images/hero/slide-3.jpg",
       "alt": "Best Solution Academic Pathways - School Syllabus to Competitive Exams"
-    },
-    {
-      "id": 4,
-      "image": "/images/hero/slide-4.jpg",
-      "alt": "JEE Advanced है आसान - Best Solution IIT Toppers"
-    },
-    {
-      "id": 5,
-      "image": "/images/hero/slide-5.jpg",
-      "alt": "Best Solution Indore Campus - उड़ें परिंदे आसमान में - Vijay Nagar Campus"
     }
   ]
 }

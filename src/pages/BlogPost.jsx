@@ -19,9 +19,7 @@ function useScrollReveal() {
       { threshold: 0.1 }
     );
     observer.observe(el);
-    return () => {
-      observer.unobserve(el);
-    };
+    return () => observer.disconnect();
   }, []);
   return ref;
 }

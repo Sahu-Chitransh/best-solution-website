@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
  * to the top of the viewport upon every route change.
  */
 export default function ScrollToTop() {
-  const { pathname, search, hash } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
     // If navigating to a specific hash anchor (e.g. #section-id)
@@ -30,7 +30,7 @@ export default function ScrollToTop() {
     });
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
-  }, [pathname, search, hash]);
+  }, [pathname, hash]);
 
   return null;
 }

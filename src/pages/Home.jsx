@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Sparkles, ArrowRight,
-  X, ChevronLeft, ChevronRight, Download,
+  ChevronLeft, ChevronRight, Download,
 } from 'lucide-react';
 import { DoctorIllustration, EngineerIllustration, RocketIllustration } from '../components/GoalIllustrations';
 import coursesData from '../content/courses.json';
@@ -77,8 +77,8 @@ function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Campus Brochure Highlights"
     >
-      {/* Slides Container - Sized so the Marquee ticker sits exactly at the bottom of the initial screen */}
-      <div className="relative w-full h-[calc(100vh-130px)] min-h-[480px] max-h-[780px] flex items-center justify-center bg-white">
+      {/* Slides Container - Native 16:9 Aspect Ratio matching slide images 1:1 */}
+      <div className="relative w-full aspect-[16/9] flex items-center justify-center bg-white">
         {slides.map((slide, idx) => {
           const isActive = idx === current;
           return (
@@ -92,7 +92,7 @@ function HeroSlider() {
               <img
                 src={slide.image}
                 alt={slide.alt || `Best Solution Banner ${idx + 1}`}
-                className="w-full h-full object-contain object-center"
+                className="w-full h-full object-contain object-center select-none"
                 loading={idx === 0 ? 'eager' : 'lazy'}
               />
             </div>

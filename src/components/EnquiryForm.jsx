@@ -23,9 +23,18 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
 
   const update = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!form.name || !form.phone) return;
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ 'form-name': 'enquiry', ...form }).toString(),
+      });
+    } catch (err) {
+      console.error('Enquiry form submission error:', err);
+    }
     setSubmitted(true);
   };
 
@@ -59,7 +68,10 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
       className="rounded-3xl border border-black/10 bg-white shadow-sm p-6 sm:p-8"
       onSubmit={handleSubmit}
       name="enquiry"
+      method="POST"
+      data-netlify="true"
     >
+      <input type="hidden" name="form-name" value="enquiry" />
       <div className="mb-6">
         <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-[#0A0A0A]">
           {title}
@@ -71,6 +83,7 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
         <Field label="Full Name">
           <input
             type="text"
+            name="name"
             placeholder="Aditya Bhardwaj"
             className={inputClass}
             value={form.name}
@@ -80,6 +93,7 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
         <Field label="Mobile">
           <input
             type="tel"
+            name="phone"
             placeholder="94259 59956"
             className={`${inputClass} font-mono`}
             value={form.phone}
@@ -89,6 +103,7 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
         <Field label="Email (optional)">
           <input
             type="email"
+            name="email"
             placeholder="you@example.com"
             className={inputClass}
             value={form.email}
@@ -97,6 +112,7 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
         </Field>
         <Field label="Class / Grade">
           <select
+            name="grade"
             className={inputClass}
             value={form.grade}
             onChange={update('grade')}
@@ -113,6 +129,7 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
       <div className="mt-4">
         <Field label="Interested in">
           <select
+            name="course"
             className={inputClass}
             value={form.course}
             onChange={update('course')}
@@ -129,6 +146,7 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
       <div className="mt-4">
         <Field label="Message (optional)">
           <textarea
+            name="message"
             rows={3}
             placeholder="Anything you'd like our counsellor to know..."
             className={`${inputClass} resize-none`}

@@ -7,38 +7,189 @@
       "title": "Top 10 Tips to Ace IIT-JEE 2026 — From Our Coaches",
       "snippet": "A tactical playbook combining our teaching floor's most repeated advice — from timetable to test-day rituals.",
       "date": "12 Jan 2026",
+      "author": "Dr. Ajay Sharma",
+      "authorRole": "Head of Physics · IIT Roorkee, ex-Allen",
+      "bgColor": "bg-slate-200",
       "image": "/blog-images/iitjee-tips.png",
-      "bgColor": "bg-slate-200"
+      "keyTakeaways": [
+        "Master foundational NCERT derivations before diving into shortcut tricks.",
+        "Maintain a dedicated Mistake Notebook to turn negative marks into guaranteed scoring areas.",
+        "Treat Chemistry as your rank accelerator — Inorganic NCERT must be revised weekly.",
+        "Simulate full 3-hour exam conditions with negative marking at least twice a week."
+      ],
+      "content": [
+        {
+          "heading": "1. Master Fundamentals Before Chasing Shortcut Formulas",
+          "paragraphs": [
+            "Every year, thousands of aspirants jump straight into 500-page formula compendiums hoping for quick breakthroughs. At Best Solution, our 14 years of mentoring top rankers in Indore have proven the exact opposite: JEE Advanced tests conceptual depth, not formula recall.",
+            "Spend the initial 40% of your study cycle proving formulas from first principles. When you understand how a thermodynamic equation or rotational mechanics theorem is derived, twisted questions in the exam hall will never throw you off."
+          ]
+        },
+        {
+          "heading": "2. The 3-Tier Problem Solving Hierarchy",
+          "paragraphs": [
+            "Structure your daily practice using our verified three-tier system:",
+            "Level 1: NCERT textbook and Exemplar problems to build bulletproof fundamentals.",
+            "Level 2: Standard coaching module sheets with single-correct and numerical type questions.",
+            "Level 3: Last 15 years' JEE Advanced multi-correct and matrix-match problems under strict timer constraints."
+          ]
+        },
+        {
+          "heading": "3. The 'Mistake Notebook' Discipline",
+          "paragraphs": [
+            "Top rankers don't solve twice as many questions as average students — they make half as many repeated mistakes. Maintain a physical A4 notebook strictly partitioned into Calculation Slips, Conceptual Misunderstandings, and Question Misreads.",
+            "Review this notebook every Sunday night before your mock test. Eliminating 4 silly mistakes per paper boosts your score by 20 marks — often the difference between a top-5 IIT branch and missing out entirely."
+          ]
+        },
+        {
+          "heading": "4. Chemistry: The Silent Rank Decider",
+          "paragraphs": [
+            "Physics and Mathematics determine selection, but Chemistry determines your All India Rank. Inorganic Chemistry requires line-by-line NCERT absorption — treat exceptions, trends, and laboratory tests as non-negotiable memory anchors.",
+            "For Organic Chemistry, focus on reaction mechanisms and stereochemistry pathways rather than memorizing isolated end products."
+          ]
+        },
+        {
+          "heading": "5. Time-Boxed Mock Tests & Analysis Ratios",
+          "paragraphs": [
+            "Taking a 3-hour mock test without 3 hours of subsequent question-by-question analysis is a wasted opportunity. Categorize every unattempted or wrong question into: 'Knew but ran out of time', 'Guessed incorrectly', and 'Concept unknown'.",
+            "This diagnostic feedback loop is the heartbeat of our rank-building program at Vijay Nagar."
+          ]
+        }
+      ]
     },
     {
       "id": 2,
       "category": "NEET",
       "readTime": "8 MIN",
       "title": "How to Crack NEET in Your First Attempt",
-      "snippet": "A framework used by 4 of our AIR<3000 NEET rankers, broken down into weekly cycles.",
+      "snippet": "A framework used by our top NEET rankers, broken down into high-yield weekly cycles.",
       "date": "05 Jan 2026",
+      "author": "Dr. Sneha Verma",
+      "authorRole": "Senior NEET Mentor · MBBS",
+      "bgColor": "bg-blue-100",
       "image": "/blog-images/neet-crack.png",
-      "bgColor": "bg-blue-100"
+      "keyTakeaways": [
+        "Aim for a 360/360 in Biology by memorizing NCERT diagrams, summaries, and scientist bios.",
+        "Overcome Physics anxiety by focusing on high-weightage topics like Modern Physics & Optics.",
+        "Practice on physical OMR sheets weekly to eliminate fatal bubbling and sequence errors.",
+        "Adopt a 3-pass question paper attempt strategy on exam day."
+      ],
+      "content": [
+        {
+          "heading": "1. Biology: The 360/360 Non-Negotiable Standard",
+          "paragraphs": [
+            "With NEET cutoffs soaring, scoring anything less than 340+ in Biology severely restricts government medical college seats. NCERT is not just a reference book; it is the question bank.",
+            "Pay special attention to diagram labels, introductory scientist biographies, and summary paragraphs at the end of each chapter. Over 95% of questions in Botany and Zoology directly mirror NCERT phrasing."
+          ]
+        },
+        {
+          "heading": "2. Conquering Physics Anxiety for Medical Students",
+          "paragraphs": [
+            "Most NEET aspirants struggle with Physics due to basic mathematical disconnects. Break this barrier by mastering Basic Math (Calculus, Vectors, Graphs) in week one.",
+            "Target high-yield, high-accuracy units first: Modern Physics, Optics, Thermal Physics, and Current Electricity. These four units alone contribute 50-60 marks with relatively direct formula applications."
+          ]
+        },
+        {
+          "heading": "3. Physical OMR Sheet Practice",
+          "paragraphs": [
+            "Digital mock tests are great for analytics, but NEET is strictly pen-and-paper. At least once a week, sit with a printed OMR sheet and bubble answers in real time.",
+            "Practice bubbling after every completed subject section (e.g. all Biology first) rather than question-by-question or all at the very end. This eliminates sequence shift catastrophes."
+          ]
+        },
+        {
+          "heading": "4. The 3-Pass Exam Room Strategy",
+          "paragraphs": [
+            "Pass 1 (0 to 60 mins): Solve all direct, memory-based Biology and Chemistry questions.",
+            "Pass 2 (60 to 130 mins): Solve standard Physics calculation questions and remaining Chemistry numericals.",
+            "Pass 3 (130 to 180 mins): Tackle lengthy calculations, double-check tricky assertions, and finalize OMR fills with 10 minutes reserved for contingency."
+          ]
+        }
+      ]
     },
     {
       "id": 3,
       "category": "CCG",
       "readTime": "5 MIN",
       "title": "What Is the CCG Program? A Complete Guide",
-      "snippet": "If your child is undecided between commerce, science or humanities, this new integrated program is built for them.",
+      "snippet": "If your child is exploring commerce, management, law or multidisciplinary careers, this integrated program is built for them.",
       "date": "28 Dec 2025",
+      "author": "Mr. Arjun Deshmukh",
+      "authorRole": "Program Director · IIM Indore Alumnus",
+      "bgColor": "bg-amber-100",
       "image": "/blog-images/ccg-program.png",
-      "bgColor": "bg-amber-100"
+      "keyTakeaways": [
+        "CCG blends Quantitative Aptitude, Logical Reasoning, Verbal Ability & Applied Economics.",
+        "Direct preparation for IPMAT (IIM Indore/Rohtak/Ranchi), CUET, CLAT & SAT.",
+        "Starting in Class 9 or 10 provides a 3x compounding advantage in aptitude competitions.",
+        "Designed to run harmoniously alongside regular CBSE and State Board school curriculums."
+      ],
+      "content": [
+        {
+          "heading": "1. Moving Beyond the Binary of Traditional Streams",
+          "paragraphs": [
+            "For decades, parents in central India felt forced into an all-or-nothing choice between Engineering and Medicine. Today, premier national programs like IIM Indore's 5-Year Integrated Program in Management (IPMAT), top law universities (NLUs via CLAT), and Central Universities via CUET offer exceptional career trajectories.",
+            "The CCG (Commerce, Corporate & General Aptitude) Program at Best Solution is our proprietary curriculum designed specifically to prepare students for these modern high-prestige admissions."
+          ]
+        },
+        {
+          "heading": "2. Four Core Pillars of the Curriculum",
+          "paragraphs": [
+            "Quantitative Aptitude: Number systems, arithmetic progression, combinatorics, and data interpretation taught with high-speed mental math techniques.",
+            "Verbal Ability & Reading Comprehension: Critical reasoning, vocabulary in context, grammar mechanics, and speed reading protocols.",
+            "Logical & Analytical Reasoning: Puzzles, syllogisms, linear arrangements, and critical decision-making sets.",
+            "General Awareness & Business Fundamentals: Current affairs, macroeconomics, and commercial awareness."
+          ]
+        },
+        {
+          "heading": "3. The Early-Starter Advantage",
+          "paragraphs": [
+            "Aptitude cannot be crammed in 2 months after 12th board exams. Students who begin foundation training in Class 9 or 10 build neuro-pathways for fast analytical thinking.",
+            "They routinely score in the 99th percentile because problem-solving has become second nature rather than an eleventh-hour struggle."
+          ]
+        }
+      ]
     },
     {
       "id": 4,
       "category": "BOARDS",
       "readTime": "7 MIN",
       "title": "Board Exam Strategy 2026 — The 90+% Roadmap",
-      "snippet": "Practical, weekly milestones for Class 12 board students, tuned for CBSE and MP Board.",
+      "snippet": "Practical, weekly milestones for Class 10 & 12 board students, tuned for CBSE and MP Board.",
       "date": "20 Dec 2025",
+      "author": "Prof. Neeraj Mishra",
+      "authorRole": "Senior Academic Lead · IIT BHU",
+      "bgColor": "bg-rose-100",
       "image": "/blog-images/board-exam.png",
-      "bgColor": "bg-rose-100"
+      "keyTakeaways": [
+        "Competitive MCQs and Board subjective answers require fundamentally different presentation skills.",
+        "Step-wise marks in Physics, Chemistry, and Math can salvage 15+ marks in every paper.",
+        "Do not leave English and optional subjects until the final 10 days before exams.",
+        "Solve 5 full previous-year papers with strict word count and margin guidelines."
+      ],
+      "content": [
+        {
+          "heading": "1. Bridging the MCQ vs. Subjective Presentation Gap",
+          "paragraphs": [
+            "Students preparing for JEE/NEET often lose silly marks in board exams not due to lack of knowledge, but poor presentation. Competitive exams reward speed; board examiners reward step-by-step clarity, neat diagrams, and explicit state equations.",
+            "Always state the governing formula, define variables, show unit cancellations, and box final answers with appropriate SI units."
+          ]
+        },
+        {
+          "heading": "2. The Step-Marking Treasure Hunt",
+          "paragraphs": [
+            "In both CBSE and MP Board evaluation rubrics, every long-answer question has allocated sub-marks for: (a) Formula statement, (b) Circuit/Ray diagram, (c) Substitution, (d) Final computation.",
+            "Even if numerical calculations go wrong in the final step, a cleanly presented derivation guarantees 80-90% of the available question marks."
+          ]
+        },
+        {
+          "heading": "3. The 45-Day Countdown Schedule",
+          "paragraphs": [
+            "Days 45 to 30: Complete all NCERT back-of-chapter exercises and exemplar proofs.",
+            "Days 30 to 15: Solve 5 official sample question papers published by the respective board under strict 3-hour exam timing.",
+            "Days 15 to 1: Focus on revision of definitions, named reactions in Chemistry, ray diagrams in Physics, and theorem proofs in Mathematics."
+          ]
+        }
+      ]
     },
     {
       "id": 5,
@@ -47,8 +198,39 @@
       "title": "Why Early Olympiad Coaching Actually Matters",
       "snippet": "Olympiads aren't about extra syllabus — they build a reasoning core that IIT/NEET exploit later.",
       "date": "10 Dec 2025",
+      "author": "Ms. Kavya Iyer",
+      "authorRole": "Olympiad Division Head · CMI, RMO Mentor",
+      "bgColor": "bg-emerald-100",
       "image": "/blog-images/olympiad.png",
-      "bgColor": "bg-emerald-100"
+      "keyTakeaways": [
+        "Olympiad training replaces superficial memorization with rigorous mathematical reasoning.",
+        "Competitions like PRMO, RMO, NSEJS and INPhO provide early national benchmark exposure.",
+        "Students trained in Olympiad problem-solving find Class 11-12 transition smooth and natural.",
+        "Builds psychological resilience against complex, multi-layered problem statements."
+      ],
+      "content": [
+        {
+          "heading": "1. The Truth About School Marks vs. True Problem Solving",
+          "paragraphs": [
+            "Scoring 98% in middle school often creates a false sense of security. School exams reward syllabus coverage and formula reproduction, but competitive exams test unstructured problem solving.",
+            "Science and Math Olympiads (like PRMO/IOQM and NSEJS) present questions where no standard template works. Students learn to sit with an unsolved problem for 30 minutes, testing hypotheses, drawing representations, and discovering elegance."
+          ]
+        },
+        {
+          "heading": "2. Smooth Transition into Senior Competitive Coaching",
+          "paragraphs": [
+            "The biggest drop in student confidence occurs in Class 11, when syllabus difficulty increases by 400%. Students who have experienced Olympiad coaching in Class 7, 8, or 9 breeze through this transition because their analytical stamina is already conditioned.",
+            "They understand that feeling challenged is part of the learning curve, not a sign of failure."
+          ]
+        },
+        {
+          "heading": "3. Prestigious Credentials & Global Recognition",
+          "paragraphs": [
+            "Olympiad stage qualifiers (RMO, INPhO, INChO, KVPY) earn direct recognition from IISc Bangalore, CMI, ISI, and international university admissions boards.",
+            "At Best Solution, our specialized Olympiad batches mentor students from Class 6 onwards with curated problem sets from global competitions."
+          ]
+        }
+      ]
     },
     {
       "id": 6,
@@ -57,8 +239,46 @@
       "title": "5 Habits to Beat Exam Stress (That Actually Work)",
       "snippet": "Written with our in-house counsellor for parents and students juggling boards + entrance exams.",
       "date": "01 Dec 2025",
+      "author": "Ms. Ritu Jain",
+      "authorRole": "Head of Student Counselling · MA Psychology",
+      "bgColor": "bg-violet-100",
       "image": "/blog-images/exam-stress.png",
-      "bgColor": "bg-violet-100"
+      "keyTakeaways": [
+        "Adopt the 50-10 study rhythm with zero-screen rest intervals.",
+        "Physical movement and 7 hours of consistent sleep directly correlate with memory consolidation.",
+        "Normalize mock test fluctuations: score dips are diagnostics, not character verdicts.",
+        "Practice the 4-7-8 breathing technique before opening question papers."
+      ],
+      "content": [
+        {
+          "heading": "1. The 50-10 Focus Cycle (Zero-Screen Rest)",
+          "paragraphs": [
+            "Human working memory peaks for 45 to 50 minutes before neural fatigue sets in. Study in focused 50-minute blocks followed by a 10-minute break.",
+            "Crucially, your break must not involve scrolling social media or watching short-form videos — which overstimulates dopamine and wipes working memory. Instead, stretch, hydrate, or look out a window."
+          ]
+        },
+        {
+          "heading": "2. Sleep as a Cognitive Multiplier",
+          "paragraphs": [
+            "Pulling all-nighters right before tests produces a 20-30% drop in cognitive processing speed. During Stage 3 and REM sleep, the brain's hippocampus transfers short-term study memories into permanent neural networks.",
+            "Protect a non-negotiable 7-hour sleep window, particularly in the final 60 days leading up to competitive exams."
+          ]
+        },
+        {
+          "heading": "3. The Pre-Exam Grounding Routine",
+          "paragraphs": [
+            "When exam stress triggers adrenaline surges, heart rate spikes and working memory narrows. Use the 4-7-8 breathing technique: inhale through the nose for 4 counts, hold for 7 counts, and exhale slowly through the mouth for 8 counts.",
+            "Doing this three times immediately resets the parasympathetic nervous system and restores calm problem-solving focus."
+          ]
+        },
+        {
+          "heading": "4. A Word for Parents: Reframe Mock Results",
+          "paragraphs": [
+            "Mock test scores will fluctuate. Treat low scores as valuable diagnostics pointing out exact weak concepts while there is still time to fix them. Celebrate effort and discipline over rank numbers.",
+            "Our counselling desk at Best Solution is always open for one-on-one student and parent mentorship sessions."
+          ]
+        }
+      ]
     },
     {
       "id": 7,
@@ -67,8 +287,46 @@
       "title": "Time Management Hacks for JEE Aspirants — The 16-Hour Formula",
       "snippet": "How our toppers split 16 waking hours between school, self-study, coaching and rest — without burning out before Mains.",
       "date": "15 Feb 2026",
+      "author": "Er. Rajesh Kulkarni",
+      "authorRole": "Senior Academic Mentor & JEE Strategist · IIT Delhi",
+      "bgColor": "bg-orange-100",
       "image": "/blog-images/time-management.png",
-      "bgColor": "bg-orange-100"
+      "keyTakeaways": [
+        "Divide your 16 waking hours into dedicated 4-hour deep work blocks rather than fragmented hourly sessions.",
+        "Prioritize self-study problem solving in a 2:1 ratio over passive lecture watching and note rewriting.",
+        "Use biological prime time (early morning or post-exercise) for your most demanding physics and math topics.",
+        "Implement daily shutdown rituals and digital boundaries to protect restorative 7-8 hour sleep cycles."
+      ],
+      "content": [
+        {
+          "heading": "1. The 16-Hour Daily Architecture",
+          "paragraphs": [
+            "Every JEE aspirant has the exact same 24 hours. The difference between an AIR 500 and an unranked candidate lies in how waking hours (typically 16 hours) are allocated and guarded against cognitive friction.",
+            "A balanced day breaks into: 6 hours of coaching and classroom instruction, 6 hours of high-focus independent problem solving, 2 hours of revision and mistake logging, and 2 hours for meals, exercise, and transition periods. The remaining 8 hours are strictly non-negotiable sleep and mental recovery."
+          ]
+        },
+        {
+          "heading": "2. The 2:1 Active-to-Passive Learning Ratio",
+          "paragraphs": [
+            "The biggest time-drain among JEE students is passive consumption: re-watching video lectures at 1.5x speed or re-reading colored notes. While this feels productive, it activates almost zero long-term memory retrieval circuits.",
+            "Follow the 2:1 rule: for every 1 hour spent learning theory, spend 2 hours actively solving unassisted numerical problems under a countdown timer. Active friction is where true neural consolidation happens."
+          ]
+        },
+        {
+          "heading": "3. Energy Management vs. Simple Time Management",
+          "paragraphs": [
+            "Not all hours of the day are created equal. Solving complex rotational dynamics or integral calculus requires peak cognitive stamina, which usually occurs 60 to 90 minutes after waking or immediately after an afternoon physical refresh.",
+            "Map your hardest subjects to your biological prime time. Reserve low-energy slots (like right after heavy lunches or late evenings) for mechanical tasks: inorganic chemistry flashcard reviews, periodic table drills, or formula notebook organization."
+          ]
+        },
+        {
+          "heading": "4. Weekly Time-Auditing & Burnout Prevention",
+          "paragraphs": [
+            "Maintain a simple time log for one week. Most students are shocked to discover 15-20 hours slipping away in unorganized transitions, social media micro-checks, and unproductive study group banter.",
+            "Schedule a mandatory half-day off every Sunday evening after completing your mock test analysis. Consistent sustainable effort over 18 months beats erratic 16-hour sprints followed by two weeks of debilitating burnout."
+          ]
+        }
+      ]
     },
     {
       "id": 8,
@@ -77,8 +335,46 @@
       "title": "Physics Shortcuts That Actually Work in JEE — 20 Tricks from Our Faculty",
       "snippet": "Dimensional analysis, energy conservation tricks, and symmetry arguments that save 5–8 minutes per paper. Compiled by our senior physics faculty.",
       "date": "22 Feb 2026",
+      "author": "Dr. Ajay Sharma",
+      "authorRole": "Head of Physics · IIT Roorkee, ex-Allen",
+      "bgColor": "bg-sky-100",
       "image": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop",
-      "bgColor": "bg-sky-100"
+      "keyTakeaways": [
+        "Eliminate 2 out of 4 multiple-choice options in seconds using dimensional analysis and boundary limit checks.",
+        "Leverage spatial and electrical symmetry to reduce multi-loop circuit and field calculations to one-line solutions.",
+        "Replace tedious kinematics integration with work-energy theorem and centre-of-mass frame transformations.",
+        "Always test limiting conditions (θ → 0, θ → 90°, m → ∞) before performing multi-page algebraic proofs."
+      ],
+      "content": [
+        {
+          "heading": "1. Option Elimination via Dimensional Analysis & Units",
+          "paragraphs": [
+            "In both JEE Main and Advanced, question setters frequently construct incorrect distractors that fail basic dimensional consistency. Before launching into a 5-minute derivation, check the dimensions of the four given options.",
+            "If a question asks for a time period and an option has dimensions of velocity squared over acceleration, strike it out immediately. In our analysis of the last 10 years of JEE papers, nearly 18% of physics MCQs can be narrowed down to two options (or solved outright) through pure dimensional verification."
+          ]
+        },
+        {
+          "heading": "2. The Power of Extreme Boundary Testing (Limiting Cases)",
+          "paragraphs": [
+            "When faced with parametric formulas in mechanics or wave optics, test extreme boundary values. What happens when the angle of inclination approaches zero? What happens when one mass becomes infinitely larger than the other?",
+            "If an expression for acceleration on an inclined plane doesn't reduce to g*sin(θ) when friction is set to zero, or if it doesn't give zero acceleration when the plane becomes horizontal, that option is physically impossible. This single trick can eliminate incorrect options in under 20 seconds."
+          ]
+        },
+        {
+          "heading": "3. Symmetry & Superposition in Electromagnetism and Circuits",
+          "paragraphs": [
+            "Complex resistor cubes, infinite grids, and charged symmetric geometries don't need Kirchhoff's 5-variable simultaneous equations. Identify equipotential planes of symmetry and perpendicular axis planes.",
+            "Folding symmetric circuits in half or removing zero-current bridge elements turns daunting Olympiad-level schematics into simple series-parallel combinations that solve in 30 seconds."
+          ]
+        },
+        {
+          "heading": "4. Center of Mass & Work-Energy Shortcuts in Mechanics",
+          "paragraphs": [
+            "Two-body collision, spring-block oscillation, and planetary orbit problems become exponentially simpler when viewed from the Center of Mass (C-Frame). In the C-frame, total linear momentum is identically zero, reducing kinetic energy calculations to reduced mass (μ) formulas.",
+            "Combined with the Work-Energy theorem, you bypass time-dependent acceleration integrations completely, moving straight from initial to final state in two lines."
+          ]
+        }
+      ]
     },
     {
       "id": 9,
@@ -87,8 +383,46 @@
       "title": "A Parent's Guide to Supporting Your NEET Aspirant",
       "snippet": "What to say, what not to say, and how to create a home environment that reduces pressure while keeping motivation high.",
       "date": "01 Mar 2026",
+      "author": "Ms. Ritu Jain",
+      "authorRole": "Head of Student Counselling · MA Psychology",
+      "bgColor": "bg-pink-100",
       "image": "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?w=600&h=400&fit=crop",
-      "bgColor": "bg-pink-100"
+      "keyTakeaways": [
+        "Shift family conversations from ranks and cutoffs to daily learning habits and emotional resilience.",
+        "Create an ergonomically sound, distraction-free home environment with low household anxiety.",
+        "Recognize early warning signs of cognitive overload, academic fatigue, and exam-related isolation.",
+        "Partner actively with institute mentors to address diagnostic test dips constructively."
+      ],
+      "content": [
+        {
+          "heading": "1. Reframing the Pressure: From Rank Anxiety to Process Focus",
+          "paragraphs": [
+            "NEET preparation is a high-stakes marathon where over 2 million students compete for limited medical seats. Aspirants carry immense internal pressure to live up to parental expectations. When conversations at the dinner table revolve exclusively around cutoffs, AIR goals, and peer comparisons, student anxiety skyrockets.",
+            "Shift your questions from 'What rank did you score in Sunday's test?' to 'Which topics felt clearer this week?' and 'How can we support your study schedule?' Validating effort over immediate test ranks builds the emotional safety net required for bold problem-solving."
+          ]
+        },
+        {
+          "heading": "2. Designing an Optimal Home Environment",
+          "paragraphs": [
+            "The physical and emotional atmosphere at home directly impacts cognitive endurance. Ensure the study space is well-lit, ventilated, and free from recurring household disturbances or loud television noise.",
+            "Equally important is nutritional and sleep discipline. Provide balanced, brain-healthy meals rich in complex carbohydrates and omega fatty acids, and discourage late-night caffeine binges that compromise essential REM sleep cycles."
+          ]
+        },
+        {
+          "heading": "3. What to Say vs. What Never to Say",
+          "paragraphs": [
+            "Avoid phrases like 'Sharma ji's daughter is scoring 680' or 'If you don't clear this year, what will relatives think?'. These trigger defensive stress responses and fear of failure, paralyzing performance during exams.",
+            "Instead, use empowering reinforcement: 'We believe in your dedication, and mock tests are just practice tools to uncover errors before the actual exam.' Normalizing score fluctuations allows students to confront weak areas without fear."
+          ]
+        },
+        {
+          "heading": "4. Maintaining a Collaborative Teacher-Parent Bridge",
+          "paragraphs": [
+            "Parents should not have to act as subject examiners. Leave academic troubleshooting to experienced subject mentors and maintain regular communication with coaching faculty.",
+            "At Best Solution, our monthly mentor-parent check-ins provide transparent tracking of student attendance, conceptual accuracy, and mental well-being, ensuring students feel supported from all sides."
+          ]
+        }
+      ]
     },
     {
       "id": 10,
@@ -97,8 +431,46 @@
       "title": "Organic Chemistry Made Easy — The Reaction Map Method",
       "snippet": "Stop rote-learning 200 reactions. Our chemistry faculty's visual 'reaction map' connects named reactions into one logical flowchart.",
       "date": "10 Mar 2026",
+      "author": "Prof. S. N. Roy",
+      "authorRole": "Head of Organic Chemistry · Ex-Faculty Super 30",
+      "bgColor": "bg-teal-100",
       "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop",
-      "bgColor": "bg-teal-100"
+      "keyTakeaways": [
+        "Replace isolated reaction memorization with interconnected functional group synthesis pathways.",
+        "Master core electron-pushing mechanisms: Electrophilic Aromatic Substitution, Nucleophilic Addition, and Elimination.",
+        "Map conversion roadmaps starting from Alkanes/Alkenes to Carbonyl Compounds and Amines.",
+        "Practice multi-step synthesis conversion puzzles daily to predict reagents and stereochemical outcomes effortlessly."
+      ],
+      "content": [
+        {
+          "heading": "1. Why Rote Memorization Fails in NEET Organic Chemistry",
+          "paragraphs": [
+            "Many students attempt to memorize 200+ named reactions like isolated history dates. In the examination hall, NEET questions rarely ask for simple definitions; they present multi-step conversion chains (A → B → C) with intermediate stereochemical and reagent variations.",
+            "When reactions are memorized in silos, a single unknown reagent breaks the entire chain. The Reaction Map Method organizes all organic transformations around central functional group hubs, turning chemistry into an intuitive subway map."
+          ]
+        },
+        {
+          "heading": "2. Building the Core Functional Group Interchange (FGI) Map",
+          "paragraphs": [
+            "Start with Hydrocarbons at the centre. Branch outward to Alkyl Halides via free-radical halogenation or Markovnikov additions. From Alkyl Halides, map the major two-way highways: substitution to Alcohols, elimination to Alkenes, and nucleophilic substitution to Nitriles and Amines.",
+            "Next, connect Alcohols to Aldehydes, Ketones, and Carboxylic Acids through graded oxidation levels (PCC vs. Jones reagent vs. KMnO4). Having this visual web on a single chart lets you trace any conversion path from compound X to compound Y in 3 moves or less."
+          ]
+        },
+        {
+          "heading": "3. The Big Three Mechanistic Archetypes",
+          "paragraphs": [
+            "90% of organic transformations in the NCERT syllabus follow three core mechanisms: (1) Electrophilic Addition/Substitution, (2) Nucleophilic Addition to Carbonyls, and (3) SN1/SN2/E1/E2 competition.",
+            "When you master electronic factors (inductive effect, resonance, hyperconjugation) and steric hindrance, you no longer need to guess the product — the most nucleophilic site naturally attacks the most electrophilic center with predictable regioselectivity."
+          ]
+        },
+        {
+          "heading": "4. Daily 15-Minute Conversion Drills",
+          "paragraphs": [
+            "Draw blank functional group nodes on an A3 whiteboard or chart. Practice filling in the necessary reagents (e.g., Grignard, LiAlH4, NaBH4, Diazonium couplings, Aldol, Cannizzaro, Hoffmann Bromamide) from memory without looking at notes.",
+            "Doing one 15-minute conversion roadmap daily guarantees 100% accuracy in NEET Organic Chemistry, converting a dreaded section into your highest-speed scoring asset."
+          ]
+        }
+      ]
     },
     {
       "id": 11,
@@ -107,8 +479,48 @@
       "title": "How Mock Tests Doubled Our Students' Board Scores",
       "snippet": "Data from 300+ students shows that weekly timed mocks improve speed by 22% and accuracy by 18%. Here's our exact mock schedule.",
       "date": "18 Mar 2026",
+      "author": "Prof. Neeraj Mishra",
+      "authorRole": "Senior Academic Lead · IIT BHU",
+      "bgColor": "bg-red-100",
       "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop",
-      "bgColor": "bg-red-100"
+      "keyTakeaways": [
+        "Timed 3-hour mock exams eliminate pacing panic and incomplete answer sheets on final board exam day.",
+        "Weekly answer script evaluations pinpoint step-marking leaks in Physics, Chemistry, and Mathematics.",
+        "Simulating official exam hall conditions builds handwriting speed, layout precision, and mental stamina.",
+        "Detailed post-mock answer rubrics teach students exactly how board evaluators allocate step marks."
+      ],
+      "content": [
+        {
+          "heading": "1. The Board Examination Reality: Knowledge vs. Presentation Speed",
+          "paragraphs": [
+            "Board examinations are not merely an assessment of what you understand; they are a race against the clock with rigid presentation expectations. Our longitudinal tracking of over 300 students in Indore revealed that 40% of lost marks were due to running out of time on long-answer questions or omitting intermediate derivation steps.",
+            "Students who wrote at least 8 full-length, timed mock tests before the board finals improved their writing speed by 22% and increased average final scores from 68% to 89%+."
+          ]
+        },
+        {
+          "heading": "2. Step-Marking Calibration & Rubric Awareness",
+          "paragraphs": [
+            "In board evaluations (CBSE & State Boards), marks are credited according to strict step rubrics. A 5-mark Physics question allocates 1 mark for the circuit diagram, 1 mark for stating the governing law, 2 marks for algebraic substitution, and 1 mark for the final unit-boxed answer.",
+            "Regular mock tests graded by senior examiners train students to never skip intermediate justifications, securing maximum partial credit even when final numerical arithmetic is challenging."
+          ]
+        },
+        {
+          "heading": "3. The 3-Hour Time Allocation Strategy",
+          "paragraphs": [
+            "Section A (1-mark MCQs & Assertions): Complete within 30 minutes. Do not get stuck on any single MCQ for more than 90 seconds.",
+            "Section B & C (2-mark and 3-mark short answers): Allocate 75 minutes. Keep answers crisp, structured in bullet points, with neat labeled diagrams.",
+            "Section D & E (5-mark long answers & Case Studies): Dedicate 60 minutes. Use margins properly and highlight key formula boxes.",
+            "Final 15 Minutes: Compulsory review period to check question numbering, graph labels, and supplementary sheet attachments."
+          ]
+        },
+        {
+          "heading": "4. Our Weekly Board Mock Regimen at Best Solution",
+          "paragraphs": [
+            "Starting 90 days prior to board exams, our students sit for simulated board exams every Saturday morning under exact exam hall conditions with physical answer sheets and strict invigilation.",
+            "Personalized feedback sessions on Mondays highlight handwriting legibility, diagram clarity, and word count control, giving every student the confidence and polish needed to exceed 90% across all subjects."
+          ]
+        }
+      ]
     }
   ],
   "news": [

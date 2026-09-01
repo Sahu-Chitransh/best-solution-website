@@ -4,6 +4,8 @@ import { Check, ArrowRight, Sparkles, BookOpen, Clock, Users, HelpCircle, Chevro
 import coursesData from '../content/courses.json';
 import { DoctorIllustration, EngineerIllustration, RocketIllustration } from '../components/GoalIllustrations';
 
+const strVal = (item, key) => typeof item === 'string' ? item : (item && (item[key] || Object.values(item)[0])) || '';
+
 /* ── Scroll reveal hook ── */
 function useScrollReveal() {
   const ref = useRef(null);
@@ -204,7 +206,7 @@ export default function Courses() {
                               className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-800 bg-slate-100 border border-slate-200/80 rounded-full px-3.5 py-1.5"
                             >
                               <BookOpen size={13} className="text-[#D32F2F]" />
-                              {exam}
+                              {strVal(exam, 'exam')}
                             </span>
                           ))}
                         </div>
@@ -221,7 +223,7 @@ export default function Courses() {
                               <div className="w-5 h-5 rounded-full bg-green-50 border border-green-200 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5">
                                 <Check size={12} strokeWidth={3} />
                               </div>
-                              <span className="leading-snug">{feature}</span>
+                              <span className="leading-snug">{strVal(feature, 'feature')}</span>
                             </div>
                           ))}
                         </div>

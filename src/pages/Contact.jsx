@@ -10,6 +10,9 @@ const useScrollReveal = () => {
   const ref = useRef(null);
   
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -20,14 +23,10 @@ const useScrollReveal = () => {
       { threshold: 0.1 }
     );
     
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    observer.observe(el);
     
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+      observer.disconnect();
     };
   }, []);
   
@@ -56,9 +55,18 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.mobile) return;
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ 'form-name': 'contact', ...formData }).toString(),
+      });
+    } catch (err) {
+      console.error('Contact form submission error:', err);
+    }
     setSubmitted(true);
   };
 
@@ -205,7 +213,8 @@ const Contact = () => {
                 </button>
               </div>
             ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4" name="contact" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-1.5 block">

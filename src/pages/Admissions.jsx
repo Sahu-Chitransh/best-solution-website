@@ -6,6 +6,9 @@ import admissionsData from '../content/admissions.json';
 function useScrollReveal() {
   const ref = useRef(null);
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -18,7 +21,7 @@ function useScrollReveal() {
       },
       { threshold: 0.1 }
     );
-    if (ref.current) observer.observe(ref.current);
+    observer.observe(el);
     return () => observer.disconnect();
   }, []);
   return ref;
