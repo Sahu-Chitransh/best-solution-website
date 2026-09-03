@@ -77,8 +77,8 @@ function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Campus Brochure Highlights"
     >
-      {/* Slides Container - Native 16:9 Aspect Ratio matching slide images 1:1 */}
-      <div className="relative w-full aspect-[16/9] flex items-center justify-center bg-white">
+      {/* Slides Container - Dynamic 16:9 on mobile, capped at calc(100dvh-128px) on desktop to guarantee zero viewport overflow */}
+      <div className="relative w-full h-[56.25vw] max-h-[calc(100dvh-128px)] min-h-[220px] flex items-center justify-center bg-white">
         {slides.map((slide, idx) => {
           const isActive = idx === current;
           return (
