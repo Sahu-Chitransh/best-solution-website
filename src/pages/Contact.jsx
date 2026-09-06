@@ -107,7 +107,7 @@ const Contact = () => {
               {contactData.address}
             </div>
             <a 
-              href="https://maps.google.com/?q=Sayaji+Square+Indore" 
+              href={contactData.mapUrl || "https://maps.app.goo.gl/ewFXjaazTKUtD4Hs9"} 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-[#D32F2F] font-semibold text-sm mt-2 hover:underline inline-flex items-center gap-1"
@@ -306,10 +306,18 @@ const Contact = () => {
         ></iframe>
         
         <div className="absolute top-4 left-4 z-10 bg-white/95 backdrop-blur rounded-xl border border-black/5 p-4 shadow-lg max-w-xs">
-          <h3 className="font-bold text-[#0A0A0A]">Sayaji Square</h3>
+          <h3 className="font-bold text-[#0A0A0A]">{contactData.mapTitle || 'Best Solution'}</h3>
           <p className="text-sm text-slate-500 mt-1">
             {contactData.mapAddress}
           </p>
+          <a
+            href={contactData.mapUrl || "https://maps.app.goo.gl/ewFXjaazTKUtD4Hs9"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#D32F2F] font-semibold text-xs mt-2 hover:underline inline-flex items-center gap-1"
+          >
+            Open in Google Maps <ArrowRight size={12} />
+          </a>
         </div>
       </div>
 
