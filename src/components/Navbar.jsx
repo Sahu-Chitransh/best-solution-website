@@ -170,8 +170,8 @@ export default function Navbar() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-18">
         {/* Logo */}
-        <Link to="/" className="flex-shrink-0">
-          <img src={settingsData.logo} alt="Best Solution" className="h-14 w-auto rounded" />
+        <Link to="/" className="flex-shrink-0 flex items-center">
+          <img src={settingsData.logo} alt="Best Solution" className="h-11 sm:h-12 w-auto object-contain" />
         </Link>
 
         {/* Desktop nav */}
