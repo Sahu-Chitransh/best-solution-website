@@ -168,7 +168,7 @@ export default function Navbar() {
       {/* Top Red Accent Line */}
       <div className="h-1.5 w-full bg-[#D32F2F]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-18">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between h-18">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0 flex items-center">
           <img src={settingsData.logo} alt="Best Solution" className="h-11 sm:h-12 w-auto object-contain" />
