@@ -64,10 +64,10 @@ const Contact = () => {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ 'form-name': 'contact', ...formData }).toString(),
       });
+      setSubmitted(true);
     } catch (err) {
       console.error('Contact form submission error:', err);
     }
-    setSubmitted(true);
   };
 
   return (
@@ -217,61 +217,65 @@ const Contact = () => {
               <input type="hidden" name="form-name" value="contact" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-1.5 block">
+                  <label htmlFor="contact-name" className="text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-1.5 block">
                     NAME
                   </label>
                   <input 
+                    id="contact-name"
                     type="text" 
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Your full name"
                     required
-                    className="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0A0A0A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D32F2F]/20 focus:border-[#D32F2F] transition-colors"
+                    className="w-full border border-slate-200 rounded-xl px-4 py-3 text-base md:text-sm text-[#0A0A0A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D32F2F]/20 focus:border-[#D32F2F] transition-colors"
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-1.5 block">
+                  <label htmlFor="contact-mobile" className="text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-1.5 block">
                     MOBILE
                   </label>
                   <input 
+                    id="contact-mobile"
                     type="tel" 
                     name="mobile"
                     value={formData.mobile}
                     onChange={handleChange}
                     placeholder="10-digit"
                     required
-                    className="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0A0A0A] font-mono placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D32F2F]/20 focus:border-[#D32F2F] transition-colors"
+                    className="w-full border border-slate-200 rounded-xl px-4 py-3 text-base md:text-sm text-[#0A0A0A] font-mono placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D32F2F]/20 focus:border-[#D32F2F] transition-colors"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-1.5 block">
+                <label htmlFor="contact-email" className="text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-1.5 block">
                   EMAIL (OPTIONAL)
                 </label>
                 <input 
+                  id="contact-email"
                   type="email" 
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="you@example.com"
-                  className="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0A0A0A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D32F2F]/20 focus:border-[#D32F2F] transition-colors"
+                  className="w-full border border-slate-200 rounded-xl px-4 py-3 text-base md:text-sm text-[#0A0A0A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D32F2F]/20 focus:border-[#D32F2F] transition-colors"
                 />
               </div>
 
               <div>
-                <label className="text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-1.5 block">
+                <label htmlFor="contact-message" className="text-xs font-mono font-semibold uppercase tracking-widest text-slate-500 mb-1.5 block">
                   MESSAGE
                 </label>
                 <textarea 
+                  id="contact-message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="What would you like to know?"
                   rows={4}
                   required
-                  className="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm text-[#0A0A0A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D32F2F]/20 focus:border-[#D32F2F] transition-colors resize-y"
+                  className="w-full border border-slate-200 rounded-xl px-4 py-3 text-base md:text-sm text-[#0A0A0A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D32F2F]/20 focus:border-[#D32F2F] transition-colors resize-y"
                 />
               </div>
 

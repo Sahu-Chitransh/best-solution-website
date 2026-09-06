@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "scrape:instagram": "node scripts/scrape-instagram.js",
-    "scrape:login": "node scripts/scrape-instagram.js --login"
+    "scrape:login": "node scripts/scrape-instagram.js --login",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
@@ -25,6 +26,7 @@
     "@vitejs/plugin-react": "^6.0.3",
     "oxlint": "^1.71.0",
     "playwright": "^1.62.1",
+    "sharp": "^0.34.5",
     "vite": "^8.1.1"
   }
 }

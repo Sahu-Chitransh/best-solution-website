@@ -79,6 +79,7 @@ function CuttingLightbox({ cutting, onClose, onNav }) {
           src={cutting.image}
           alt={cutting.caption}
           className="w-full rounded-2xl shadow-2xl bs-lightbox-img border-4 border-white/10"
+          decoding="async"
         />
         {/* Caption */}
         <div className="text-center mt-4">
@@ -226,6 +227,8 @@ export default function Blog() {
                           src={cutting.image}
                           alt={cutting.caption}
                           className="w-full h-52 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                          decoding="async"
                         />
                         {/* Paper texture overlay */}
                         <div className="absolute inset-0 bg-gradient-to-b from-amber-900/5 via-transparent to-amber-900/10 pointer-events-none" />
@@ -329,7 +332,7 @@ export default function Blog() {
                     <div className="w-full md:w-5/12 flex justify-center md:justify-start">
                       <div className="relative bg-[#0A0A0A] p-2.5 rounded-[2rem] -rotate-3 group-hover:rotate-0 transition-transform duration-500 shadow-2xl max-w-md w-full">
                         <div className="relative bg-[#1a1a2e] rounded-3xl overflow-hidden border border-white/10 aspect-[4/5] flex items-center justify-center">
-                          <img src={filteredNews[0].image} alt={filteredNews[0].title || "News article"} className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" />
+                          <img src={filteredNews[0].image} alt={filteredNews[0].title || "News article"} className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" loading="lazy" decoding="async" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                           
                           {/* Overlapping white badge */}
@@ -387,7 +390,7 @@ export default function Blog() {
                   {/* Newspaper image */}
                   {item.image && (
                     <div className="relative h-40 overflow-hidden bg-amber-50">
-                      <img src={item.image} alt={item.title || "News clipping"} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                      <img src={item.image} alt={item.title || "News clipping"} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
                       <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
                       {/* Category badge on image */}
                       <div className={`absolute top-3 left-3 h-1.5 w-12 rounded-full ${
@@ -547,6 +550,8 @@ export default function Blog() {
                       src={post.image}
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      loading="lazy"
+                      decoding="async"
                     />
                   )}
                   {/* Gradient overlay */}

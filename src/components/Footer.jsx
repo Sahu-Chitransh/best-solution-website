@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <img src={settingsData.logoDark || settingsData.logo} alt="Best Solution" className="h-12 w-auto rounded mb-6" />
+            <img src={settingsData.logoDark || settingsData.logo} alt="Best Solution" className="h-12 w-auto rounded mb-6" loading="lazy" decoding="async" width="120" height="48" />
             <p className="text-sm text-slate-400 leading-relaxed max-w-xs">
               Best Solution Coaching Classes — training champions for IIT-JEE, NEET, Olympiads, NTSE & CCG since 2010, right in the heart of Vijay Nagar, Indore.
             </p>

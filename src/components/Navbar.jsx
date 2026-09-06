@@ -171,7 +171,7 @@ export default function Navbar() {
       <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between h-18">
         {/* Logo */}
         <Link to="/" className="flex-shrink-0 flex items-center">
-          <img src={settingsData.logo} alt="Best Solution" className="h-11 sm:h-12 w-auto object-contain" />
+          <img src={settingsData.logo} alt="Best Solution" className="h-11 sm:h-12 w-auto object-contain" width="120" height="48" decoding="async" fetchpriority="high" />
         </Link>
 
         {/* Desktop nav */}
@@ -220,6 +220,7 @@ export default function Navbar() {
             className="lg:hidden p-2"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
+            aria-expanded={open}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>

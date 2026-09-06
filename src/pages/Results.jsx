@@ -5,29 +5,7 @@ import {
   ArrowRight, X, ChevronLeft, ChevronRight, ZoomIn, ShieldCheck,
 } from 'lucide-react';
 import resultsData from '../content/results.json';
-
-/* ── Scroll Reveal Hook ── */
-function useScrollReveal() {
-  const ref = useRef(null);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const targets = el.querySelectorAll('.bs-animate-hidden');
-    const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add('bs-animate-visible');
-            io.unobserve(e.target);
-          }
-        }),
-      { threshold: 0.1 }
-    );
-    targets.forEach((t) => io.observe(t));
-    return () => io.disconnect();
-  }, []);
-  return ref;
-}
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function Results() {
   const wrapRef = useScrollReveal();
@@ -227,6 +205,7 @@ export default function Results() {
                     alt={spot.name}
                     className="w-full h-full object-contain rounded-xl transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-2xl">
                     <span className="bg-white/90 text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-md flex items-center gap-1">
@@ -266,7 +245,7 @@ export default function Results() {
           </div>
 
           {/* Filter Chips */}
-          <div className="inline-flex items-center p-1.5 rounded-full bg-slate-100 border border-slate-200 shadow-inner">
+          <div className="inline-flex flex-wrap items-center p-1.5 rounded-full bg-slate-100 border border-slate-200 shadow-inner">
             <button
               onClick={() => setFilter('all')}
               className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold rounded-full transition-all duration-200 ${
@@ -324,6 +303,7 @@ export default function Results() {
                 alt={item.label}
                 className="w-full h-full object-contain rounded-xl sm:rounded-2xl bg-white select-none transition-transform duration-300 group-hover:scale-102"
                 loading="lazy"
+                decoding="async"
               />
 
               {/* Zoom Hover Overlay */}
@@ -415,6 +395,7 @@ export default function Results() {
               src={currentItem.src}
               alt={currentItem.label || 'Result Poster'}
               className="max-h-[80vh] w-auto object-contain rounded-2xl shadow-2xl border border-white/10 bg-white"
+              decoding="async"
             />
             {/* Caption & Counter */}
             <div className="mt-4 flex items-center gap-3 bg-black/60 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/15 text-xs text-white/80 font-medium">

@@ -231,3 +231,41 @@
   50% { transform: scale(1.15); opacity: 0; }
 }
 
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .bs-marquee-track {
+    animation: none;
+  }
+  .bs-hero-animate,
+  .bs-hero-image-animate {
+    animation: none;
+  }
+  .bs-sparkle {
+    animation: none;
+    display: none;
+  }
+  .bs-sparkle-btn::before {
+    animation: none;
+  }
+  .bs-pamphlet-glow {
+    animation: none;
+  }
+  .bs-animate-hidden {
+    opacity: 1;
+    transform: none;
+  }
+  .bs-animate-visible {
+    transition: none;
+  }
+}
+
+/* Mobile horizontal scroll styling */
+@media (max-width: 640px) {
+  .snap-x {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .snap-x::-webkit-scrollbar {
+    display: none;
+  }
+}

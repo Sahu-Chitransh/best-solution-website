@@ -13,7 +13,7 @@ function Field({ label, children }) {
 }
 
 const inputClass =
-  'w-full bg-white border border-slate-200 rounded-lg px-4 py-2.5 text-sm text-[#0A0A0A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D32F2F]/20 focus:border-[#D32F2F] transition-colors';
+  'w-full bg-white border border-slate-200 rounded-lg px-4 py-2.5 text-base md:text-sm text-[#0A0A0A] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D32F2F]/20 focus:border-[#D32F2F] transition-colors';
 
 export default function EnquiryForm({ title = 'Book a free demo class', subtitle = 'Fill this quick form. Our counsellor will call you within 2 hours.' }) {
   const [submitted, setSubmitted] = useState(false);
@@ -32,10 +32,10 @@ export default function EnquiryForm({ title = 'Book a free demo class', subtitle
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ 'form-name': 'enquiry', ...form }).toString(),
       });
+      setSubmitted(true);
     } catch (err) {
       console.error('Enquiry form submission error:', err);
     }
-    setSubmitted(true);
   };
 
   if (submitted) {

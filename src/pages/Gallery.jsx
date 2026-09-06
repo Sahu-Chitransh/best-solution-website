@@ -98,6 +98,7 @@ const Gallery = () => {
                         alt={caption ? truncateCaption(caption, 40) : 'Instagram Post'}
                         className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-102"
                         loading="lazy"
+                        decoding="async"
                       />
                       
                       {/* Hover Overlay */}

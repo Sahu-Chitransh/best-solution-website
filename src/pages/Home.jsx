@@ -94,6 +94,8 @@ function HeroSlider() {
                 alt={slide.alt || `Best Solution Banner ${idx + 1}`}
                 className="w-full h-full object-cover object-center select-none"
                 loading={idx === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+                fetchPriority={idx === 0 ? 'high' : 'auto'}
               />
             </div>
           );
@@ -128,12 +130,16 @@ function HeroSlider() {
               key={i}
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => goTo(i)}
-              className={`rounded-full transition-all duration-300 ${
-                i === current
-                  ? 'w-7 sm:w-8 h-2 sm:h-2.5 bg-[#D32F2F] shadow-sm'
-                  : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/70 hover:bg-white'
-              }`}
-            />
+              className="relative flex items-center justify-center min-w-[44px] min-h-[44px]"
+            >
+              <span
+                className={`block rounded-full transition-all duration-300 ${
+                  i === current
+                    ? 'w-7 sm:w-8 h-2 sm:h-2.5 bg-[#D32F2F] shadow-sm'
+                    : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/70 hover:bg-white'
+                }`}
+              />
+            </button>
           ))}
         </div>
       )}
@@ -323,6 +329,7 @@ function ResultsGallery() {
                 alt={`${activeTab.toUpperCase()} Achiever`}
                 className="w-full h-full object-contain rounded-xl bg-white select-none transition-transform duration-300 group-hover:scale-105"
                 loading="lazy"
+                decoding="async"
               />
             </Link>
           ))}
@@ -366,6 +373,10 @@ function TestimonialsSection() {
                     alt={t.name}
                     className="w-14 h-14 rounded-full object-cover border-2 border-[#D32F2F]"
                     src={t.image}
+                    loading="lazy"
+                    decoding="async"
+                    width="56"
+                    height="56"
                   />
                 ) : (
                   <div className="w-14 h-14 rounded-full bg-[#D32F2F] flex items-center justify-center text-white font-bold text-lg border-2 border-[#D32F2F]">
@@ -447,6 +458,7 @@ function InstagramSection() {
                     alt={getPostCaption(post)}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                     <p className="text-white text-sm font-medium line-clamp-2">{getPostCaption(post)}</p>
@@ -527,6 +539,8 @@ function PamphletBanner() {
               alt="Best Solution July 2026 Brochure"
               className="w-full object-cover"
               src={brochureData.image}
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>
