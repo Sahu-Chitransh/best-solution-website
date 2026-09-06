@@ -77,8 +77,8 @@ function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Campus Brochure Highlights"
     >
-      {/* Slides Container - Dynamic 16:9 on mobile, capped at calc(100dvh-128px) on desktop to guarantee zero viewport overflow */}
-      <div className="relative w-full h-[56.25vw] max-h-[calc(100dvh-128px)] min-h-[220px] flex items-center justify-center bg-white">
+      {/* Slides Container - Pure 16:9 Full Width with zero pillarbox gaps */}
+      <div className="relative w-full aspect-[16/9] flex items-center justify-center bg-white">
         {slides.map((slide, idx) => {
           const isActive = idx === current;
           return (
@@ -92,7 +92,7 @@ function HeroSlider() {
               <img
                 src={slide.image}
                 alt={slide.alt || `Best Solution Banner ${idx + 1}`}
-                className="w-full h-full object-contain object-center select-none"
+                className="w-full h-full object-cover object-center select-none"
                 loading={idx === 0 ? 'eager' : 'lazy'}
               />
             </div>
@@ -122,7 +122,7 @@ function HeroSlider() {
 
       {/* Slide Indicator Dots */}
       {slideCount > 1 && (
-        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-2.5 bg-black/25 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/20 shadow-sm">
+        <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-2.5 bg-black/30 px-3.5 py-1.5 rounded-full backdrop-blur-md border border-white/25 shadow-sm">
           {slides.map((_, i) => (
             <button
               key={i}
