@@ -77,8 +77,8 @@ function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Campus Brochure Highlights"
     >
-      {/* Slides Container - Pure 16:9 Full Width with zero pillarbox gaps */}
-      <div className="relative w-full aspect-[16/9] flex items-center justify-center bg-white">
+      {/* Slides Container - 24:10 (2400x1000) Cinematic Widescreen: Edge-to-Edge with Zero Pillarbox Gaps & Fits with Ticker */}
+      <div className="relative w-full aspect-[24/10] flex items-center justify-center bg-white">
         {slides.map((slide, idx) => {
           const isActive = idx === current;
           return (
