@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Trophy, Sparkles, Medal,
-  ArrowRight, X, ChevronLeft, ChevronRight, ZoomIn, ShieldCheck,
+  ArrowRight, ShieldCheck,
 } from 'lucide-react';
 import resultsData from '../content/results.json';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -10,9 +10,6 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 export default function Results() {
   const wrapRef = useScrollReveal();
   const [filter, setFilter] = useState('all'); // 'all' | 'jee' | 'neet'
-  const [lightbox, setLightbox] = useState({ open: false, index: 0, items: [] });
-  const touchStartX = useRef(null);
-  const touchEndX = useRef(null);
 
   // Extract raw lists safely
   const rawJee = (resultsData?.jee || []).map((img) =>
@@ -43,69 +40,6 @@ export default function Results() {
   const displayItems =
     filter === 'jee' ? jeeItems : filter === 'neet' ? neetItems : allItems;
 
-  const openLightbox = (itemsList, index) => {
-    setLightbox({ open: true, index, items: itemsList });
-  };
-
-  const closeLightbox = () => {
-    setLightbox((prev) => ({ ...prev, open: false }));
-  };
-
-  const showNext = useCallback(() => {
-    setLightbox((prev) => ({
-      ...prev,
-      index: (prev.index + 1) % (prev.items.length || 1),
-    }));
-  }, []);
-
-  const showPrev = useCallback(() => {
-    setLightbox((prev) => ({
-      ...prev,
-      index: (prev.index - 1 + (prev.items.length || 1)) % (prev.items.length || 1),
-    }));
-  }, []);
-
-  // Keyboard navigation
-  useEffect(() => {
-    if (!lightbox.open) return;
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') showNext();
-      if (e.key === 'ArrowLeft') showPrev();
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightbox.open, showNext, showPrev]);
-
-  // Lock body scroll
-  useEffect(() => {
-    if (lightbox.open) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [lightbox.open]);
-
-  // Touch handlers for Lightbox
-  const onTouchStart = (e) => {
-    touchStartX.current = e.targetTouches[0].clientX;
-  };
-  const onTouchMove = (e) => {
-    touchEndX.current = e.targetTouches[0].clientX;
-  };
-  const onTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return;
-    const diff = touchStartX.current - touchEndX.current;
-    if (diff > 50) showNext();
-    else if (diff < -50) showPrev();
-    touchStartX.current = null;
-    touchEndX.current = null;
-  };
-
-  const currentItem = lightbox.items[lightbox.index] || {};
   const statsList = resultsData?.stats || [];
   const spotlights = resultsData?.spotlights || [];
 
@@ -172,18 +106,7 @@ export default function Results() {
             {spotlights.map((spot, idx) => (
               <div
                 key={idx}
-                onClick={() =>
-                  openLightbox(
-                    spotlights.map((s) => ({
-                      src: s.image,
-                      label: `${s.name} - ${s.rank} (${s.exam})`,
-                      badge: s.exam,
-                      badgeColor: s.accent || '#D32F2F',
-                    })),
-                    idx
-                  )
-                }
-                className="group relative rounded-3xl bg-gradient-to-b from-white to-slate-50 border-2 border-slate-200/90 hover:border-[#D32F2F] p-6 sm:p-7 transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 cursor-pointer flex flex-col justify-between"
+                className="group relative rounded-3xl bg-gradient-to-b from-white to-slate-50 border-2 border-slate-200/90 hover:border-[#D32F2F] p-6 sm:p-7 transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col justify-between"
               >
                 {/* Top Badge */}
                 <div className="flex items-center justify-between gap-2 mb-4">
@@ -207,11 +130,6 @@ export default function Results() {
                     loading="lazy"
                     decoding="async"
                   />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-2xl">
-                    <span className="bg-white/90 text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-md flex items-center gap-1">
-                      <ZoomIn size={14} /> View Card
-                    </span>
-                  </div>
                 </div>
 
                 {/* Student Details */}
@@ -240,7 +158,7 @@ export default function Results() {
               Complete Hall of Fame
             </h2>
             <p className="text-sm text-slate-500 mt-1">
-              Click any poster card below to view rank card in high definition.
+              Top rankers and achievers from our IIT-JEE and NEET programs.
             </p>
           </div>
 
@@ -284,8 +202,7 @@ export default function Results() {
           {displayItems.map((item, idx) => (
             <div
               key={`${item.type}-${idx}`}
-              onClick={() => openLightbox(displayItems, idx)}
-              className="group relative rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-white p-2 sm:p-2.5 shadow-sm hover:shadow-xl hover:border-[#D32F2F] transition-all duration-300 hover:-translate-y-1.5 cursor-pointer flex flex-col items-center justify-center aspect-[3/4]"
+              className="group relative rounded-2xl sm:rounded-3xl border border-slate-200/90 bg-white p-2 sm:p-2.5 shadow-sm hover:shadow-xl hover:border-[#D32F2F] transition-all duration-300 hover:-translate-y-1.5 flex flex-col items-center justify-center aspect-[3/4]"
             >
               {/* Category Badge */}
               <div className="absolute top-3 right-3 z-10">
@@ -305,13 +222,6 @@ export default function Results() {
                 loading="lazy"
                 decoding="async"
               />
-
-              {/* Zoom Hover Overlay */}
-              <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                <div className="bg-white/95 text-slate-900 px-3.5 py-1.5 rounded-full font-bold text-xs shadow-lg flex items-center gap-1.5">
-                  <ZoomIn size={14} /> Full View
-                </div>
-              </div>
             </div>
           ))}
         </div>
@@ -354,72 +264,6 @@ export default function Results() {
           </div>
         </div>
       </section>
-
-      {/* ============ 6. INTERACTIVE FULLSCREEN LIGHTBOX ============ */}
-      {lightbox.open && (
-        <div
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 select-none transition-opacity duration-300"
-          onClick={closeLightbox}
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEnd}
-        >
-          {/* Close Button */}
-          <button
-            onClick={closeLightbox}
-            aria-label="Close fullscreen modal"
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 text-white/80 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all backdrop-blur-md border border-white/15"
-          >
-            <X size={24} />
-          </button>
-
-          {/* Previous Arrow */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              showPrev();
-            }}
-            aria-label="Previous result"
-            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-50 text-white/80 hover:text-white p-3 sm:p-4 rounded-full bg-black/40 hover:bg-black/70 transition-all backdrop-blur-md border border-white/20 shadow-xl"
-          >
-            <ChevronLeft size={28} />
-          </button>
-
-          {/* Fullscreen Image Card */}
-          <div
-            className="relative z-40 max-h-[85vh] max-w-[92vw] sm:max-w-[80vw] flex flex-col items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img
-              key={currentItem.src}
-              src={currentItem.src}
-              alt={currentItem.label || 'Result Poster'}
-              className="max-h-[80vh] w-auto object-contain rounded-2xl shadow-2xl border border-white/10 bg-white"
-              decoding="async"
-            />
-            {/* Caption & Counter */}
-            <div className="mt-4 flex items-center gap-3 bg-black/60 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/15 text-xs text-white/80 font-medium">
-              <span>{currentItem.label}</span>
-              <span>·</span>
-              <span className="text-[#FFC107] font-bold">
-                {lightbox.index + 1} / {lightbox.items.length}
-              </span>
-            </div>
-          </div>
-
-          {/* Next Arrow */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              showNext();
-            }}
-            aria-label="Next result"
-            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-50 text-white/80 hover:text-white p-3 sm:p-4 rounded-full bg-black/40 hover:bg-black/70 transition-all backdrop-blur-md border border-white/20 shadow-xl"
-          >
-            <ChevronRight size={28} />
-          </button>
-        </div>
-      )}
     </div>
   );
 }
