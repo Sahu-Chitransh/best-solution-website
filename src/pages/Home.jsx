@@ -43,9 +43,6 @@ function HeroSlider() {
     return () => clearInterval(id);
   }, [next, slideCount, autoplayInterval]);
 
-  const goTo = (i) => {
-    setCurrent(i);
-  };
 
   // Touch swipe handlers
   const onTouchStart = (e) => {
@@ -122,27 +119,6 @@ function HeroSlider() {
         </>
       )}
 
-      {/* Slide Indicator Dots */}
-      {slideCount > 1 && (
-        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-2.5 bg-black/30 px-3.5 py-1.5 rounded-full backdrop-blur-md border border-white/25 shadow-sm">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              aria-label={`Go to slide ${i + 1}`}
-              onClick={() => goTo(i)}
-              className="relative flex items-center justify-center min-w-[44px] min-h-[44px]"
-            >
-              <span
-                className={`block rounded-full transition-all duration-300 ${
-                  i === current
-                    ? 'w-7 sm:w-8 h-2 sm:h-2.5 bg-[#D32F2F] shadow-sm'
-                    : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/70 hover:bg-white'
-                }`}
-              />
-            </button>
-          ))}
-        </div>
-      )}
     </section>
   );
 }
