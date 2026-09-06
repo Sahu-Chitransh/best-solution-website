@@ -77,8 +77,8 @@ function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Campus Brochure Highlights"
     >
-      {/* Slides Container - 24:9 (2400x900) Cinematic Widescreen: Full Screen Width & Perfect Ticker Clearance */}
-      <div className="relative w-full aspect-[24/9] flex items-center justify-center bg-white">
+      {/* Slides Container - Sized so Hero + Ticker fill exactly 100% viewport height (ticker pinned at bottom on initial load) */}
+      <div className="relative w-full h-[56.25vw] min-h-[220px] sm:h-[calc(100dvh-125px)] flex items-center justify-center bg-white">
         {slides.map((slide, idx) => {
           const isActive = idx === current;
           return (
