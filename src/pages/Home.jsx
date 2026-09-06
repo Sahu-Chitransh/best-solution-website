@@ -77,8 +77,8 @@ function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Campus Brochure Highlights"
     >
-      {/* Slides Container - 24:10 (2400x1000) Cinematic Widescreen: Edge-to-Edge with Zero Pillarbox Gaps & Fits with Ticker */}
-      <div className="relative w-full aspect-[24/10] flex items-center justify-center bg-white">
+      {/* Slides Container - 24:9 (2400x900) Cinematic Widescreen: Full Screen Width & Perfect Ticker Clearance */}
+      <div className="relative w-full aspect-[24/9] flex items-center justify-center bg-white">
         {slides.map((slide, idx) => {
           const isActive = idx === current;
           return (
@@ -122,7 +122,7 @@ function HeroSlider() {
 
       {/* Slide Indicator Dots */}
       {slideCount > 1 && (
-        <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-2.5 bg-black/30 px-3.5 py-1.5 rounded-full backdrop-blur-md border border-white/25 shadow-sm">
+        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 sm:gap-2.5 bg-black/30 px-3.5 py-1.5 rounded-full backdrop-blur-md border border-white/25 shadow-sm">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -148,7 +148,7 @@ function Marquee() {
   );
   return (
     <div className="border-y border-black/10 bg-[#0A0A0A] text-white overflow-hidden">
-      <div className="bs-marquee-track py-3.5 whitespace-nowrap">
+      <div className="bs-marquee-track py-2.5 sm:py-3 whitespace-nowrap">
         {[0, 1].map((copy) => (
           <div key={copy} className="flex items-center gap-14 pr-14 text-sm font-semibold uppercase tracking-widest">
             {items.map((item, i) => (
