@@ -36,10 +36,6 @@ const COURSE_LINKS = [
 const USEFUL_LINKS = [
   { label: 'Terms & Conditions', href: '/contact' },
   { label: 'Privacy Policy', href: '/contact' },
-  { label: 'Refund Policy', href: '/contact' },
-  { label: 'Student Login', href: '/admin/' },
-  { label: 'Parent Login', href: '/contact' },
-  { label: 'Sitemap', href: '/courses' },
 ];
 
 export default function Footer() {
