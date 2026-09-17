@@ -1,0 +1,39 @@
+{
+  "eyebrow": "WHY BEST SOLUTION",
+  "title": "Education that goes",
+  "titleHighlight": "beyond classrooms.",
+  "description": "At Best Solution, we combine strong concepts, disciplined practice and continuous testing to help students move from learning to confident performance.",
+  "pillars": [
+    {
+      "number": "01",
+      "title": "Concept Clarity",
+      "description": "Build fundamentals before moving to advanced problems.",
+      "icon": "Lightbulb"
+    },
+    {
+      "number": "02",
+      "title": "Regular Testing",
+      "description": "Frequent tests with structured performance review.",
+      "icon": "FileCheck"
+    },
+    {
+      "number": "03",
+      "title": "Personal Guidance",
+      "description": "Mentoring that keeps students consistent and focused.",
+      "icon": "UserCheck"
+    }
+  ],
+  "slogan": "Better Learning → Brighter Future",
+  "card": {
+    "stat": "16+",
+    "statLabel": "Years of trusted guidance",
+    "description": "One clear goal: help every student become a better learner, problem solver and performer.",
+    "image": "/images/why-us/student.webp",
+    "badges": [
+      "Experienced Faculty",
+      "Doubt Support",
+      "Test Analysis",
+      "Study Planning"
+    ]
+  }
+}

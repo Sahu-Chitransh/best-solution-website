@@ -10,11 +10,11 @@ import SectionHeader from '../components/SectionHeader';
 import EnquiryForm from '../components/EnquiryForm';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import heroData from '../content/hero.json';
-import statsData from '../content/stats.json';
 import marqueeData from '../content/marquee.json';
 import brochureData from '../content/brochure.json';
 import testimonialsData from '../content/testimonials.json';
 import resultsData from '../content/results.json';
+import WhyUsSection from '../components/WhyUsSection';
 
 /* ── Full-Width Hero Banner Carousel ── */
 function HeroSlider() {
@@ -179,32 +179,6 @@ function GoalSelector() {
             />
           ))}
         </div>
-      </div>
-    </section>
-  );
-}
-
-/* ── Stats ── */
-function StatsSection() {
-  const ref = useScrollReveal();
-  return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24" ref={ref}>
-      <SectionHeader
-        eyebrow="Numbers that don't lie"
-        title="Track record forged in Indore, felt across India."
-        description="Every number here is a real student — with a real rank and a real family who believed in the process."
-      />
-      <div className="mt-14 grid grid-cols-2 md:grid-cols-4 divide-x divide-black/10 border-y border-black/10">
-        {(statsData?.stats || []).map((s, i) => (
-          <div key={i} className={`p-6 md:p-8 bs-animate-hidden bs-stagger-${(i % 6) + 1}`} data-animate>
-            <div className="text-4xl md:text-5xl font-black text-[#D32F2F] tracking-tight">
-              {s.value}
-            </div>
-            <div className="mt-2 text-xs sm:text-sm uppercase tracking-widest text-slate-500">
-              {s.label}
-            </div>
-          </div>
-        ))}
       </div>
     </section>
   );
@@ -447,7 +421,7 @@ export default function Home() {
       <HeroSlider />
       <Marquee />
       <GoalSelector />
-      <StatsSection />
+      <WhyUsSection />
       <ResultsGallery />
       <TestimonialsSection />
       <PamphletBanner />
