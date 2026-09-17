@@ -6,7 +6,6 @@ import {
 } from 'lucide-react';
 import GoalCard from '../components/GoalCard';
 import coursesData from '../content/courses.json';
-import InstagramIcon from '../components/InstagramIcon';
 import SectionHeader from '../components/SectionHeader';
 import EnquiryForm from '../components/EnquiryForm';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -16,7 +15,6 @@ import marqueeData from '../content/marquee.json';
 import brochureData from '../content/brochure.json';
 import testimonialsData from '../content/testimonials.json';
 import resultsData from '../content/results.json';
-import instagramData from '../content/instagram.json';
 
 /* ── Full-Width Hero Banner Carousel ── */
 function HeroSlider() {
@@ -362,88 +360,6 @@ function TestimonialsSection() {
   );
 }
 
-/* ── Instagram Section ── */
-function InstagramSection() {
-  const ref = useScrollReveal();
-  const getPostImage = (post) => post.image || post.fetchedImage || '';
-  const getPostCaption = (post) => post.caption || post.fetchedCaption || '';
-  const featuredPosts = (instagramData?.posts || [])
-    .filter(p => p.featured)
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 6);
-
-  return (
-    <section className="py-24 bg-white" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-          <SectionHeader
-            eyebrow="Life at Best Solution"
-            title={instagramData?.sectionTitle || "Follow Our Journey"}
-            description="A glimpse into daily life, achievements, and celebrations at our coaching center."
-          />
-          {instagramData?.profileUrl && (
-            <a
-              href={instagramData.profileUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F77737] px-5 py-2.5 text-sm font-bold text-white hover:opacity-90 transition-opacity whitespace-nowrap self-start"
-            >
-              <InstagramIcon size={16} />
-              {instagramData?.handle || 'Instagram'}
-            </a>
-          )}
-        </div>
-
-        <div className="mt-14 grid grid-cols-2 md:grid-cols-3 gap-4">
-          {featuredPosts.map((post, i) => (
-            <a
-              key={i}
-              href={post.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group relative rounded-2xl overflow-hidden border border-black/10 aspect-square bg-slate-100 bs-animate-hidden bs-stagger-${Math.min(i + 1, 6)}`}
-              data-animate
-            >
-              {getPostImage(post) ? (
-                <>
-                  <img
-                    src={getPostImage(post)}
-                    alt={getPostCaption(post)}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                    <p className="text-white text-sm font-medium line-clamp-2">{getPostCaption(post)}</p>
-                    <div className="flex items-center gap-1.5 mt-2 text-white/80 text-xs">
-                      <InstagramIcon size={14} />
-                      <span>View on Instagram</span>
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <div className="w-full h-full bg-gradient-to-br from-purple-100 via-pink-50 to-orange-50 flex flex-col items-center justify-center gap-2">
-                  <InstagramIcon size={28} className="text-pink-400" />
-                  <span className="text-xs text-gray-500 font-medium">View on Instagram</span>
-                </div>
-              )}
-            </a>
-          ))}
-        </div>
-
-        <div className="mt-10 text-center">
-          <Link
-            to="/gallery"
-            className="inline-flex items-center gap-2 rounded-full border border-black/15 hover:bg-[#0A0A0A] hover:text-white px-6 py-3 text-sm font-bold transition-colors"
-          >
-            View all posts <ArrowRight size={16} />
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ── Pamphlet Banner ── */
 function PamphletBanner() {
   const ref = useScrollReveal();
@@ -534,7 +450,6 @@ export default function Home() {
       <StatsSection />
       <ResultsGallery />
       <TestimonialsSection />
-      <InstagramSection />
       <PamphletBanner />
       <CtaSection />
     </div>
