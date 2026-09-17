@@ -192,16 +192,16 @@ export default function WhyUsSection() {
                   </div>
                 </div>
 
-                {/* Right side of card: Student Photo */}
-                <div className="w-44 sm:w-52 lg:w-56 flex-shrink-0 flex justify-center -mb-6 sm:-mb-8 lg:-mb-9">
+                {/* Right side of card: Student Photo (Enlarged & Crisp) */}
+                <div className="w-56 sm:w-64 md:w-72 lg:w-76 xl:w-80 flex-shrink-0 flex justify-center -mb-6 sm:-mb-8 lg:-mb-9">
                   <img
                     src={whyUsData.card.image}
                     alt="Best Solution Student"
-                    className="w-full h-auto object-contain drop-shadow-md select-none"
+                    className="w-full max-w-[340px] h-auto object-contain drop-shadow-xl select-none"
                     loading="lazy"
                     decoding="async"
-                    width="240"
-                    height="354"
+                    width="720"
+                    height="1062"
                   />
                 </div>
               </div>
