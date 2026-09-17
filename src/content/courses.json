@@ -1,13 +1,16 @@
 {
-  "heading": "Select your goal",
-  "subheading": "to explore our courses",
+  "heading": "YOUR DREAM.",
+  "subheading": "OUR GUIDANCE.",
+  "tagline": "Choose your path to success",
   "goals": [
     {
       "id": "doctor",
-      "title": "Doctor",
-      "subtitle": "Medical (NEET / CUET)",
+      "title": "MEDICAL",
+      "subtitle": "NEET • CUET",
       "badge": "Medical Track",
-      "accentColor": "#00A3FF",
+      "accentColor": "#E54B4B",
+      "buttonColor": "#E54B4B",
+      "image": "/images/goals/medical-3d.webp",
       "description": "Comprehensive medical entrance coaching tailored for AIIMS, JIPMER, and government medical colleges.",
       "programs": [
         {
@@ -45,10 +48,12 @@
     },
     {
       "id": "engineer",
-      "title": "Engineer",
-      "subtitle": "Engineering (IIT-JEE / BITSAT)",
+      "title": "ENGINEERING",
+      "subtitle": "JEE • BITSAT",
       "badge": "Engineering Track",
-      "accentColor": "#FF9800",
+      "accentColor": "#2F80ED",
+      "buttonColor": "#2F80ED",
+      "image": "/images/goals/engineering-3d.webp",
       "description": "Rigorous problem-solving curriculum built for IIT-JEE Main, Advanced, BITSAT & premier engineering institutes.",
       "programs": [
         {
@@ -86,10 +91,12 @@
     },
     {
       "id": "foundation",
-      "title": "6-10th",
-      "subtitle": "Junior & Foundation",
+      "title": "FOUNDATION",
+      "subtitle": "CLASS 6 – 10",
       "badge": "Foundation Track",
-      "accentColor": "#2E7D32",
+      "accentColor": "#27AE60",
+      "buttonColor": "#27AE60",
+      "image": "/images/goals/foundation-3d.webp",
       "description": "Early start advantage building critical thinking, analytical mindset, and Olympiad excellence.",
       "programs": [
         {

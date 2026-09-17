@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Check, ArrowRight, Sparkles, BookOpen, Clock, Users, HelpCircle, ChevronRight } from 'lucide-react';
 import coursesData from '../content/courses.json';
-import { DoctorIllustration, EngineerIllustration, RocketIllustration } from '../components/GoalIllustrations';
+import GoalCard from '../components/GoalCard';
 
 const strVal = (item, key) => typeof item === 'string' ? item : (item && (item[key] || Object.values(item)[0])) || '';
 
@@ -28,12 +28,6 @@ function useScrollReveal() {
   }, []);
   return ref;
 }
-
-const GOAL_ILLUSTRATIONS = {
-  doctor: DoctorIllustration,
-  engineer: EngineerIllustration,
-  foundation: RocketIllustration,
-};
 
 export default function Courses() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -79,61 +73,31 @@ export default function Courses() {
       <section className="pt-16 md:pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         {/* Top Header */}
         <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#0A0A0A]">
-            {coursesData.heading || 'Select your goal'}
+          <p className="text-lg sm:text-2xl font-black tracking-widest text-slate-500 uppercase">
+            {coursesData.heading || 'YOUR DREAM.'}
+          </p>
+          <h1 className="mt-1 text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#0A1B39] uppercase">
+            {coursesData.subheading || 'OUR GUIDANCE.'}
           </h1>
-          <p className="mt-2 text-2xl sm:text-3xl md:text-4xl font-black text-[#00A3FF] tracking-tight">
-            {coursesData.subheading || 'to explore our courses'}
-          </p>
-          <p className="mt-4 text-sm sm:text-base text-slate-500 max-w-xl mx-auto">
-            Choose your academic ambition below to view personalized coaching programs, test schedules, and batch details.
-          </p>
+          <div className="mt-3.5 flex items-center justify-center gap-3">
+            <span className="w-8 sm:w-16 h-px bg-slate-200"></span>
+            <p className="text-sm sm:text-base font-semibold text-slate-500">
+              {coursesData.tagline || 'Choose your path to success'}
+            </p>
+            <span className="w-8 sm:w-16 h-px bg-slate-200"></span>
+          </div>
         </div>
 
-        {/* 3 Goal Cards Row (Matching Screenshot Style) */}
-        <div className="mt-12 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-          {goals.map((goal) => {
-            const isSelected = selectedGoal === goal.id;
-            const IllustrationComp = GOAL_ILLUSTRATIONS[goal.id] || RocketIllustration;
-
-            return (
-              <button
-                key={goal.id}
-                onClick={() => handleGoalSelect(goal.id)}
-                type="button"
-                aria-pressed={isSelected}
-                className={`group relative flex flex-col items-center justify-between rounded-3xl bg-white p-6 sm:p-7 transition-all duration-300 text-center cursor-pointer border ${
-                  isSelected
-                    ? 'border-[#00A3FF] ring-4 ring-[#00A3FF]/15 shadow-xl -translate-y-1.5'
-                    : 'border-slate-200/90 hover:border-slate-300 hover:shadow-lg hover:-translate-y-1 shadow-sm'
-                }`}
-              >
-                {/* Illustration Card Container */}
-                <div className="w-full flex justify-center mb-5">
-                  <div className="w-28 h-28 sm:w-32 sm:h-32 transform transition-transform duration-300 group-hover:scale-105">
-                    <IllustrationComp className="w-full h-full" />
-                  </div>
-                </div>
-
-                {/* Title */}
-                <div className="mt-auto">
-                  <h3 className="text-xl sm:text-2xl font-black text-[#0A0A0A] tracking-tight group-hover:text-[#00A3FF] transition-colors">
-                    {goal.title}
-                  </h3>
-                  <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">
-                    {goal.subtitle}
-                  </p>
-                </div>
-
-                {/* Active Indicator Check / Badge */}
-                {isSelected && (
-                  <span className="absolute -top-3 bg-[#00A3FF] text-white text-[11px] font-bold uppercase tracking-widest px-3.5 py-0.5 rounded-full shadow-md">
-                    Selected
-                  </span>
-                )}
-              </button>
-            );
-          })}
+        {/* 3 Goal Cards Row */}
+        <div className="mt-12 max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+          {goals.map((goal) => (
+            <GoalCard
+              key={goal.id}
+              goal={goal}
+              isSelected={selectedGoal === goal.id}
+              onClick={() => handleGoalSelect(goal.id)}
+            />
+          ))}
         </div>
       </section>
 
@@ -261,7 +225,7 @@ export default function Courses() {
               Click on a goal above to get started
             </h3>
             <p className="mt-2 text-slate-500 text-sm sm:text-base max-w-md mx-auto">
-              Select <strong>Doctor</strong> for medical, <strong>Engineer</strong> for IIT-JEE, or <strong>6-10th</strong> for foundational school Olympiads.
+              Select <strong>Medical</strong> for NEET/CUET, <strong>Engineering</strong> for IIT-JEE, or <strong>Foundation</strong> for Class 6–10 Olympiads.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               {goals.map((g) => (
