@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Check, ArrowRight, Sparkles, BookOpen, Clock, Users, HelpCircle, ChevronRight } from 'lucide-react';
+import { ArrowRight, HelpCircle, ChevronRight } from 'lucide-react';
 import coursesData from '../content/courses.json';
 import GoalCard from '../components/GoalCard';
-
-const strVal = (item, key) => typeof item === 'string' ? item : (item && (item[key] || Object.values(item)[0])) || '';
+import ProgramCard from '../components/ProgramCard';
 
 /* ── Scroll reveal hook ── */
 function useScrollReveal() {
@@ -105,113 +104,79 @@ export default function Courses() {
       <section ref={coursesRef} className="pb-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto scroll-mt-20">
         {activeGoalData ? (
           /* When a goal is selected */
-          <div className="space-y-12">
-            {/* Active Track Banner Header */}
-            <div className="rounded-3xl bg-gradient-to-r from-slate-900 via-[#0A0A0A] to-slate-900 text-white p-8 sm:p-10 relative overflow-hidden shadow-xl border border-white/10">
-              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#00A3FF]/10 blur-3xl pointer-events-none" />
-              
-              <div className="relative z-10 max-w-3xl">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-[#00A3FF]">
-                  <Sparkles size={14} />
-                  {activeGoalData.badge}
-                </span>
-                <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white">
-                  {activeGoalData.title} Programs
-                </h2>
-                <p className="mt-3 text-slate-300 text-base sm:text-lg leading-relaxed">
-                  {activeGoalData.description}
-                </p>
+          <div className="space-y-10">
+            {/* Active Track Header (Matching Mockup Style) */}
+            <div className="relative text-center py-6 px-4">
+              {/* Watermark illustration in background */}
+              {selectedGoal === 'doctor' && (
+                <div className="absolute right-0 sm:right-6 -top-4 w-32 sm:w-44 h-auto opacity-70 pointer-events-none select-none hidden sm:block">
+                  <img
+                    src="/images/programs/medical-watermark.webp"
+                    alt=""
+                    className="w-full h-auto object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              )}
+
+              {/* Eyebrow with flanking lines and accent underline */}
+              <div className="inline-flex flex-col items-center">
+                <div className="flex items-center gap-3">
+                  <span className="w-8 sm:w-12 h-px bg-slate-200"></span>
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-slate-500">
+                    OUR COURSES
+                  </span>
+                  <span className="w-8 sm:w-12 h-px bg-slate-200"></span>
+                </div>
+                <span
+                  className="w-8 h-1 rounded-full mt-1.5"
+                  style={{
+                    backgroundColor:
+                      selectedGoal === 'doctor'
+                        ? '#E53935'
+                        : selectedGoal === 'engineer'
+                        ? '#2F80ED'
+                        : '#27AE60',
+                  }}
+                />
               </div>
+
+              {/* Main Heading */}
+              <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-black tracking-tight">
+                <span
+                  style={{
+                    color:
+                      selectedGoal === 'doctor'
+                        ? '#E53935'
+                        : selectedGoal === 'engineer'
+                        ? '#2F80ED'
+                        : '#27AE60',
+                  }}
+                >
+                  {selectedGoal === 'doctor'
+                    ? 'Medical'
+                    : selectedGoal === 'engineer'
+                    ? 'Engineering'
+                    : 'Foundation'}
+                </span>{' '}
+                <span className="text-[#0A1B39]">Programs</span>
+              </h2>
+
+              {/* Subtitle / Description */}
+              <p className="mt-3 text-slate-500 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-normal">
+                {activeGoalData.description}
+              </p>
             </div>
 
             {/* Program Detail Cards */}
-            <div className="grid grid-cols-1 gap-8">
+            <div className="grid grid-cols-1 gap-8 sm:gap-10">
               {activeGoalData.programs.map((program, idx) => (
-                <div
+                <ProgramCard
                   key={program.slug || idx}
-                  className="rounded-3xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:border-slate-300 grid grid-cols-1 lg:grid-cols-12"
-                >
-                  {/* Left Highlight Sidebar */}
-                  <div
-                    className="lg:col-span-4 p-8 sm:p-10 flex flex-col justify-between text-white relative overflow-hidden"
-                    style={{
-                      background: `linear-gradient(135deg, ${program.color || '#D32F2F'} 0%, ${program.colorDark || '#0A0A0A'} 100%)`,
-                    }}
-                  >
-                    <div>
-                      <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-white/90 bg-white/15 backdrop-blur-sm px-3 py-1 rounded-full mb-4">
-                        {program.grade}
-                      </span>
-                      <h3 className="text-2xl sm:text-3xl font-black tracking-tight leading-snug">
-                        {program.title}
-                      </h3>
-                      <p className="mt-4 text-sm text-white/85 leading-relaxed">
-                        {program.tagline}
-                      </p>
-                    </div>
-
-                    <div className="mt-8 pt-6 border-t border-white/15 flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-white/80">
-                      <Clock size={15} /> Admissions Open 2026-27
-                    </div>
-                  </div>
-
-                  {/* Right Features & CTAs Content */}
-                  <div className="lg:col-span-8 p-8 sm:p-10 flex flex-col justify-between bg-white">
-                    <div>
-                      {/* Targeted Exams Badges */}
-                      <div className="mb-6">
-                        <span className="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-2.5">
-                          Target Exams & Syllabus
-                        </span>
-                        <div className="flex flex-wrap gap-2">
-                          {(program.exams || []).map((exam, eIdx) => (
-                            <span
-                              key={eIdx}
-                              className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-800 bg-slate-100 border border-slate-200/80 rounded-full px-3.5 py-1.5"
-                            >
-                              <BookOpen size={13} className="text-[#D32F2F]" />
-                              {strVal(exam, 'exam')}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Key Features Bullet List */}
-                      <div className="mt-6">
-                        <span className="text-xs font-bold uppercase tracking-widest text-slate-400 block mb-3">
-                          Program Highlights & System
-                        </span>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                          {(program.features || []).map((feature, fIdx) => (
-                            <div key={fIdx} className="flex items-start gap-2.5 text-sm text-slate-700">
-                              <div className="w-5 h-5 rounded-full bg-green-50 border border-green-200 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5">
-                                <Check size={12} strokeWidth={3} />
-                              </div>
-                              <span className="leading-snug">{strVal(feature, 'feature')}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Action Footer */}
-                    <div className="mt-10 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
-                      <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
-                        <Users size={16} className="text-[#D32F2F]" />
-                        <span>Batches of 25–30 Students · Personal Mentorship</span>
-                      </div>
-
-                      <div className="flex items-center gap-3">
-                        <Link
-                          to="/admissions"
-                          className="inline-flex items-center gap-2 rounded-full bg-[#D32F2F] text-white px-7 py-3 text-sm font-bold hover:bg-[#B71C1C] hover:-translate-y-0.5 transition-all duration-200 shadow-md shadow-[#D32F2F]/20"
-                        >
-                          Enquire for this Batch <ArrowRight size={15} />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                  program={program}
+                  trackId={selectedGoal}
+                />
               ))}
             </div>
           </div>
