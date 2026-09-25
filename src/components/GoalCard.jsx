@@ -41,34 +41,34 @@ export default function GoalCard({
   const cardContent = (
     <>
       {/* 3D Icon Graphic */}
-      <div className="w-full flex justify-center items-center pt-2 pb-1">
-        <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 flex items-center justify-center transform transition-transform duration-300 group-hover:scale-105 select-none">
+      <div className="w-full flex justify-center items-center pt-1 pb-1">
+        <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center transform transition-transform duration-300 group-hover:scale-105 select-none">
           <img
             src={goal.image}
             alt={goal.title}
             className="w-full h-full object-contain pointer-events-none"
             loading="lazy"
             decoding="async"
-            width="144"
-            height="144"
+            width="112"
+            height="112"
           />
         </div>
       </div>
 
       {/* Title & Subtitle */}
-      <div className="my-3 text-center">
-        <h3 className="text-xl sm:text-2xl font-black text-[#0A1B39] tracking-tight transition-colors">
+      <div className="my-2 sm:my-2.5 text-center">
+        <h3 className="text-lg sm:text-xl font-black text-[#0A1B39] tracking-tight transition-colors">
           {goal.title}
         </h3>
-        <p className="text-xs sm:text-[13px] font-bold text-slate-400 uppercase tracking-wider mt-1">
+        <p className="text-[11px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider mt-0.5">
           {goal.subtitle}
         </p>
       </div>
 
       {/* Colored Pill Button */}
-      <div className="mt-2 pb-1">
+      <div className="mt-1.5 pb-0.5">
         <span
-          className={`inline-flex items-center gap-1.5 rounded-full px-6 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md transition-all duration-300 group-hover:scale-105 ${theme.btnBg} ${theme.btnShadow}`}
+          className={`inline-flex items-center gap-1.5 rounded-full px-4.5 py-1.5 sm:py-2 text-xs sm:text-[13px] font-bold text-white shadow-md transition-all duration-300 group-hover:scale-105 ${theme.btnBg} ${theme.btnShadow}`}
         >
           Explore &rarr;
         </span>
@@ -76,7 +76,7 @@ export default function GoalCard({
     </>
   );
 
-  const baseClasses = `group relative flex flex-col items-center justify-between rounded-[28px] p-6 sm:p-8 text-center transition-all duration-300 border-2 shadow-sm hover:shadow-xl hover:-translate-y-1.5 select-none cursor-pointer ${theme.bg} ${
+  const baseClasses = `group relative flex flex-col items-center justify-between rounded-[22px] p-4.5 sm:p-5.5 text-center transition-all duration-300 border-2 shadow-sm hover:shadow-xl hover:-translate-y-1.5 select-none cursor-pointer ${theme.bg} ${
     isSelected
       ? `ring-4 ${theme.ring} shadow-lg -translate-y-1.5`
       : `${theme.border} ${theme.shadow}`

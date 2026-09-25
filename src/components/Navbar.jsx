@@ -214,7 +214,7 @@ export default function Navbar() {
             to="/admissions"
             className="hidden sm:inline-flex items-center rounded-full bg-[#D32F2F] text-white px-5 py-2 text-sm font-bold hover:bg-[#B71C1C] transition-colors"
           >
-            Enroll Now
+            Enquiry Now
           </Link>
           <button
             className="lg:hidden p-2"
@@ -272,7 +272,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className="text-center rounded-full bg-[#D32F2F] text-white px-5 py-2.5 text-sm font-bold"
               >
-                Enroll Now
+                Enquiry Now
               </Link>
             </div>
           </div>

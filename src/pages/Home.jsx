@@ -168,7 +168,7 @@ function GoalSelector() {
           </div>
         </div>
 
-        <div className="mt-14 max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+        <div className="mt-10 sm:mt-12 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
           {goals.map((goal, i) => (
             <GoalCard
               key={goal.id}
@@ -246,7 +246,7 @@ function ResultsGallery() {
             <Link
               key={`${activeTab}-${idx}`}
               to="/results"
-              className="flex-shrink-0 w-48 sm:w-56 md:w-64 aspect-[3/4] rounded-2xl overflow-hidden border border-slate-200/90 bg-white p-2 shadow-sm hover:shadow-xl hover:border-[#D32F2F] hover:-translate-y-1.5 transition-all duration-300 group flex items-center justify-center"
+              className="flex-shrink-0 w-40 sm:w-44 md:w-52 aspect-[3/4] rounded-2xl overflow-hidden border border-slate-200/90 bg-white p-1.5 sm:p-2 shadow-sm hover:shadow-xl hover:border-[#D32F2F] hover:-translate-y-1.5 transition-all duration-300 group flex items-center justify-center"
               aria-label={`View ${activeTab.toUpperCase()} result card`}
             >
               <img
