@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import FloatingSocials from './FloatingSocials';
+import StarTestPopup from './StarTestPopup';
 
 export default function Layout() {
   return (
@@ -12,6 +13,7 @@ export default function Layout() {
       </main>
       <Footer />
       <FloatingSocials />
+      <StarTestPopup />
     </div>
   );
 }

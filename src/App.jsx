@@ -11,6 +11,7 @@ import Gallery from './pages/Gallery';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Contact from './pages/Contact';
+import StarTest from './pages/StarTest';
 
 export default function App() {
   return (
@@ -22,6 +23,8 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/admissions" element={<Admissions />} />
+          <Route path="/star-test" element={<StarTest />} />
+          <Route path="/scholarship" element={<StarTest />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/results" element={<Results />} />
           <Route path="/gallery" element={<Gallery />} />

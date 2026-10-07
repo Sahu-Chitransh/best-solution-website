@@ -1,0 +1,45 @@
+{
+  "title": "BEST SOLUTION STAR SCHOLARSHIP TEST 2027",
+  "hindiTitle": "हर विद्यार्थी में एक STAR छिपा है — बस उसे चमकने का मौका चाहिए!",
+  "tagline": "प्रतिभागिता आपकी, निश्चित उपहार हमारा!",
+  "academicSession": "Academic Session: 2026-27 & 2027-28",
+  "scholarshipUpto": "90% Scholarship in Tuition Fee",
+  "scholarshipPool": "₹5.0 Crore in Classroom Programs",
+  "cashPrize": "₹2 Lakh Cash Prize (Total worth ₹5,000 to 40 Students with Excellence Award)",
+  "guaranteedGifts": "हर Participant के लिए निश्चित उपहार",
+  "classes": ["6th", "7th", "8th", "9th", "10th", "11th"],
+  "streams": ["IIT-JEE", "NEET", "Foundation", "अभी निश्चित नहीं"],
+  "sources": [
+    "Pamphlet / Poster (पर्चे / पोस्टर से)",
+    "School (स्कूल से)",
+    "Social Media (सोशल मीडिया)",
+    "Friend / Student (दोस्त / विद्यार्थी)",
+    "Parent (माता-पिता)",
+    "BEST SOLUTION Center",
+    "Other (अन्य)"
+  ],
+  "dates": [
+    { "date": "04 Oct 2026", "day": "रविवार (Sunday)", "label": "Phase 1" },
+    { "date": "25 Oct 2026", "day": "रविवार (Sunday)", "label": "Phase 2" },
+    { "date": "22 Nov 2026", "day": "रविवार (Sunday)", "label": "Phase 3" }
+  ],
+  "venue": {
+    "title": "Best Solution Coaching Classes",
+    "address": "18/19 Sayaji Square, Near Hotel Park, Vijay Nagar, Indore (M.P.)",
+    "mapUrl": "https://maps.app.goo.gl/ewFXjaazTKUtD4Hs9",
+    "mapEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.1245645391696!2d75.8878954!3d22.7537924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396302a8f41d5f79%3A0x13fbb00de0d8ff6e!2sBest%20Solution!5e0!3m2!1sen!2sin!4v1700000000000"
+  },
+  "contacts": [
+    { "phone": "0731-4080896", "link": "tel:07314080896" },
+    { "phone": "94259 59956", "link": "tel:9425959956" }
+  ],
+  "whatsapp": "9425959956",
+  "googleSheetWebhookUrl": "",
+  "qrTargetUrl": "https://bestsolution.co.in/star-test?src=pamphlet",
+  "images": {
+    "posterFull": "/images/star-test/poster-full.jpg",
+    "posterCard": "/images/star-test/poster-card.jpg",
+    "bannerVertical": "/images/star-test/banner-vertical.png",
+    "qrCode": "/images/qr/star-test-qr.png"
+  }
+}
