@@ -41,24 +41,24 @@ export default function StarTestPopup() {
 
   return (
     <>
-      {/* Floating Side Badge (Always accessible on non-star-test pages) */}
+      {/* Floating Badge (Repositioned to top-right corner below the top bar) */}
       {!isStarTestPage && (
-        <div className="fixed bottom-6 right-6 z-40 animate-bounce duration-1000">
+        <div className="fixed top-[82px] sm:top-[88px] right-3 sm:right-6 z-40 select-none">
           <button
             onClick={handleReopen}
-            className="group flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-[#8B0000] via-[#D32F2F] to-[#B71C1C] text-white shadow-xl shadow-red-600/30 border border-amber-300/40 hover:scale-105 active:scale-95 transition-all select-none"
+            className="group flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-[#8B0000] via-[#D32F2F] to-[#B71C1C] text-white shadow-lg shadow-red-900/25 border border-amber-300/50 hover:scale-105 active:scale-95 transition-all cursor-pointer backdrop-blur-sm"
             title="Open STAR Scholarship Test details"
           >
-            <span className="text-base">⭐</span>
-            <div className="text-left leading-tight hidden sm:block">
-              <div className="text-[11px] font-black text-[#FFD700] uppercase tracking-wider">
-                STAR Test 2027
+            <span className="text-sm sm:text-base animate-pulse">⭐</span>
+            <div className="text-left leading-tight">
+              <div className="text-[11px] sm:text-xs font-black text-[#FFD700] uppercase tracking-wider flex items-center gap-1">
+                <span>STAR Test 2027</span>
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400" />
               </div>
-              <div className="text-[10px] text-white/90 font-medium">
+              <div className="text-[9px] sm:text-[10px] text-white/90 font-medium">
                 Upto 90% Scholarship
               </div>
             </div>
-            <span className="sm:hidden text-xs font-black text-[#FFD700]">STAR TEST</span>
           </button>
         </div>
       )}
