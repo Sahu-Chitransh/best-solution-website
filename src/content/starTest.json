@@ -35,7 +35,7 @@
   ],
   "whatsapp": "9425959956",
   "googleSheetWebhookUrl": "",
-  "qrTargetUrl": "https://bestsolution.co.in/star-test?src=pamphlet",
+  "qrTargetUrl": "https://best-solution-website.vercel.app/star-test?src=pamphlet",
   "images": {
     "posterFull": "/images/star-test/poster-full.jpg",
     "posterCard": "/images/star-test/poster-card.jpg",
