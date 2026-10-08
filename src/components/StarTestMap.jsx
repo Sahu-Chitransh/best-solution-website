@@ -6,28 +6,26 @@ export default function StarTestMap() {
 
   return (
     <div className="bg-white rounded-3xl border border-red-100 overflow-hidden shadow-xl shadow-red-500/5">
-      <div className="p-6 sm:p-8 bg-gradient-to-r from-red-50/70 via-white to-amber-50/50 border-b border-red-100 flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <div>
-          <div className="flex items-center gap-2 text-xs font-bold tracking-widest text-[#D32F2F] uppercase mb-1">
-            <MapPin size={15} />
-            TEST EXAMINATION CENTER
-          </div>
-          <h3 className="text-xl sm:text-2xl font-black text-[#0A0A0A] tracking-tight">
-            {venue.title}
-          </h3>
-          <p className="mt-1 text-sm text-slate-600 max-w-xl">
-            {venue.address}
-          </p>
+      <div className="p-6 bg-gradient-to-br from-red-50/70 via-white to-amber-50/50 border-b border-red-100">
+        <div className="flex items-center gap-2 text-xs font-bold tracking-widest text-[#D32F2F] uppercase mb-1">
+          <MapPin size={15} />
+          TEST EXAMINATION CENTER
         </div>
+        <h3 className="text-xl sm:text-2xl font-black text-[#0A0A0A] tracking-tight">
+          {venue.title}
+        </h3>
+        <p className="mt-1.5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+          {venue.address}
+        </p>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="mt-4">
           <a
             href={venue.mapUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold text-sm shadow-md shadow-red-500/20 hover:scale-105 active:scale-95 transition-all"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#D32F2F] hover:bg-[#B71C1C] text-white font-bold text-xs sm:text-sm shadow-md shadow-red-500/20 hover:scale-102 active:scale-98 transition-all"
           >
-            <Navigation size={16} />
+            <Navigation size={15} />
             <span>मैप पर रास्ता देखें (Get Directions)</span>
             <ArrowUpRight size={14} />
           </a>

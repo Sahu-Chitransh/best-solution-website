@@ -1,12 +1,9 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
-  Trophy,
-  Award,
   Calendar,
   Sparkles,
   Phone,
-  Gift,
   HelpCircle,
   Download,
   Share2,
@@ -185,112 +182,22 @@ export default function StarTest() {
         </div>
       </section>
 
-      {/* Main Container: Form + Benefits */}
+      {/* Main Container: Form + Map */}
       <section className="py-16 sm:py-24" id="register">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            {/* Left 7 Columns: Form */}
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            {/* Left 7 Columns: Registration Form */}
             <div className="lg:col-span-7">
               <StarTestForm />
             </div>
 
-            {/* Right 5 Columns: Rewards & Campaign Info */}
-            <div className="lg:col-span-5 space-y-6">
-              {/* Rewards Card */}
-              <div className="rounded-3xl bg-white border border-red-100 p-6 sm:p-8 shadow-xl shadow-red-500/5">
-                <div className="flex items-center gap-2 text-xs font-bold tracking-widest text-[#D32F2F] uppercase mb-1">
-                  <Trophy size={16} />
-                  SCHOLARSHIP & REWARDS
-                </div>
-                <h3 className="text-xl sm:text-2xl font-black text-[#0A0A0A] tracking-tight">
-                  प्रतिभागिता आपकी, निश्चित उपहार हमारा!
-                </h3>
-
-                <div className="mt-6 space-y-4">
-                  <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-red-50/70 border border-red-100">
-                    <div className="w-10 h-10 rounded-full bg-[#D32F2F] text-white flex items-center justify-center font-bold flex-shrink-0">
-                      90%
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-[#0A0A0A] text-sm">90% तक की स्कॉलरशिप</h4>
-                      <p className="text-xs text-slate-600 mt-0.5">
-                        ट्यूशन फीस में 90% तक की भारी छूट आपकी मेरिट के आधार पर।
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200/80">
-                    <div className="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center flex-shrink-0">
-                      <Award size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-[#0A0A0A] text-sm">₹2 Lakh Cash Prize</h4>
-                      <p className="text-xs text-slate-600 mt-0.5">
-                        शीर्ष 40 विद्यार्थियों को Excellence Award के रूप में ₹5,000 प्रत्येक कैश रिवॉर्ड।
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-100">
-                    <div className="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center flex-shrink-0">
-                      <Gift size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-[#0A0A0A] text-sm">प्रत्येक प्रतिभागी को निश्चित उपहार</h4>
-                      <p className="text-xs text-slate-600 mt-0.5">
-                        हर छात्र जो टेस्ट में उपस्थित होगा, उसे Best Solution की ओर से सुनिश्चित उपहार दिया जाएगा।
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* QR Code Campaign Card (For Pamphlets) */}
-              <div className="rounded-3xl bg-gradient-to-br from-[#8B0000] to-[#5C0000] text-white p-6 sm:p-8 shadow-xl shadow-red-950/20">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-xs font-bold text-amber-300 uppercase tracking-widest block">
-                      OFFLINE PAMPHLET QR
-                    </span>
-                    <h4 className="text-lg font-black text-white mt-1">
-                      पर्चे / पोस्टर का QR कोड
-                    </h4>
-                  </div>
-                  <a
-                    href={starTestData.images.qrCode}
-                    download="Best-Solution-STAR-Test-QR.png"
-                    className="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors"
-                    title="Download 300 DPI QR Code"
-                  >
-                    <Download size={18} />
-                  </a>
-                </div>
-
-                <div className="mt-5 flex items-center gap-5">
-                  <div className="w-28 h-28 rounded-2xl bg-white p-2 shadow-md flex-shrink-0 flex items-center justify-center">
-                    <img
-                      src={starTestData.images.qrCode}
-                      alt="STAR Scholarship Test QR Code"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="text-xs text-white/90 space-y-1">
-                    <p className="leading-relaxed">
-                      यह हाई-रिज़ॉल्यूशन QR कोड शहर भर के पर्चों (Pamphlets) पर प्रिंट करने के लिए तैयार है।
-                    </p>
-                    <a
-                      href={starTestData.images.qrCode}
-                      download="Best-Solution-STAR-Test-QR.png"
-                      className="inline-flex items-center gap-1 text-amber-300 hover:underline font-bold pt-1"
-                    >
-                      <Download size={13} /> 300 DPI QR डाउनलोड करें
-                    </a>
-                  </div>
-                </div>
-              </div>
+            {/* Right 5 Columns: Map & Helpline */}
+            <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-24">
+              {/* Interactive Examination Center Map */}
+              <StarTestMap />
 
               {/* Direct Helpline */}
-              <div className="rounded-3xl bg-white border border-slate-200/80 p-6 flex items-center gap-4">
+              <div className="rounded-3xl bg-white border border-slate-200/80 p-6 flex items-center gap-4 shadow-xl shadow-red-500/5">
                 <div className="w-12 h-12 rounded-full bg-[#D32F2F] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
                   <Phone size={20} />
                 </div>
@@ -312,11 +219,6 @@ export default function StarTest() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Interactive Examination Center Map Section */}
-          <div className="mt-16">
-            <StarTestMap />
           </div>
 
           {/* FAQ Section */}
