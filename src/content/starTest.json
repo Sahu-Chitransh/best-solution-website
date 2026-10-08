@@ -34,7 +34,7 @@
     { "phone": "94259 59956", "link": "tel:9425959956" }
   ],
   "whatsapp": "9425959956",
-  "googleSheetWebhookUrl": "",
+  "googleSheetWebhookUrl": "https://script.google.com/macros/s/AKfycbxbvKOLOb2Yq3hgMXyL0-8oV83Tvl9qGR43AQy3QWMImqXj1K6ZGciPPErvA-IuQ93FCw/exec",
   "qrTargetUrl": "https://best-solution-website.vercel.app/star-test?src=pamphlet",
   "images": {
     "posterFull": "/images/star-test/poster-full.jpg",
